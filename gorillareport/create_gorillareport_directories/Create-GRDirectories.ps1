@@ -4,6 +4,7 @@
 .DESCRIPTION
     Crea los direcrtorios de gorillaReport en el cliente. En el directorio home del usuario crea un directorio llamado gorillaReport, y los subdirectorios:
         - gorillaReport\scripts: directorio para los scripts de gorillaReport
+        - gorillaRweport\modules: directorio para los módulos de gorillaReport
         - gorillaReport\logs: directorio para los logs de gorillaReport
         - gorillaReport\reports: directorio para los informes de gorillaReport
         - gorillaReport\temp: directorio para los archivos temporales de gorillaReport
@@ -32,7 +33,7 @@ if (-not (Test-Path -Path "$homedir\$gorilladir" -PathType Container)) {
 }
 
 #create subdirectories
-$subdirectories = @("scripts", "logs", "reports", "temp")
+$subdirectories = @("scripts", "modules", "logs", "reports", "temp")
 
 foreach ($subdir in $subdirectories) {
     if (-not (Test-Path -Path "$homedir\$gorilladir\$subdir" -PathType Container)) {

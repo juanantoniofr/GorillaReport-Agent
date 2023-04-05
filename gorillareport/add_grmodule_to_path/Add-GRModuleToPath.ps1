@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS 
-    Añade la ruta del módulo de scripts de gorillaReport a la variable de entorno PSModulePath
+    Hace disponible el módulo gorillaReport.psm1 para todos los scripts de powershell.
 .DESCRIPTION
-    Añade la ruta del módulo de scripts de gorillaReport a la variable de entorno PSModulePath. Si la ruta ya está en la variable de entorno no hace nada.
-    El módulo estará disponible de forma global y permanente para todos los scripts de powershell.
+    Añade la ruta del módulo gorillaReport a la variable de entorno PSModulePath. Si la ruta ya está en la variable de entorno no hace nada.
+    De esta forma, el módulo estará disponible de forma global y permanente para todos los scripts de powershell.
     Con esto conseguimos que los scripts de gorillaReport puedan importar el módulo de scripts de gorillaReport, teniendo acceso a variables y funciones definidas en él.
     Variables de entorno:
         GR_SCRIPTS_PATH: ruta de los scripts de gorillaReport
@@ -18,30 +18,13 @@
 
 # Aquí empieza el script
 
-# Creamos directorio en el cliente para scripts de gorillaReport  
-$homeDir = [Environment]::GetFolderPath("UserProfile")
-$gorilladir = "gorillaReport"
-
-if (-not (Test-Path -Path "$homeDir\$gorilladir" -PathType Container)) {
-    try {
-        New-Item -ItemType Directory -Path "$homeDir\$dirToCreate" -ErrorAction Stop | Out-Null
-        Write-Host "Directorio creado correctamente."
-    } catch {
-        throw "Error al crear el directorio: $_"
-    }
-} else {
-    Write-Host "El directorio ya existe."
-}
-
-
 # Variables
-$GR_SCRIPTS_PATH = "$homeDir\$dirToCreate"
-$GR_SCRIPTS_MODULE = $GR_SCRIPTS_PATH + "\gr_module.psm1"
-
-
+$homedir = [Environment]::GetFolderPath("UserProfile")
+$gorilladir = "gorillaReport"
+$gr_module_path = "$homeDir\$gorilladir\modules\GRModule.psm1"
 
 # 1. Obtener la ruta completa de la carpeta del módulo
-$modulePath = Resolve-Path -Path $GR_SCRIPTS_MODULE
+$modulePath = Resolve-Path -Path $gr_module_path
 
 # 2. Obtener la variable de entorno PSModulePath
 $envPath = [Environment]::GetEnvironmentVariable("PSModulePath", "User")
@@ -72,5 +55,5 @@ if ($pathArray -contains $modulePath) {
 }
 
 #Aquí termina el script
-#Cualquier script puede importar el módulo de scripts de gorillaReport
-#Import-Module gr_module.psm1
+#Cualquier script puede importar el módulo GRmodule.psm1 con el siguiente comando:
+#Import-Module GRModule.psm1
