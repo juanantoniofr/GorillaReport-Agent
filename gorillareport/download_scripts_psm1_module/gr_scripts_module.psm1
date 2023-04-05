@@ -1,12 +1,9 @@
 ##########################################
 # VARIABLES
 ##########################################
-# path scripts gr
-$GR_SCRIPTS_PATH = "C:\Users\tecnico\scripts\gr"
-# directorio de logs
 $GR_LOGS_DIRECTORY = $GR_SCRIPTS_PATH + "\logs"
-# directorio de scripts gorillareport
-$GR_SCRIPTS_MODULE = $GR_SCRIPTS_PATH + "\gr_scripts_module.psm1"
+$GR_lOGS_FILE = $GR_LOGS_DIRECTORY + "\gr_log.log"
+
 
 ##########################################
 # FUNCIONES
