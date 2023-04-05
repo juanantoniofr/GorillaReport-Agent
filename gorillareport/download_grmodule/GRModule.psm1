@@ -1,13 +1,12 @@
-##########################################
-# VARIABLES
-##########################################
-$GR_LOGS_DIRECTORY = $GR_SCRIPTS_PATH + "\logs"
-$GR_lOGS_FILE = $GR_LOGS_DIRECTORY + "\gr_log.log"
 
 
-##########################################
-# FUNCIONES
-##########################################
+#variables
+# uri api de registro de pc_client
+$register_pc_uri = "https://gorillareport:4444/api/client/register"
+# fichero de logs de gorillaReport
+$log_file = "$homedir\$gorilladir\logs\gorillareport.log"
+
+# Funciones
 
 ##########################################
 # Obtiene el token API de acceso

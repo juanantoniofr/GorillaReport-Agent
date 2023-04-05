@@ -19,45 +19,35 @@
 # Aquí empieza el script
 
 # Variables
-$homedir = [Environment]::GetFolderPath("UserProfile")
+# home de usuario
+$homedir = $env:USERPROFILE
+# directorio de gorillaReport
 $gorilladir = "gorillaReport"
-$gr_module_path = "$homeDir\$gorilladir\modules\GRModule.psm1"
+# directorio de módulos de gorillaReport
+$gr_module_path = "$homeDir\$gorilladir\modules"
 
-# 1. Obtener la ruta completa de la carpeta del módulo
-$modulePath = Resolve-Path -Path $gr_module_path
 
-# 2. Obtener la variable de entorno PSModulePath
-$envPath = [Environment]::GetEnvironmentVariable("PSModulePath", "User")
 
-# 3. Convertir la cadena de la variable de entorno en un array de rutas
-if ($envPath -eq $null) {
-    $envPath = ""
+# Verificar si el archivo de perfil existe
+if (!(Test-Path $PROFILE)) {
+    # Si el archivo de perfil no existe, crearlo
+    New-Item -ItemType File -Path $PROFILE -Force
 }
 
-$pathArray = $envPath -split ';'
-
-# 4. Comprobar si la ruta del módulo ya está en la variable de entorno
-if ($pathArray -contains $modulePath) {
-    Write-Output "La ruta del módulo ya está en PSModulePath"
-} else {
-    # 5. Añadir la ruta del módulo al principio del array de rutas
-    $modulePath = [System.IO.DirectoryInfo]::new($modulePath)
-    $pathArray = $modulePath.FullName + $pathArray
+# Agregar el directorio personalizado a la variable PSModulePath
+if (-not ($env:PSModulePath -split ';' | Select-String -SimpleMatch $gr_module_path)) {
+    $env:PSModulePath += ";$gr_module_path"
 
 
-    # 6. Actualizar la variable de entorno PSModulePath
-    $newPath = $pathArray -join ';'
-    [Environment]::SetEnvironmentVariable("PSModulePath", $newPath, "User")
-    Write-Output "La ruta del módulo ha sido añadida a PSModulePath"
+    # Agregar el comando a $PROFILE para que los cambios sean permanentes
+    Add-Content $PROFILE "`n`$env:PSModulePath += `";$gr_module_path`""
+
+    # Mostrar la nueva lista de directorios de módulos
+    Write-Host "La variable `$env:PSModulePath ahora contiene:`n$env:PSModulePath"
 }
-
-# 7. Comprobar que la ruta del módulo está en la variable de entorno
-$envPath = [Environment]::GetEnvironmentVariable("PSModulePath", "User")
-$pathArray = $envPath -split ';'
-if ($pathArray -contains $modulePath) {
-    Write-Output "La ruta del módulo está en PSModulePath"
-} else {
-    Write-Output "La ruta del módulo no está en PSModulePath"
+else {
+    <# Action when all if and elseif conditions are false #>
+    Write-Host "La variable `$env:PSModulePath ya contiene $gr_module_path :`n$env:PSModulePath"
 }
 
 #Aquí termina el script

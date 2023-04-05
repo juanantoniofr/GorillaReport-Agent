@@ -8,8 +8,8 @@
         GR_LOGS_DIRECTORY: directorio de logs
         GR_SCRIPTS_MODULE: directorio del módulo de scripts de gorillaReport
 .NOTE
-    Autor: Juan Carlos González
-    Fecha: 2021-03-01
+    Autor: Juan Antonio Fernández Ruiz
+    Fecha: 2023-03-03
     Versión: 1.0
     Email: juanafr@us.es
     Licencia: GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
@@ -17,23 +17,19 @@
 
 #aquí empieza el script
 
-##########################################
-# VARIABLES
-##########################################
-$GR_SCRIPTS_PATH = "C:\Users\juana\scripts\gr"
-$GR_SCRIPTS_MODULE = $GR_SCRIPTS_PATH + "\gr_scripts_module.psm1"
-$URI = "https://gorillareport:4444/api/client/register"
+# variables
+$gr_module = "GRModule.psm1"
 
-#Importamos el módulo de scripts de gorillaReport
+# Importamos el módulo de scripts de gorillaReport
 try {
-    Import-Module $GR_SCRIPTS_MODULE -ErrorAction SilentlyContinue    
+    Import-Module $gr_module -ErrorAction SilentlyContinue
+    Write-Host "Módulo de scripts de gorillaReport importado"
+    Get-Module -ListAvailable -Name $gr_module    
 }
 catch {
     <#Do this if a terminating exception happens#>
     Write-Host "Error al importar el módulo de scripts de gorillaReport"
-    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Write-Log -logFile $GR_lOGS_FILE -logLevel "ERROR: $DATE " -logMessage "Error al importar el módulo de scripts de gorillaReport"
-    exit 0
+    Write-Host $_.Exception.Message
 }
 
 # Registra pc_client en el servidor gorillaReport
@@ -80,11 +76,11 @@ $token = get_access_token
 if ( $null -eq $token ){ 
     #DEBUG: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Write-Log -logFile $GR_lOGS_FILE -logLevel "ERROR: $DATE " -logMessage "No se ha podido obtener el token de acceso"    
+    Write-Log -logFile $log_file -logLevel "ERROR: $DATE " -logMessage "No se ha podido obtener el token de acceso"    
     exit 0
 }
 
 #Registramos pc_client
 register_pc_client $token.access_token
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-Write-Log -logFile $GR_lOGS_FILE -logLevel "INFO: $DATE " -logMessage "pc_client registrado correctamente"
+Write-Log -logFile $log_file -logLevel "INFO: $DATE " -logMessage "pc_client registrado correctamente"

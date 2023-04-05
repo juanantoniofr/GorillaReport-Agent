@@ -47,3 +47,17 @@ foreach ($subdir in $subdirectories) {
         Write-Host "El directorio ya existe."
     }
 }
+
+#Create files
+#Create log file
+$log_file = "$homedir\$gorilladir\logs\gorillareport.log"
+if (-not (Test-Path -Path $log_file -PathType Leaf)) {
+    try {
+        New-Item -ItemType File -Path $log_file -ErrorAction Stop | Out-Null
+        Write-Host "Archivo creado correctamente."
+    } catch {
+        throw "Error al crear el archivo: $_"
+    }
+} else {
+    Write-Host "El archivo ya existe."
+}
