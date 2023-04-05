@@ -30,6 +30,10 @@ $modulePath = Resolve-Path -Path $gr_module_path
 $envPath = [Environment]::GetEnvironmentVariable("PSModulePath", "User")
 
 # 3. Convertir la cadena de la variable de entorno en un array de rutas
+if ($envPath -eq $null) {
+    $envPath = ""
+}
+
 $pathArray = $envPath -split ';'
 
 # 4. Comprobar si la ruta del módulo ya está en la variable de entorno
@@ -37,7 +41,9 @@ if ($pathArray -contains $modulePath) {
     Write-Output "La ruta del módulo ya está en PSModulePath"
 } else {
     # 5. Añadir la ruta del módulo al principio del array de rutas
-    $pathArray = $modulePath + $pathArray
+    $modulePath = [System.IO.DirectoryInfo]::new($modulePath)
+    $pathArray = $modulePath.FullName + $pathArray
+
 
     # 6. Actualizar la variable de entorno PSModulePath
     $newPath = $pathArray -join ';'
