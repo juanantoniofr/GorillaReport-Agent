@@ -63,16 +63,15 @@ function Register {
             Body = $body
         }
 
-        #Invoke-RestMethod @Params
+        Invoke-RestMethod @Params
 
-        Write-Host $Params
-    
     } -args @($token, $URI)
 }
 
 #Obtenemos el token de acceso
-#$token = $GRModule."Get-AccessToken"()
-
+Write-Host "login_uri: " $GRModule.login_uri
+$token = GetAccessToken($GRModule.login_uri)
+Write-Host "resultado de GetAccessToken: $token"
 #Si no hay token de acceso salimos
 if ( $null -eq $token ){ 
     #DEBUG: escribir en el fichero de logs
@@ -82,6 +81,17 @@ if ( $null -eq $token ){
 }
 
 #Registramos pc_client
-register $token.access_token $GRModule.login_uri
-$DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-Write-Log -logFile $log_file -logLevel "INFO: $DATE " -logMessage "pc_client registrado correctamente"
+Write-Host "token: $token"
+Write-Host "URI: " $GRModule.login_uri
+$result = register $token.access_token $GRModule.login_uri
+if ($null -eq $result) {
+    #DEBUG: escribir en el fichero de logs
+    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE): No se ha podido registrar pc_client"
+    exit 0
+}
+else{
+    #DEBUG: escribir en el fichero de logs
+    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE): pc_client registrado correctamente"
+}
