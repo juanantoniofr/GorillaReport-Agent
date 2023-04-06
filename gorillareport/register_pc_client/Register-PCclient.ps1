@@ -15,13 +15,14 @@
 
 # variables
 $gr_module = "GRModule"
+$this_script = "Register-PCclient.ps1"
 
 # Importamos el módulo de scripts de gorillaReport
 try {
     $GRModule = Import-Module -Name $gr_module -AsCustomObject -Force -ErrorAction stop -Passthru
     #Console debug: lista de propiedades y métodos del módulo
     Write-Host "Módulo de scripts de gorillaReport importado"
-    $GRModule | Get-Member
+    #$GRModule | Get-Member
 }
 catch {
     <#Do this if a terminating exception happens#>
@@ -32,25 +33,32 @@ catch {
 
 # Registra pc_client en el servidor gorillaReport
 function Register {
+    
+    param(
+        [Parameter(Mandatory=$true)]
+        [System.Object[]]$token,
+        [Parameter(Mandatory=$true)]
+        [string]$URI
+    )
 
-    pwsh -Command{
-        param(
-            [Parameter(Mandatory=$true)]
-            [string]$token,
-
-            [Parameter(Mandatory=$true)]
-            [string]$URI
-        )
+    # Ejecutamos el script en powershell 7
+    $result = pwsh -Command{
+        
+        $token = $args[0].access_token
+        $URI = $args[1]
 
         #$token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
         $token = ConvertTo-SecureString -String $token -AsPlainText -Force
 
-        $net_ip_configuration = Get-NetIPConfiguration | Select-Object -Property Computername, IPv4Address
+        # Obtenemos las IPs de la máquina
+        $ipAddresses = Get-NetIPAddress -AddressFamily Ipv4 | Where-Object { $_.IPAddress -ne '127.0.0.1' } | Select-Object -ExpandProperty IPAddress
+        # Convertimos a json
+        $ips = $ipAddresses | ConvertTo-Json
         
         $body = @{
             huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
-            name = $net_ip_configuration.Computername
-            ip = $net_ip_configuration.IPv4Address.IPAddress
+            name = $env:COMPUTERNAME
+            ip = $ips
             information = "{}"
         }
         
@@ -62,36 +70,42 @@ function Register {
             SkipCertificateCheck = 1
             Body = $body
         }
-
-        Invoke-RestMethod @Params
+        
+        return Invoke-RestMethod @Params
 
     } -args @($token, $URI)
+
+    return $result
 }
 
 #Obtenemos el token de acceso
-Write-Host "login_uri: " $GRModule.login_uri
 $token = GetAccessToken($GRModule.login_uri)
-Write-Host "resultado de GetAccessToken: $token"
+
 #Si no hay token de acceso salimos
 if ( $null -eq $token ){ 
     #DEBUG: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE): No se ha podido obtener el token de acceso"
-    exit 0
-}
-
-#Registramos pc_client
-Write-Host "token: $token"
-Write-Host "URI: " $GRModule.login_uri
-$result = register $token.access_token $GRModule.login_uri
-if ($null -eq $result) {
-    #DEBUG: escribir en el fichero de logs
-    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE): No se ha podido registrar pc_client"
+    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: No se ha podido obtener el token de acceso"
     exit 0
 }
 else{
     #DEBUG: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE): pc_client registrado correctamente"
+    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script - : Token de acceso obtenido correctamente"
+}
+
+#Registramos pc_client
+
+$result = Register $token $GRModule.register_pc_uri 
+
+if ($null -eq $result) {
+    #DEBUG: escribir en el fichero de logs
+    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: No se ha podido registrar pc_client"
+    exit 0
+}
+else{
+    #DEBUG: escribir en el fichero de logs
+    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script -: pc_client registrado correctamente"
 }
