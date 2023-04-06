@@ -4,5 +4,10 @@
 
 Próximos hitos:
 
- - actulizar GRModule.psm1 con las funciones y variables comunes a los scripts de gorillaReport
+ 
  - crear un script que registre un equipo en la app gorillaReport (hecho - mañana testeamos)
+
+
+De forma continua conforme se necesite
+
+- actulizar GRModule.psm1 con las funciones y variables comunes a los scripts de gorillaReport

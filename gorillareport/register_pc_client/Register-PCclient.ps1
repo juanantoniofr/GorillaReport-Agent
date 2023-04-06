@@ -3,11 +3,7 @@
     Registra pc_client en el servidor gorillaReport
 .DESCRIPTION
     Registra pc_client en el servidor gorillaReport. Para ello primero obtiene el token de acceso a la API y luego registra el pc_client.
-    Variables de entorno:
-        GR_SCRIPTS_PATH: ruta de los scripts de gorillaReport
-        GR_LOGS_DIRECTORY: directorio de logs
-        GR_SCRIPTS_MODULE: directorio del módulo de scripts de gorillaReport
-.NOTE
+.NOTES
     Autor: Juan Antonio Fernández Ruiz
     Fecha: 2023-03-03
     Versión: 1.0
@@ -18,22 +14,24 @@
 #aquí empieza el script
 
 # variables
-$gr_module = "GRModule.psm1"
+$gr_module = "GRModule"
 
 # Importamos el módulo de scripts de gorillaReport
 try {
-    Import-Module $gr_module -ErrorAction SilentlyContinue
+    $GRModule = Import-Module -Name $gr_module -AsCustomObject -Force -ErrorAction stop -Passthru
+    #Console debug: lista de propiedades y métodos del módulo
     Write-Host "Módulo de scripts de gorillaReport importado"
-    Get-Module -ListAvailable -Name $gr_module    
+    $GRModule | Get-Member
 }
 catch {
     <#Do this if a terminating exception happens#>
     Write-Host "Error al importar el módulo de scripts de gorillaReport"
     Write-Host $_.Exception.Message
+    exit 1
 }
 
 # Registra pc_client en el servidor gorillaReport
-function register_pc_client {
+function Register {
 
     pwsh -Command{
         param(
@@ -44,7 +42,8 @@ function register_pc_client {
             [string]$URI
         )
 
-        $token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
+        #$token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
+        $token = ConvertTo-SecureString -String $token -AsPlainText -Force
 
         $net_ip_configuration = Get-NetIPConfiguration | Select-Object -Property Computername, IPv4Address
         
@@ -64,23 +63,25 @@ function register_pc_client {
             Body = $body
         }
 
-        Invoke-RestMethod @Params
+        #Invoke-RestMethod @Params
+
+        Write-Host $Params
     
     } -args @($token, $URI)
 }
 
 #Obtenemos el token de acceso
-$token = get_access_token
+#$token = $GRModule."Get-AccessToken"()
 
 #Si no hay token de acceso salimos
 if ( $null -eq $token ){ 
     #DEBUG: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Write-Log -logFile $log_file -logLevel "ERROR: $DATE " -logMessage "No se ha podido obtener el token de acceso"    
+    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE): No se ha podido obtener el token de acceso"
     exit 0
 }
 
 #Registramos pc_client
-register_pc_client $token.access_token
+register $token.access_token $GRModule.login_uri
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Write-Log -logFile $log_file -logLevel "INFO: $DATE " -logMessage "pc_client registrado correctamente"

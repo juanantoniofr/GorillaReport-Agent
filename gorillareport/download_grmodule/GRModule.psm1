@@ -1,8 +1,14 @@
 
 
 #variables
+# uri api login
+$login_uri = "https://gorillareport:4444/api/login"
 # uri api de registro de pc_client
 $register_pc_uri = "https://gorillareport:4444/api/client/register"
+# home de usuario
+$homedir = $env:USERPROFILE
+# directorio de gorillaReport
+$gorilladir = "gorillareport"
 # fichero de logs de gorillaReport
 $log_file = "$homedir\$gorilladir\logs\gorillareport.log"
 
@@ -12,7 +18,11 @@ $log_file = "$homedir\$gorilladir\logs\gorillareport.log"
 # Obtiene el token API de acceso
 # @return $token (String) | null
 ##########################################
-function get_access_token() {
+function Get-AccessToken {
+
+    param(
+        [Parameter(Mandatory=$true)] LoginUri
+    )
 
     pwsh -Command {
 
@@ -53,5 +63,8 @@ function get_access_token() {
 
 
 # Hacer las funciones y variables de este módulo disponibles en los scripts que lo usen 
-Export-ModuleMember -Function '*'
+$ExportedCommands = @(
+    'Get-AccessToken'
+)
+Export-ModuleMember -Function $ExportedCommands
 Export-ModuleMember -Variable '*'
