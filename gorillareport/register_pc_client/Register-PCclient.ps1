@@ -53,14 +53,14 @@ function Register {
         # Obtenemos las IPs de la máquina
         $ipAddresses = Get-NetIPAddress -AddressFamily Ipv4 | Where-Object { $_.IPAddress -ne '127.0.0.1' } | Select-Object -ExpandProperty IPAddress
         # Convertimos a json
-        $ips = $ipAddresses | ConvertTo-Json
+        $ips = ($ipAddresses | ConvertTo-Json)
         
         $body = @{
             huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
             name = $env:COMPUTERNAME
-            ip = $ips
-            information = "{}"
+            ip = $ips.Replace('[','{').Replace(']','}')
         }
+        
         
         $Params=@{
             Method = "Post"
@@ -72,7 +72,6 @@ function Register {
         }
         
         return Invoke-RestMethod @Params
-
     } -args @($token, $URI)
 
     return $result
