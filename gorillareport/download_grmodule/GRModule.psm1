@@ -1,4 +1,3 @@
-
 <#
 .SYNOPSIS
     Módulo de funciones de gorillaReport
@@ -25,6 +24,8 @@ $gr_module = "GRModule"
 $login_uri = "https://gorillareport:4444/api/login"
 # uri api de registro de pc_client
 $register_pc_uri = "https://gorillareport:4444/api/client/register"
+# uri api set basic information
+$set_basic_info_uri = "https://gorillareport:4444/api/client/updateBasicInformation"
 # home de usuario
 $homedir = $env:USERPROFILE
 # directorio de gorillaReport
@@ -94,13 +95,76 @@ function GetAccessToken() {
 
 }
 
+##########################################
+# Añade información básica de la máquina a la DB en gorillaReport webapp
+# @return $result (Boolean) | null
+#########################################
+function AddBasicInformation(){
+    
+    param(
+        [Parameter(Mandatory=$true)]
+        [System.Object[]]$token,
+
+        [Parameter(Mandatory=$true)]
+        [String]$basicInformation,
+
+        [Parameter(Mandatory=$true)]
+        [string]$URI
+    )
+    $result = $null
+
+    Write-Host $token
+    Write-Host $basicInformation
+    Write-Host $URI
+    Write-Host "####################"
+    
+    # Ejecutamos el script en powershell 7
+    $result = pwsh -Command{
+        
+        $token = $args[0].access_token
+        $basicInformation = $args[1]
+        $URI = $args[2]
+
+        #$token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
+        $token = ConvertTo-SecureString -String $token -AsPlainText -Force
+
+        $body = @{
+            huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
+            name = $env:COMPUTERNAME
+            information = $basicInformation.ToString()
+        }
+
+        Write-Host $body
+        
+        $Params=@{
+            Method = "Post"
+            Uri = $URI
+            Authentication = "Bearer"
+            Token = $token
+            SkipCertificateCheck = 1
+            Body = $body
+        }
+        
+        $result = Invoke-RestMethod @Params
+        Write-Host "result Invoke-RestMethod:"
+        Write-Host $result
+        return $result 
+
+    } -args @($token, $basicInformation, $URI)
+
+    
+    return $result
+}
+
 # Hacer las funciones y variables de este módulo disponibles en los scripts que lo usen 
 $ExportedCommands = @(
-    'GetAccessToken'
+    'GetAccessToken',
+    'AddBasicInformation'
 )
 $ExportedVariables = @(
     "login_uri",
     "register_pc_uri",
+    "set_basic_info_uri",
     "log_file"
 )
 Export-ModuleMember -Function $ExportedCommands -Variable $ExportedVariables
