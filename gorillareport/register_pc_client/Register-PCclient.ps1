@@ -11,8 +11,7 @@
     Licencia: GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
 #>
 
-#aquí empieza el script
-
+# aquí empieza el script
 # variables
 $gr_module = "GRModule"
 $this_script = "Register-PCclient.ps1"

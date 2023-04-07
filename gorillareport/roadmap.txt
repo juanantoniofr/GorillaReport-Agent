@@ -2,11 +2,14 @@
 2. Script para descargar el GRModule.psm1 de gorillaReport: contine funciones y variable comunes a los scripts de gorillaReport
 3. Script para añadir al PATH de importación de modulos de PS el módulo de gorillaReport el GRModule. Así podemos usar las funciones y variables en el definidos en los scripts de gorillaReport simplemente importandolo con el cmdlet Import-Module GRModule.psm1.
 4. Script para registrar un equipo en gorillaReport
+5. 
+    - PS_script: Añadir información básica del equipo al registro: se añade un json con dos bloques, el primero con información con las especificaciones del dispositivo (Procesador, RAM Instalada, Tipo de sistema), el segundo con información especifica de windows (Version, Build, fecha de instalación y compilación del sistema operativo)
+    - Web app gorillaReport: Añadir uri a la API para actualizar la información básica del equipo.
 
 Próximos hitos:
 
+- Update view client en web app gorillaReport: ips es u n array de ips y information es un string con formato json.
  
-
 De forma continua conforme se necesite
 
 - actulizar GRModule.psm1 con las funciones y variables comunes a los scripts de gorillaReport
