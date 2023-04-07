@@ -37,6 +37,7 @@ function Register {
     param(
         [Parameter(Mandatory=$true)]
         [System.Object[]]$token,
+
         [Parameter(Mandatory=$true)]
         [string]$URI
     )
@@ -79,7 +80,7 @@ function Register {
 }
 
 #Obtenemos el token de acceso
-$token = GetAccessToken($GRModule.login_uri)
+$token = $GRModule.GetAccessToken($GRModule.login_uri)
 
 #Si no hay token de acceso salimos
 if ( $null -eq $token ){ 
@@ -95,9 +96,9 @@ else{
 }
 
 #Registramos pc_client
-
 $result = Register $token $GRModule.register_pc_uri 
 
+# si no se ha podido registrar pc_client salimos
 if ($null -eq $result) {
     #DEBUG: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"

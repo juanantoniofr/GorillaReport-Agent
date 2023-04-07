@@ -1,12 +1,11 @@
 1. Script que genere en el cliente el arbol de directorios y ficheros de gorillaReport
 2. Script para descargar el GRModule.psm1 de gorillaReport: contine funciones y variable comunes a los scripts de gorillaReport
-3. Script para añadir al PATH de importación de modulos de PS el módulo de gorillaReport el GRModule. Así podemos usar las funciones y variables en el definidos en los scripts de gorillaReport simplemente importandolo con el cmdlet Import-Module GRModule.psm1 
+3. Script para añadir al PATH de importación de modulos de PS el módulo de gorillaReport el GRModule. Así podemos usar las funciones y variables en el definidos en los scripts de gorillaReport simplemente importandolo con el cmdlet Import-Module GRModule.psm1.
+4. Script para registrar un equipo en gorillaReport
 
 Próximos hitos:
 
  
- - crear un script que registre un equipo en la app gorillaReport (hecho - mañana testeamos)
-
 
 De forma continua conforme se necesite
 
