@@ -1,0 +1,54 @@
+{
+  "lastExecution": {
+    "manifest": "conejillo",
+    "catalog": "catalog",
+    "managed_install": [
+      {
+        "name": "test gorilla log 1.0.0",
+        "version": "2023/04/08 09:11:58.879830",
+        "Checking": {
+          "item": "test gorilla log 1.0.0",
+          "Debug": {
+            "line1": "Algun mensaje",
+            "line2": "Algun mensaje"
+          }
+        },
+        "Installing": {
+          "Debug": {
+            "line1": "Algun mensaje",
+            "line2": "Algun mensaje"
+          },
+          "result": "test gorilla log 1.0.0 Installation successfully Installation SUCCESSFUL)",
+          "item": "test gorilla log 1.0.0"
+        },
+        "id": "1"
+      },
+      {
+        "name": "test gorilla log 1.0.0",
+        "version": "2023/04/08 09:16:38.152827",
+        "Checking": {
+          "item": "test gorilla log 1.0.0",
+          "Debug": {
+            "line1": "Algun mensaje",
+            "line2": "Algun mensaje"
+          }
+        },
+        "Installing": {
+          "Debug": {
+            "line1": "Algun mensaje",
+            "line2": "Algun mensaje"
+          },
+          "result": "test gorilla log 1.0.0 Installation successfully Installation FAILED)",
+          "item": "test gorilla log 1.0.0"
+        },
+        "id": "1"
+      }
+    ],
+    "endTime": "2023-04-08 09:16:38",
+    "log": "gorilla.log",
+    "name": "test",
+    "duration": "1000",
+    "startTime": "2023-04-08 09:16:37",
+    "id": 1
+  }
+}

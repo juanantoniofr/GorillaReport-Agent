@@ -9,7 +9,7 @@
 
 Próximos hitos:
 
-    - Ip se guarda como array, hay que enviarlo como JSON.
+    - Parser gorilla.log
 
  
 De forma continua conforme se necesite
