@@ -1,10 +1,16 @@
 $logPath = "C:\gorilla\cache\gorilla.log"
 $jsonPath = ".\result.json"
 
+
+$pattern = "INFO:\s\d{4}\/\d{2}\/\d{2}\s\d{2}:\d{2}:\d{2}.\d{6}\sRetrieving manifest:"
+$ocurrencias = Select-String -Path $logPath -Pattern $pattern -AllMatches
+$firstLine = $ocurrencias[$ocurrencias.Count-1].LineNumber
+
+write-host $firstLine
+
 $logFile = Get-Content -Path $logPath
 
 # Variables para almacenar la información
-$id = 1
 $name = 'test'
 $catalog = ''
 $manifest = ''
@@ -15,37 +21,61 @@ $log = ''
 $managedInstall = @()
 
 # Recorremos las líneas del archivo de log
-foreach ($line in $logFile) {
+foreach ($i in $firstLine..($logFile.Count - 1)) {
+    # Obtenemos la línea actual
+    $line = $logFile[$i]
+    
+    # Procesamos la línea
     if ($line -match 'Retrieving manifest: (.+)') {
         $manifest = $Matches[1]
     } elseif ($line -match 'Retrieving catalog: \[(.+)\]') {
         $catalog = $Matches[1]
     } elseif ($line -match 'INFO: (.+) Processing manifest') {
         $startTime = [datetime]::ParseExact($Matches[1], 'yyyy/MM/dd HH:mm:ss.ffffff', $null).ToString('yyyy-MM-dd HH:mm:ss')
-    } elseif ($line -match '^(INFO|WARN): (\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}\.\d{6}) (.+) (Installation SUCCESSFUL|Installation FAILED)$') {
-        $endTime = [datetime]::ParseExact($Matches[2], 'yyyy/MM/dd HH:mm:ss.ffffff', $null).ToString('yyyy-MM-dd HH:mm:ss')
+    } 
+    elseif ($line -match 'INFO: (.+) Done!') {
+        $endTime = [datetime]::ParseExact($Matches[1], 'yyyy/MM/dd HH:mm:ss.ffffff', $null).ToString('yyyy-MM-dd HH:mm:ss')
         $duration = (New-TimeSpan -Start $startTime -End $endTime).TotalMilliseconds.ToString()
-        $log = 'gorilla.log'
+        $log = $logPath
+    }
+    #INFO: 2023/04/09 11:15:24.103086 Checking status via script: display_name
+    elseif ($line -match 'INFO: (.+) Checking status (.+)') {
+        <# Action when this condition is true #>
+        $DebugCheck = @{}
 
+        do {
+            # Leemos la siguiente línea
+            $line = $logFile[++$i]
+            # Procesamos la línea
+            if ($line -match "DEBUG:\s\d{4}\/\d{2}\/\d{2}\s\d{2}:\d{2}:\d{2}.\d{6}\s(.+)$") {
+                $DebugCheck["line$($DebugCheck.Count + 1)"]=$matches[1]
+            }
+        } while ($line -match "DEBUG:\s\d{4}\/\d{2}\/\d{2}\s\d{2}:\d{2}:\d{2}.\d{6}\s(.+)$")
+    }
+    #INFO: 2023/04/09 11:15:25.322027 Installing ps1 display_name
+    elseif ($line -match 'INFO: (.+) Installing (.+)') {
+        <# Action when this condition is true #>
+        $DebugInstall = @{}
+
+        do {
+            # Leemos la siguiente línea
+            $line = $logFile[++$i]
+            # Procesamos la línea
+            if ($line -match "DEBUG:\s\d{4}\/\d{2}\/\d{2}\s\d{2}:\d{2}:\d{2}.\d{6}\s(.+)$") {
+                $DebugInstall["line$($DebugInstall.Count + 1)"]=$matches[1]
+            }
+        } while ($line -match "DEBUG:\s\d{4}\/\d{2}\/\d{2}\s\d{2}:\d{2}:\d{2}.\d{6}\s(.+)$")
+    }
+    elseif ($line -match '^(INFO|WARN): (\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}\.\d{6}) (.+) (Installation SUCCESSFUL|Installation FAILED)$') {
         # Creamos el objeto para el managed install y lo añadimos al array
         $managedInstallObj = @{
-            'id' = '1'
-            'name' = $Matches[3]
-            'version' = $Matches[2]
+            'item' = $Matches[3]
             'Checking' = @{
-                'item' = $Matches[3]
-                'Debug' = @{
-                    'line1' = 'Algun mensaje'
-                    'line2' = 'Algun mensaje'
-                }
+                'Debug' = $DebugCheck
             }
             'Installing' = @{
-                'item' = $Matches[3]
-                'Debug' = @{
-                    'line1' = 'Algun mensaje'
-                    'line2' = 'Algun mensaje'
-                }
-                'result' = "$($Matches[3]) Installation successfully $($Matches[4]))"
+                'Debug' = $DebugInstall 
+                'result' = $Matches[4]
             }
         }
         $managedInstall += $managedInstallObj
@@ -55,7 +85,6 @@ foreach ($line in $logFile) {
 # Creamos el objeto JSON
 $jsonObj = @{
     'lastExecution' = @{
-        'id' = $id
         'name' = $name
         'catalog' = $catalog
         'manifest' = $manifest
@@ -68,5 +97,6 @@ $jsonObj = @{
 }
 
 # Convertimos el objeto a JSON y lo guardamos en un archivo
-$json = ConvertTo-Json $jsonObj -Depth 10
-$json | Out-File $jsonPath -Encoding UTF8
+$jsonString = ConvertTo-Json $jsonObj -Depth 10
+#guardamos el json en un archivo
+Write-Output $jsonString | Out-File -Encoding utf8 -FilePath $jsonPath

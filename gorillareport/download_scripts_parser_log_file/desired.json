@@ -54,3 +54,36 @@ Quiero parserar este fichero de log y parsear la información para obtener un fi
         }
     }
 }
+
+
+Tengo definido mi objeto con las propiedades en este orden$jsonObj = @{
+    'lastExecution' = @{
+        'id' = $id
+        'name' = $name
+        'catalog' = $catalog
+        'manifest' = $manifest
+        'startTime' = $startTime
+        'endTime' = $endTime
+        'duration' = $duration
+        'log' = $log
+        'managed_install' = $managedInstall
+    }
+}    pero se ecriben en el fichero en este otro $jsonObj = @{
+    'lastExecution' = @{
+        'id' = $id
+        'name' = $name
+        'catalog' = $catalog
+        'manifest' = $manifest
+        'managed_install' = $managedInstall
+        'startTime' = $startTime
+        'endTime' = $endTime
+        'duration' = $duration
+        'log' = $log
+    }
+}
+¿por qué?
+
+
+
+
+
