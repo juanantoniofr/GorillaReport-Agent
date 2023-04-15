@@ -22,7 +22,6 @@ try {
     $GRModule = Import-Module -Name $gr_module -AsCustomObject -Force -ErrorAction stop -Passthru
     #Console debug: lista de propiedades y métodos del módulo
     Write-Host "Módulo de scripts de gorillaReport importado"
-    #$GRModule | Get-Member
 }
 catch {
     <#Do this if a terminating exception happens#>

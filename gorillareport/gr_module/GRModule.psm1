@@ -20,18 +20,28 @@
 #variables
 # Nombre de este módulo
 $gr_module = "GRModule"
+
+#### URI's ####
 # uri api login
 $login_uri = "https://gorillareport:4444/api/login"
 # uri api de registro de pc_client
 $register_pc_uri = "https://gorillareport:4444/api/client/register"
 # uri api set basic information
 $set_basic_info_uri = "https://gorillareport:4444/api/client/updateBasicInformation"
+# uri api set report
+$update_report_uri = "https://gorillareport:4444/api/client/updateReport"
+
+#### Files and directories paths ####
 # home de usuario
 $homedir = $env:USERPROFILE
 # directorio de gorillaReport
 $gorilladir = "gorillaReport"
 # fichero de logs de gorillaReport
 $log_file = "$homedir\$gorilladir\logs\gorillareport.log"
+# directorio de repositorio de gorillaReport
+$reports_dir = "$homedir\$gorilladir\reports"
+# fichero de logs de gorilla
+$file_gorilla_log = "C:\gorilla\cache\gorilla.log"
 
 # Funciones
 
@@ -134,8 +144,6 @@ function AddBasicInformation(){
             information = $basicInformation.ToString()
         }
 
-        Write-Host $body
-        
         $Params=@{
             Method = "Post"
             Uri = $URI
@@ -146,25 +154,77 @@ function AddBasicInformation(){
         }
         
         $result = Invoke-RestMethod @Params
-        Write-Host "result Invoke-RestMethod:"
-        Write-Host $result
         return $result 
 
     } -args @($token, $basicInformation, $URI)
 
+    return $result
+}
+
+##########################################
+# Enviamos logs de la última ejecución de gorilla en formato JSON
+# @return $result (Boolean) | null
+#########################################
+function PushReport() {
     
+    param(
+        [Parameter(Mandatory=$true)]
+        [System.Object[]]$token,
+
+        [Parameter(Mandatory=$true)]
+        [String]$report,
+
+        [Parameter(Mandatory=$true)]
+        [string]$URI
+    ) 
+    $result = $null
+
+    #Ejecutamos el script en powershell 7
+    $result = pwsh -Command{
+
+        $token = $args[0].access_token
+        $report = $args[1]
+        $URI = $args[2]
+
+        #$token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
+        $token = ConvertTo-SecureString -String $token -AsPlainText -Force
+
+        $body = @{
+            huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
+            report = $report.ToString()
+        }
+
+        $Params=@{
+            Method = "Post"
+            Uri = $URI
+            Authentication = "Bearer"
+            Token = $token
+            SkipCertificateCheck = 1
+            Body = $body
+        }
+
+        #$Params.body.report
+        $result = Invoke-RestMethod @Params
+        return $result
+
+    } -args @($token, $report, $URI)
+
     return $result
 }
 
 # Hacer las funciones y variables de este módulo disponibles en los scripts que lo usen 
 $ExportedCommands = @(
     'GetAccessToken',
-    'AddBasicInformation'
+    'AddBasicInformation',
+    'PushReport'
 )
 $ExportedVariables = @(
     "login_uri",
     "register_pc_uri",
     "set_basic_info_uri",
-    "log_file"
+    "update_report_uri",
+    "log_file",
+    "file_gorilla_log",
+    "reports_dir"
 )
 Export-ModuleMember -Function $ExportedCommands -Variable $ExportedVariables
