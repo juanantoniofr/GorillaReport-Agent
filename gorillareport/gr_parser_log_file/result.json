@@ -1,53 +1,12 @@
 {
   "lastExecution": {
-    "duration": "3000",
-    "log": "C:\\gorilla\\cache\\gorilla.log",
-    "managed_install": [
-      {
-        "Checking": {
-          "Debug": {
-            "line1": "Command Error: <nil>",
-            "line3": "stderr: ",
-            "line2": "stdout: "
-          }
-        },
-        "item": "test gorilla log 1 1.0.0",
-        "Installing": {
-          "result": "Installation SUCCESSFUL",
-          "Debug": {
-            "line1": "command: C:\\WINDOWS\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\scripts\\test_gorilla_logs\\Test-GorillaLogs1.ps1]",
-            "line5": "--------------------",
-            "line3": "--------------------",
-            "line4": "Soy test_gorilla_logs 1",
-            "line2": "Command Output:"
-          }
-        }
-      },
-      {
-        "Checking": {
-          "Debug": {
-            "line1": "Command Error: <nil>",
-            "line3": "stderr: ",
-            "line2": "stdout: "
-          }
-        },
-        "item": "test gorilla log 2 ",
-        "Installing": {
-          "result": "Installation SUCCESSFUL",
-          "Debug": {
-            "line1": "command: C:\\WINDOWS\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\scripts\\test_gorilla_logs\\Test-GorillaLogs2.ps1]",
-            "line5": "--------------------",
-            "line3": "--------------------",
-            "line4": "Soy test_gorilla_logs 2",
-            "line2": "Command Output:"
-          }
-        }
-      }
-    ],
-    "endTime": "2023-04-09 11:15:27",
-    "catalog": "catalog",
-    "name": "test",
+    "startTime": "",
+    "duration": "",
+    "catalog": "",
+    "managed_install": [],
+    "endTime": "",
     "manifest": "",
-    "startTime": "2023-04-09 11:15:24"
+    "log": "",
+    "name": "test"
   }
 }

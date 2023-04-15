@@ -1,14 +1,34 @@
-$logPath = "C:\gorilla\cache\gorilla.log"
-$jsonPath = ".\result.json"
+# aquí empieza el script
+# Importamos el módulo de scripts de gorillaReport
+try {
+    $GRModule = Import-Module -Name "GRModule" -AsCustomObject -Force -ErrorAction stop -Passthru
+    #Console debug: lista de propiedades y métodos del módulo
+    Write-Host "Módulo de scripts de gorillaReport importado"
+    #$GRModule | Get-Member
+}
+catch {
+    <#Do this if a terminating exception happens#>
+    Write-Host "Error al importar el módulo de scripts de gorillaReport"
+    Write-Host $_.Exception.Message
+    exit 1
+}
 
+# variables
+$this_script = "Parse-LogToJson.ps1"
+$file_gorilla_log = $GRModule.file_gorilla_log
+$reports_dir = $GRModule.reports_dir
+$file_json_report = "$reports_dir\result.json"
+#$GRModule | Get-Member
+Write-Host "Parsing file $file_gorilla_log to $file_json_report"
 
+#Código
 $pattern = "INFO:\s\d{4}\/\d{2}\/\d{2}\s\d{2}:\d{2}:\d{2}.\d{6}\sRetrieving manifest:"
-$ocurrencias = Select-String -Path $logPath -Pattern $pattern -AllMatches
+$ocurrencias = Select-String -Path $file_gorilla_log -Pattern $pattern -AllMatches
 $firstLine = $ocurrencias[$ocurrencias.Count-1].LineNumber
 
 write-host $firstLine
 
-$logFile = Get-Content -Path $logPath
+$logFile = Get-Content -Path $file_gorilla_log
 
 # Variables para almacenar la información
 $name = 'test'
@@ -36,7 +56,7 @@ foreach ($i in $firstLine..($logFile.Count - 1)) {
     elseif ($line -match 'INFO: (.+) Done!') {
         $endTime = [datetime]::ParseExact($Matches[1], 'yyyy/MM/dd HH:mm:ss.ffffff', $null).ToString('yyyy-MM-dd HH:mm:ss')
         $duration = (New-TimeSpan -Start $startTime -End $endTime).TotalMilliseconds.ToString()
-        $log = $logPath
+        $log = $file_gorilla_log
     }
     #INFO: 2023/04/09 11:15:24.103086 Checking status via script: display_name
     elseif ($line -match 'INFO: (.+) Checking status (.+)') {
@@ -99,4 +119,9 @@ $jsonObj = @{
 # Convertimos el objeto a JSON y lo guardamos en un archivo
 $jsonString = ConvertTo-Json $jsonObj -Depth 10
 #guardamos el json en un archivo
-Write-Output $jsonString | Out-File -Encoding utf8 -FilePath $jsonPath
+Write-Output $jsonString | Out-File -Encoding utf8 -FilePath $file_json_report
+
+# Obtenemmos el token de acceso a la API
+$token = $GRModule.GetAccessToken($GRModule.login_uri)
+#enviamos el reporte a la api de gorillaReport
+$GRModule.PushReport($token,$jsonString,$GRModule.PushReport)
