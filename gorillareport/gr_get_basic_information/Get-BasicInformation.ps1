@@ -2,7 +2,7 @@
 .SYNOPSIS
     Obtiene información básica del sistema
 .DESCRIPTION
-    Obtiene información básica del sistema y la guarda en un archivo JSON. Esta información contiene el procesador, la memoria RAM instalada, el tipo de sistema (32 o 64 bits), la versión de Windows, el número de compilación y la fecha de instalación.
+    Obtiene información básica del sistema y la envía a gorillaReport webapp. Esta información contiene el procesador, la memoria RAM instalada, el tipo de sistema (32 o 64 bits), la versión de Windows, el número de compilación y la fecha de instalación.
     Funciones:
         - Export-SystemInfo: obtiene la información del sistema y la guarda en un archivo JSON.
 .NOTES
@@ -91,7 +91,7 @@ else{
     Write-Host "Token de acceso a la API obtenido"
 }
 
-# Añadimos información básica a la BD de gorillaReport webapp
+# Enviamos información básica a gorillaReport webapp
 $result = $GRModule.AddBasicInformation($token, $basicInformation, $GRModule.set_basic_info_uri)
 
 #Write-Host $this_script " - " $result
