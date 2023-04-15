@@ -26,8 +26,6 @@ $pattern = "INFO:\s\d{4}\/\d{2}\/\d{2}\s\d{2}:\d{2}:\d{2}.\d{6}\sRetrieving mani
 $ocurrencias = Select-String -Path $file_gorilla_log -Pattern $pattern -AllMatches
 $firstLine = $ocurrencias[$ocurrencias.Count-1].LineNumber
 
-write-host $firstLine
-
 $logFile = Get-Content -Path $file_gorilla_log
 
 # Variables para almacenar la información
@@ -124,4 +122,11 @@ Write-Output $jsonString | Out-File -Encoding utf8 -FilePath $file_json_report
 # Obtenemmos el token de acceso a la API
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
-$GRModule.PushReport($token,$jsonString,$GRModule.PushReport)
+$result = $GRModule.PushReport($token,$jsonString,$GRModule.update_report_uri)
+
+if ($null -ne $result) {
+    Write-Host "Report update for pc-client " $result.name " susccessful "
+}
+else {
+    Write-Host "Report update for pc-client " $result.name " failed "
+}
