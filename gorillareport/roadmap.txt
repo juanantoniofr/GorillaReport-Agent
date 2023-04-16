@@ -6,10 +6,12 @@
     - PS_script: Añadir información básica del equipo al registro: se añade un json con dos bloques, el primero con información con las especificaciones del dispositivo (Procesador, RAM Instalada, Tipo de sistema), el segundo con información especifica de windows (Version, Build, fecha de instalación y compilación del sistema operativo)
     - Web app gorillaReport: Añadir uri a la API para actualizar la información básica del equipo.
     - Update view client en web app gorillaReport: ips es un array de ips y information es un string con formato json.
+6. Parser gorilla.log
+
 
 Próximos hitos:
 
-    - Parser gorilla.log
+- test paser managed_uninstall, enviar y guardar en gorillareport webapp    
 
  
 De forma continua conforme se necesite
