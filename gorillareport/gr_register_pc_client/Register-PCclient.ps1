@@ -95,16 +95,8 @@ else{
 
 #Registramos pc_client
 $result = Register $token $GRModule.register_pc_uri 
-
-# si no se ha podido registrar pc_client salimos
-if ($null -eq $result) {
-    #DEBUG: escribir en el fichero de logs
-    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: No se ha podido registrar pc_client"
-    exit 0
-}
-else{
-    #DEBUG: escribir en el fichero de logs
-    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script -: pc_client registrado correctamente"
-}
+Write-Host "gorillareport webapp response: " $result.message
+#DEBUG: escribir en el fichero de logs
+$DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : gorillareport webapp response ->  $result.message" 
+exit 0

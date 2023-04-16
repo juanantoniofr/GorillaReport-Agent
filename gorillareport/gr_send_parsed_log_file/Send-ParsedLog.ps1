@@ -14,7 +14,7 @@ catch {
 }
 
 # variables
-$this_script = "Parse-LogToJson.ps1"
+$this_script = "Send-ParsedLog.ps1"
 $file_gorilla_log = $GRModule.file_gorilla_log
 $reports_dir = $GRModule.reports_dir
 $file_json_report = "$reports_dir\result.json"
@@ -123,10 +123,8 @@ Write-Output $jsonString | Out-File -Encoding utf8 -FilePath $file_json_report
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
 $result = $GRModule.PushReport($token,$jsonString,$GRModule.update_report_uri)
-
-if ($null -ne $result) {
-    Write-Host "Report update for pc-client " $result.name " susccessful "
-}
-else {
-    Write-Host "Report update for pc-client " $result.name " failed "
-}
+Write-Host "gorillareport webapp response: " $result.message
+#DEBUG: escribir en el fichero de logs
+$DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : gorillareport webapp response: -> $result.message"
+exit 0

@@ -27,7 +27,7 @@ $login_uri = "https://gorillareport:4444/api/login"
 # uri api de registro de pc_client
 $register_pc_uri = "https://gorillareport:4444/api/client/register"
 # uri api set basic information
-$set_basic_info_uri = "https://gorillareport:4444/api/client/updateBasicInformation"
+$udpate_basic_info_uri = "https://gorillareport:4444/api/client/updateBasicInformation"
 # uri api set report
 $update_report_uri = "https://gorillareport:4444/api/client/updateReport"
 
@@ -38,7 +38,7 @@ $homedir = $env:USERPROFILE
 $gorilladir = "gorillaReport"
 # fichero de logs de gorillaReport
 $log_file = "$homedir\$gorilladir\logs\gorillareport.log"
-# directorio de repositorio de gorillaReport
+# directorio para reports de gorillaReport
 $reports_dir = "$homedir\$gorilladir\reports"
 # fichero de logs de gorilla
 $file_gorilla_log = "C:\gorilla\cache\gorilla.log"
@@ -109,25 +109,17 @@ function GetAccessToken() {
 # Añade información básica de la máquina a la DB en gorillaReport webapp
 # @return $result (Boolean) | null
 #########################################
-function AddBasicInformation(){
+function PushBasicInformation(){
     
     param(
         [Parameter(Mandatory=$true)]
         [System.Object[]]$token,
 
         [Parameter(Mandatory=$true)]
-        [String]$basicInformation,
-
-        [Parameter(Mandatory=$true)]
-        [string]$URI
+        [String]$basicInformation
     )
-    $result = $null
-
-    Write-Host $token
-    Write-Host $basicInformation
-    Write-Host $URI
-    Write-Host "####################"
     
+
     # Ejecutamos el script en powershell 7
     $result = pwsh -Command{
         
@@ -153,10 +145,9 @@ function AddBasicInformation(){
             Body = $body
         }
         
-        $result = Invoke-RestMethod @Params
-        return $result 
+        return Invoke-RestMethod @Params
 
-    } -args @($token, $basicInformation, $URI)
+    } -args @($token, $basicInformation, $udpate_basic_info_uri)
 
     return $result
 }
@@ -177,7 +168,7 @@ function PushReport() {
         [Parameter(Mandatory=$true)]
         [string]$URI
     ) 
-    $result = $null
+    
 
     #Ejecutamos el script en powershell 7
     $result = pwsh -Command{
@@ -215,13 +206,13 @@ function PushReport() {
 # Hacer las funciones y variables de este módulo disponibles en los scripts que lo usen 
 $ExportedCommands = @(
     'GetAccessToken',
-    'AddBasicInformation',
+    'PushBasicInformation',
     'PushReport'
 )
 $ExportedVariables = @(
     "login_uri",
     "register_pc_uri",
-    "set_basic_info_uri",
+    "udpate_basic_info_uri",
     "update_report_uri",
     "log_file",
     "file_gorilla_log",

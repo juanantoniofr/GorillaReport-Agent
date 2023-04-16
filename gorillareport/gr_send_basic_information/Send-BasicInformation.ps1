@@ -15,7 +15,7 @@
 # aquí empieza el script
 # variables
 $gr_module = "GRModule"
-$this_script = "Get-BasicInformation.ps1"
+$this_script = "Send-BasicInformation.ps1"
 
 # Importamos el módulo de scripts de gorillaReport
 try {
@@ -76,7 +76,7 @@ $basicInformation = Get-SystemInfo
 # Obtenemmos el token de acceso a la API
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #si no hay token de acceso salimos
-if ($token -eq $null) {
+if ($null -eq $token) {
     #Debug: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: No se ha podido obtener el token de acceso a la API"
@@ -91,21 +91,9 @@ else{
 }
 
 # Enviamos información básica a gorillaReport webapp
-$result = $GRModule.AddBasicInformation($token, $basicInformation, $GRModule.set_basic_info_uri)
-
-#Write-Host $this_script " - " $result
-#si no se ha podido añadir la información básica salimos
-if( $null -eq $result ){
-    #Debug: escribir en el fichero de logs
-    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: No se ha podido añadir la información básica a la BD de gorillaReport webapp"
-    Write-Host "No se ha podido añadir la información básica a la BD de gorillaReport webapp"
-    exit 1
-}
-else{
-    #Debug: escribir en el fichero de logs
-    $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script -: Información básica añadida a la BD de gorillaReport webapp"
-    Write-Host "Información básica añadida a la BD de gorillaReport webapp"
-    Write-Host $result
-}
+$result = $GRModule.PushBasicInformation($token, $basicInformation)
+Write-Host "gorillareport webapp response: " $result.message
+#DEBUG: escribir en el fichero de logs
+$DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : gorillareport webapp response ->  $result.message" 
+exit 0
