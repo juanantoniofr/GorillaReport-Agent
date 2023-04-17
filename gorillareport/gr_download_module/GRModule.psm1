@@ -22,14 +22,16 @@
 $gr_module = "GRModule"
 
 #### URI's ####
+#Nameserver o IP del servidor de gorillaReport
+$gr_server = "gorillareport::4444"
 # uri api login
-$login_uri = "https://gorillareport:4444/api/login"
+$login_uri = "https://"+$gr_server+"/gorillareport:4444/api/login"
 # uri api de registro de pc_client
-$register_pc_uri = "https://gorillareport:4444/api/client/register"
+$register_pc_uri = "https://"+$gr_server+"/api/client/register"
 # uri api set basic information
-$udpate_basic_info_uri = "https://gorillareport:4444/api/client/updateBasicInformation"
+$udpate_basic_info_uri = "https://"+$gr_server+"/api/client/updateBasicInformation"
 # uri api set report
-$update_report_uri = "https://gorillareport:4444/api/client/updateReport"
+$update_report_uri = "https://"+$gr_server+"/api/client/updateReport"
 
 #### Files and directories paths ####
 # home de usuario
@@ -163,10 +165,7 @@ function PushReport() {
         [System.Object[]]$token,
 
         [Parameter(Mandatory=$true)]
-        [String]$report,
-
-        [Parameter(Mandatory=$true)]
-        [string]$URI
+        [String]$report
     ) 
     
 
@@ -198,7 +197,7 @@ function PushReport() {
         $result = Invoke-RestMethod @Params
         return $result
 
-    } -args @($token, $report, $URI)
+    } -args @($token, $report, $update_report_uri)
 
     return $result
 }

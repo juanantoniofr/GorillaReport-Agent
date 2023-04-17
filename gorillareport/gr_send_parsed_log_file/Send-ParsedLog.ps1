@@ -115,14 +115,14 @@ $jsonObj = @{
 }
 
 # Convertimos el objeto a JSON y lo guardamos en un archivo
-$jsonString = ConvertTo-Json $jsonObj -Depth 10
+$jsonString = ConvertTo-Json $jsonObj -Depth 100
 #guardamos el json en un archivo
 Write-Output $jsonString | Out-File -Encoding utf8 -FilePath $file_json_report
 
 # Obtenemmos el token de acceso a la API
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
-$result = $GRModule.PushReport($token,$jsonString,$GRModule.update_report_uri)
+$result = $GRModule.PushReport($token,$jsonString)
 Write-Host "gorillareport webapp response: " $result.message
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
