@@ -1,0 +1,245 @@
+{
+  "Catalog": ["fcomtic_catalog"],
+  "CurrentUser": "pc101_IntelH310\\tecnico",
+  "EndTime": "2023-04-18 09:30:24 +0000",
+  "HostName": "pc101_IntelH310",
+  "InstalledItems": [
+    {
+      "Dependencies": null,
+      "DisplayName": "copy_final_draft_8",
+      "Check": {
+        "File": null,
+        "Script": "exit 0\n",
+        "Registry": {
+          "Name": "",
+          "Version": ""
+        }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/archive/scripts/copy_final_draft_8/copy_final_draft_8.ps1",
+        "Hash": "9dc7cf7c63e0cd87b4fab4616cb165e670fe659b2e7f8a1add09569d0cd20381",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "add_media_feature_pack",
+      "Check": {
+        "File": null,
+        "Script": "echo \"Comprobando status.txt...para realizar actualizaciones criticas e importantes (ignorando reinicios requeridos)\"\nexit 0\n",
+        "Registry": {
+          "Name": "",
+          "Version": ""
+        }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/add_media_feature_pack/add_media_feature_pack.ps1",
+        "Hash": "DB0688E858B96696C4CD97DC9DBAA7809CBCA8C4EC836922BE65B337C957F74A",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "install_or_update_drivers",
+      "Check": {
+        "File": null,
+        "Script": "echo \"Comprobando status.txt...para realizar actualizaciones criticas e importantes (ignorando reinicios requeridos)\"\nexit 0\n",
+        "Registry": {
+          "Name": "",
+          "Version": ""
+        }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/install_or_update_drivers/install_or_update_drivers.ps1",
+        "Hash": "31295180B13AC3C9D066498CB5B33D1483BB147B8AF6A0664A2394B7748DAA36",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "update_set_gorilla_manifest",
+      "Check": {
+        "File": null,
+        "Script": "exit 0\n",
+        "Registry": { "Name": "", "Version": "" }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/update_set_gorilla_manifest/update_set_gorilla_manifest.ps1",
+        "Hash": "8ec63eb6f3b3cf18831187124af5aa87ce617c442806ec1987a26d89b6078986",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "hotfix",
+      "Check": {
+        "File": null,
+        "Script": "echo \"Hotfix se ejecuta siempre (no guarda su ejecucion en status.txt)\"\nexit 0\n",
+        "Registry": { "Name": "", "Version": "" }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/hotfix/hotfix.ps1",
+        "Hash": "3C0704DF30CB193B1A36E2C314909DC5717979CFE33C95842B5E9B01F3BBB0AF",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "gorilla_info_app",
+      "Check": {
+        "File": null,
+        "Script": "$file = \"C:\\Users\\clase\\scripts\\GorillaInfoApp\\GorillaInfoApp.exe\"\n$zip_file = \"C:\\Users\\clase\\scripts\\GorillaInfoApp\\GorillaInfoApp.zip\"\nIf (Test-Path $file) {\n  If ((Get-FileHash $zip_file).Hash -ne \"D49CA03A962B0DDE33AC3D438D96C06E796EDBAC58B11FD4F98382A6430FDE48\"){\n    Stop-Process -Name \"GorillaInfoApp\" -Confirm -PassThru -Force\n    echo \"Descargando una nueva version de GorillaInfoApp.exe\"\n    exit 0\n  }\n  echo \"GorillaInfoApp.exe ya esta instalado en el sistema en su ultima version\"\n  exit 1\n}\nElse {\n  echo \"Descargando una nueva version de GorillaInfoApp.exe\"\n  exit 0\n}\n",
+        "Registry": { "Name": "", "Version": "" }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/gorilla_info_app/gorilla_info_app.ps1",
+        "Hash": "b2a53da4a25f1bae436c58f983e69d6887a6efa8472eb2555954e392a1109e36",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "events_logs",
+      "Check": {
+        "File": null,
+        "Script": "Try { \n    $content = Invoke-WebRequest \"http://10.1.21.24/\" -ErrorAction Stop \n} Catch { \n    echo \"La web SGI (http://10.1.21.24) no tiene conexion\"\n    exit 1\n}\necho \"Enviando logs a la web SGI\"    \nexit 0\n",
+        "Registry": { "Name": "", "Version": "" }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/events_logs/events_logs.ps1",
+        "Hash": "f96e34c2d5645a06da66ff6cf87c67f5c4e6aa72b13cb45ade96ac9503b3f550",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "windows_update_critical_and_important",
+      "Check": {
+        "File": null,
+        "Script": "echo \"Comprobando status.txt...para realizar actualizaciones criticas e importantes (ignorando reinicios requeridos)\"\nexit 0\n",
+        "Registry": { "Name": "", "Version": "" }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/windows_update_critical_and_important/windows_update_critical_and_important.ps1",
+        "Hash": "4c15904f26fedcf17c64cd37321aea692c568f1d9decd59cb2eb349ac9734fa1",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "update_gorilla_inventory",
+      "Check": {
+        "File": null,
+        "Script": "Try { \n    $content = Invoke-WebRequest \"http://10.1.21.24/\" -ErrorAction Stop \n} Catch { \n   echo \"La web SGI (http://10.1.21.24) no tiene conexion\"\n    exit 1\n}\necho \"Actualizando el inventario hardware de este equipo en la web SGI\"    \nexit 0\n",
+        "Registry": { "Name": "", "Version": "" }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/complete/scripts/update_gorilla_inventory/update_gorilla_inventory.ps1",
+        "Hash": "7f2cb2bf0bb5df9b478bc065eeb79f82dd9d7793cc206b8b9823f0919608263e",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    }
+  ],
+  "Manifest": "pc101_manifest",
+  "StartTime": "2023-04-18 09:29:11 +0000",
+  "UninstalledItems": null
+}

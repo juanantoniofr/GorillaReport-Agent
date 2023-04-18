@@ -1,0 +1,17 @@
+object(stdClass)#1343 (3){
+    ["Checking"]=> object(stdClass)#1344 (1) { 
+        ["Debug"]=> object(stdClass)#1342 (2) { 
+            ["line2"]=> string(118) "stdout: Comprobando status.txt...para realizar actualizaciones criticas e importantes (ignorando reinicios requeridos)"
+            ["line1"]=> string(20) "Command Error: " 
+        }
+    }
+    ["Installing"]=> object(stdClass)#1341 (2) {
+        ["Debug"]=> object(stdClass)#1338 (3) {
+            ["line2"]=> string(15) "Command Output:"
+            ["line3"]=> string(20) "--------------------"
+            ["line1"]=> string(258) "command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\complete\scripts\install_or_update_drivers\install_or_update_drivers.ps1]" 
+        }
+        ["result"]=> string(23) "Installation SUCCESSFUL"
+    }
+    ["item"]=> string(29) "install_or_update_drivers 1.0" 
+} 

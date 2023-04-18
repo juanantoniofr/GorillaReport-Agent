@@ -36,10 +36,17 @@ $update_report_uri = "https://"+$gr_server+"/api/client/updateReport"
 #### Files and directories paths ####
 # home de usuario
 $homedir = $env:USERPROFILE
+
+### directorios y ficheros de gorillaReport ###
 # directorio de gorillaReport
 $gorilladir = "gorillaReport"
 # fichero de logs de gorillaReport
 $log_file = "$homedir\$gorilladir\logs\gorillareport.log"
+# fichero de logs de gorilla en formato JSON
+$gorilla_log_file_json_format = "%programdata%\gorilla\GorillaReport.json"
+
+
+### directorios y ficheros de gorilla ###
 # directorio para reports de gorillaReport
 $reports_dir = "$homedir\$gorilladir\reports"
 # fichero de logs de gorilla
@@ -214,6 +221,7 @@ $ExportedVariables = @(
     "udpate_basic_info_uri",
     "update_report_uri",
     "log_file",
+    "gorilla_log_file_json_format",
     "file_gorilla_log",
     "reports_dir"
 )
