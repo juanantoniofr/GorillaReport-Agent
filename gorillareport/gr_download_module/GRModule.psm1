@@ -23,9 +23,10 @@ $gr_module = "GRModule"
 
 #### URI's ####
 #Nameserver o IP del servidor de gorillaReport
-$gr_server = "gorillareport::4444"
+#$gr_server = "gorillareport::4444"
+$gr_server = "10.1.21.2"
 # uri api login
-$login_uri = "https://"+$gr_server+"/gorillareport:4444/api/login"
+$login_uri = "https://"+$gr_server+"/api/login"
 # uri api de registro de pc_client
 $register_pc_uri = "https://"+$gr_server+"/api/client/register"
 # uri api set basic information
@@ -37,20 +38,22 @@ $update_report_uri = "https://"+$gr_server+"/api/client/updateReport"
 # home de usuario
 $homedir = $env:USERPROFILE
 
+### directorios y ficheros de gorilla ###
+#directorio de gorilla
+$gorilla_dir = "c:\gorilla"
+# fichero de logs de gorilla
+$file_gorilla_log = "$gorilla_dir\cache\gorilla.log"
+
 ### directorios y ficheros de gorillaReport ###
 # directorio de gorillaReport
-$gorilladir = "gorillaReport"
+$gorillaReport_dir = "gorillaReport"
+# directorio para reports de gorilla
+$reports_dir = "$homedir\$gorillaReport_dir\reports"
 # fichero de logs de gorillaReport
-$log_file = "$homedir\$gorilladir\logs\gorillareport.log"
+$log_file = "$homedir\$gorillaReport_dir\logs\gorillareport.log"
 # fichero de logs de gorilla en formato JSON
-$gorilla_log_file_json_format = "%programdata%\gorilla\GorillaReport.json"
+$gorilla_log_file_json_format = "$gorilla_dir\CustomGorillaReport.json"
 
-
-### directorios y ficheros de gorilla ###
-# directorio para reports de gorillaReport
-$reports_dir = "$homedir\$gorilladir\reports"
-# fichero de logs de gorilla
-$file_gorilla_log = "C:\gorilla\cache\gorilla.log"
 
 # Funciones
 
@@ -172,7 +175,7 @@ function PushReport() {
         [System.Object[]]$token,
 
         [Parameter(Mandatory=$true)]
-        [String]$report
+        [System.Object]$report
     ) 
     
 
@@ -182,6 +185,10 @@ function PushReport() {
         $token = $args[0].access_token
         $report = $args[1]
         $URI = $args[2]
+
+        Write-Host $report 
+
+        exit 0
 
         #$token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
         $token = ConvertTo-SecureString -String $token -AsPlainText -Force

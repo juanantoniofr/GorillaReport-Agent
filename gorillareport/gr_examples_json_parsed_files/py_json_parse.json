@@ -1,245 +1,337 @@
 {
-  "Catalog": ["fcomtic_catalog"],
-  "CurrentUser": "pc101_IntelH310\\tecnico",
-  "EndTime": "2023-04-18 09:30:24 +0000",
-  "HostName": "pc101_IntelH310",
-  "InstalledItems": [
+  "global_info": {
+    "HostName": "pc101_IntelH310",
+    "CurrentUser": "pc101_IntelH310\\tecnico",
+    "Catalog": ["fcomtic_catalog"],
+    "Manifest": "pc101_manifest",
+    "LastExecution_StartTime": "2023-04-18 11:09:11 +0000",
+    "LastExecution_EndTime": "2023-04-18 11:10:22 +0000"
+  },
+  "managed_installs": [
     {
-      "Dependencies": null,
-      "DisplayName": "copy_final_draft_8",
-      "Check": {
-        "File": null,
-        "Script": "exit 0\n",
-        "Registry": {
-          "Name": "",
-          "Version": ""
-        }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/archive/scripts/copy_final_draft_8/copy_final_draft_8.ps1",
-        "Hash": "9dc7cf7c63e0cd87b4fab4616cb165e670fe659b2e7f8a1add09569d0cd20381",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "copy_final_draft_8",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:11.977107 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\archive\\scripts\\copy_final_draft_8\\copy_final_draft_8.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:11.977107 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:11.977107 --------------------\n",
+          "DEBUG: 2023/04/18 13:09:12.179252 \n",
+          "DEBUG: 2023/04/18 13:09:12.179252 \n",
+          "DEBUG: 2023/04/18 13:09:12.179252     Directorio: C:\\Users\\clase\n",
+          "DEBUG: 2023/04/18 13:09:12.179252 \n",
+          "DEBUG: 2023/04/18 13:09:12.179252 \n",
+          "DEBUG: 2023/04/18 13:09:12.179763 Mode                LastWriteTime         Length Name                                              \n",
+          "DEBUG: 2023/04/18 13:09:12.179763 ----                -------------         ------ ----                                              \n",
+          "DEBUG: 2023/04/18 13:09:12.180276 d-r---       20/12/2022      9:38                Desktop                                           \n",
+          "DEBUG: 2023/04/18 13:09:15.644930 \n",
+          "DEBUG: 2023/04/18 13:09:15.644930 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 \n",
+          "DEBUG: 2023/04/18 13:09:15.644930 Scanning the drive for archives:\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 1 file, 41245427 bytes (40 MiB)\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 \n",
+          "DEBUG: 2023/04/18 13:09:15.644930 Extracting archive: C:\\Users\\Public\\FD8.zip\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 --\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 Path = C:\\Users\\Public\\FD8.zip\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 Type = zip\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 Physical Size = 41245427\n",
+          "DEBUG: 2023/04/18 13:09:15.644930 \n",
+          "DEBUG: 2023/04/18 13:09:15.644930 \n",
+          "DEBUG: 2023/04/18 13:09:15.645442 Would you like to replace the existing file:\n",
+          "DEBUG: 2023/04/18 13:09:15.645442   Path:     C:\\Users\\Public\\FD8\\FD8\\Final Draft.exe\n",
+          "DEBUG: 2023/04/18 13:09:15.645442   Size:     43937024 bytes (42 MiB)\n",
+          "DEBUG: 2023/04/18 13:09:15.645442   Modified: 2009-10-22 15:55:30\n",
+          "DEBUG: 2023/04/18 13:09:15.645442 with the file from archive:\n",
+          "DEBUG: 2023/04/18 13:09:15.645442   Path:     FD8\\FD8\\Final Draft.exe\n",
+          "DEBUG: 2023/04/18 13:09:15.645442   Size:     43937024 bytes (42 MiB)\n",
+          "DEBUG: 2023/04/18 13:09:15.645442   Modified: 2009-10-22 15:55:30\n",
+          "DEBUG: 2023/04/18 13:09:15.645953 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
+          "DEBUG: 2023/04/18 13:09:15.645953 Archives with Errors: 1\n",
+          "DEBUG: 2023/04/18 13:09:15.645953 \n",
+          "DEBUG: 2023/04/18 13:09:18.661546 --------------------\n",
+          "INFO: 2023/04/18 13:09:18.692192 copy_final_draft_8 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "add_media_feature_pack",
-      "Check": {
-        "File": null,
-        "Script": "echo \"Comprobando status.txt...para realizar actualizaciones criticas e importantes (ignorando reinicios requeridos)\"\nexit 0\n",
-        "Registry": {
-          "Name": "",
-          "Version": ""
-        }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/add_media_feature_pack/add_media_feature_pack.ps1",
-        "Hash": "DB0688E858B96696C4CD97DC9DBAA7809CBCA8C4EC836922BE65B337C957F74A",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "add_media_feature_pack",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:18.879422 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:18.879935 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:18.879935 --------------------\n",
+          "DEBUG: 2023/04/18 13:09:19.076187 --------------------\n",
+          "WARN: 2023/04/18 13:09:19.088270 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n",
+          "WARN: 2023/04/18 13:09:19.088270 Command error: exit status 1\n",
+          "WARN: 2023/04/18 13:09:19.088270 add_media_feature_pack 1.0 Installation FAILED\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "install_or_update_drivers",
-      "Check": {
-        "File": null,
-        "Script": "echo \"Comprobando status.txt...para realizar actualizaciones criticas e importantes (ignorando reinicios requeridos)\"\nexit 0\n",
-        "Registry": {
-          "Name": "",
-          "Version": ""
-        }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/install_or_update_drivers/install_or_update_drivers.ps1",
-        "Hash": "31295180B13AC3C9D066498CB5B33D1483BB147B8AF6A0664A2394B7748DAA36",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "DaVinci_18.1.1",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "update_set_gorilla_manifest",
-      "Check": {
-        "File": null,
-        "Script": "exit 0\n",
-        "Registry": { "Name": "", "Version": "" }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/update_set_gorilla_manifest/update_set_gorilla_manifest.ps1",
-        "Hash": "8ec63eb6f3b3cf18831187124af5aa87ce617c442806ec1987a26d89b6078986",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "install_or_update_drivers",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:30.528337 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\install_or_update_drivers\\install_or_update_drivers.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:30.528337 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:30.528337 --------------------\n",
+          "DEBUG: 2023/04/18 13:09:30.737500 \n",
+          "DEBUG: 2023/04/18 13:09:30.759437 Searching Driver-Updates...\n",
+          "DEBUG: 2023/04/18 13:09:42.332190 No pending driver updates.\n",
+          "DEBUG: 2023/04/18 13:09:42.337884 --------------------\n",
+          "INFO: 2023/04/18 13:09:42.350612 install_or_update_drivers 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "hotfix",
-      "Check": {
-        "File": null,
-        "Script": "echo \"Hotfix se ejecuta siempre (no guarda su ejecucion en status.txt)\"\nexit 0\n",
-        "Registry": { "Name": "", "Version": "" }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/hotfix/hotfix.ps1",
-        "Hash": "3C0704DF30CB193B1A36E2C314909DC5717979CFE33C95842B5E9B01F3BBB0AF",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "install_driver_and_printer_HP_Laser_408",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "gorilla_info_app",
-      "Check": {
-        "File": null,
-        "Script": "$file = \"C:\\Users\\clase\\scripts\\GorillaInfoApp\\GorillaInfoApp.exe\"\n$zip_file = \"C:\\Users\\clase\\scripts\\GorillaInfoApp\\GorillaInfoApp.zip\"\nIf (Test-Path $file) {\n  If ((Get-FileHash $zip_file).Hash -ne \"D49CA03A962B0DDE33AC3D438D96C06E796EDBAC58B11FD4F98382A6430FDE48\"){\n    Stop-Process -Name \"GorillaInfoApp\" -Confirm -PassThru -Force\n    echo \"Descargando una nueva version de GorillaInfoApp.exe\"\n    exit 0\n  }\n  echo \"GorillaInfoApp.exe ya esta instalado en el sistema en su ultima version\"\n  exit 1\n}\nElse {\n  echo \"Descargando una nueva version de GorillaInfoApp.exe\"\n  exit 0\n}\n",
-        "Registry": { "Name": "", "Version": "" }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/gorilla_info_app/gorilla_info_app.ps1",
-        "Hash": "b2a53da4a25f1bae436c58f983e69d6887a6efa8472eb2555954e392a1109e36",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "create_scheduled_task_set_default_printer",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "events_logs",
-      "Check": {
-        "File": null,
-        "Script": "Try { \n    $content = Invoke-WebRequest \"http://10.1.21.24/\" -ErrorAction Stop \n} Catch { \n    echo \"La web SGI (http://10.1.21.24) no tiene conexion\"\n    exit 1\n}\necho \"Enviando logs a la web SGI\"    \nexit 0\n",
-        "Registry": { "Name": "", "Version": "" }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/events_logs/events_logs.ps1",
-        "Hash": "f96e34c2d5645a06da66ff6cf87c67f5c4e6aa72b13cb45ade96ac9503b3f550",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "update_set_gorilla_manifest",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:43.228052 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_set_gorilla_manifest\\update_set_gorilla_manifest.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:43.228052 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:43.228052 --------------------\n",
+          "DEBUG: 2023/04/18 13:09:43.943367 --------------------\n",
+          "INFO: 2023/04/18 13:09:43.959062 update_set_gorilla_manifest 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "windows_update_critical_and_important",
-      "Check": {
-        "File": null,
-        "Script": "echo \"Comprobando status.txt...para realizar actualizaciones criticas e importantes (ignorando reinicios requeridos)\"\nexit 0\n",
-        "Registry": { "Name": "", "Version": "" }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/windows_update_critical_and_important/windows_update_critical_and_important.ps1",
-        "Hash": "4c15904f26fedcf17c64cd37321aea692c568f1d9decd59cb2eb349ac9734fa1",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "hotfix",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:44.127235 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\hotfix\\hotfix.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:44.127235 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:44.127235 --------------------\n",
+          "DEBUG: 2023/04/18 13:09:47.116351 modo incognito activado con anterioridad.....\n",
+          "DEBUG: 2023/04/18 13:09:47.128217 --------------------\n",
+          "INFO: 2023/04/18 13:09:47.139018 hotfix 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
     },
     {
-      "Dependencies": null,
-      "DisplayName": "update_gorilla_inventory",
-      "Check": {
-        "File": null,
-        "Script": "Try { \n    $content = Invoke-WebRequest \"http://10.1.21.24/\" -ErrorAction Stop \n} Catch { \n   echo \"La web SGI (http://10.1.21.24) no tiene conexion\"\n    exit 1\n}\necho \"Actualizando el inventario hardware de este equipo en la web SGI\"    \nexit 0\n",
-        "Registry": { "Name": "", "Version": "" }
-      },
-      "Installer": {
-        "Type": "ps1",
-        "Location": "packages/complete/scripts/update_gorilla_inventory/update_gorilla_inventory.ps1",
-        "Hash": "7f2cb2bf0bb5df9b478bc065eeb79f82dd9d7793cc206b8b9823f0919608263e",
-        "Arguments": null
-      },
-      "Uninstaller": {
-        "Type": "",
-        "Location": "",
-        "Hash": "",
-        "Arguments": null
-      },
-      "Version": "1.0",
-      "BlockingApps": null,
-      "PreScript": "",
-      "PostScript": ""
+      "task_name": "gorilla_info_app",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:47.403110 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\gorilla_info_app\\gorilla_info_app.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:47.403110 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:47.403619 --------------------\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 \n",
+          "DEBUG: 2023/04/18 13:09:50.362706 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 \n",
+          "DEBUG: 2023/04/18 13:09:50.362706 Scanning the drive for archives:\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 1 file, 167754703 bytes (160 MiB)\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 \n",
+          "DEBUG: 2023/04/18 13:09:50.362706 Extracting archive: C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 --\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 Path = C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 Type = zip\n",
+          "DEBUG: 2023/04/18 13:09:50.362706 Physical Size = 167754703\n",
+          "DEBUG: 2023/04/18 13:09:50.363217 \n",
+          "DEBUG: 2023/04/18 13:09:50.363217 \n",
+          "DEBUG: 2023/04/18 13:09:50.363217 Would you like to replace the existing file:\n",
+          "DEBUG: 2023/04/18 13:09:50.363217   Path:     C:\\Users\\clase\\scripts\\GorillaInfoApp\\Accessibility.dll\n",
+          "DEBUG: 2023/04/18 13:09:50.363217   Size:     21144 bytes (21 KiB)\n",
+          "DEBUG: 2023/04/18 13:09:50.363217   Modified: 2022-05-18 01:18:12\n",
+          "DEBUG: 2023/04/18 13:09:50.363217 with the file from archive:\n",
+          "DEBUG: 2023/04/18 13:09:50.363217   Path:     GorillaInfoApp\\Accessibility.dll\n",
+          "DEBUG: 2023/04/18 13:09:50.363217   Size:     21144 bytes (21 KiB)\n",
+          "DEBUG: 2023/04/18 13:09:50.363217   Modified: 2022-05-18 01:18:12\n",
+          "DEBUG: 2023/04/18 13:09:50.363726 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
+          "DEBUG: 2023/04/18 13:09:50.363726 Archives with Errors: 1\n",
+          "DEBUG: 2023/04/18 13:09:50.363726 \n",
+          "DEBUG: 2023/04/18 13:09:52.262695 --------------------\n",
+          "INFO: 2023/04/18 13:09:52.284267 gorilla_info_app 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_set_wallpaper",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_update_windows_defender_signature",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_set_screen_resolution",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_activator_w10_office",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_auto_shutdown",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "gpedit_shutdown_event_log",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "gpedit_shutdown_clean_desktop_files_and_others",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "events_logs",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:54.393097 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\events_logs\\events_logs.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:54.393097 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:54.393097 --------------------\n",
+          "DEBUG: 2023/04/18 13:09:57.442736 --------------------\n",
+          "INFO: 2023/04/18 13:09:57.462820 events_logs 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "windows_update_critical_and_important",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:09:57.624674 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\windows_update_critical_and_important\\windows_update_critical_and_important.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:09:57.624674 Command Output:\n",
+          "DEBUG: 2023/04/18 13:09:57.624674 --------------------\n",
+          "DEBUG: 2023/04/18 13:10:20.432925 --------------------\n",
+          "INFO: 2023/04/18 13:10:20.452327 windows_update_critical_and_important 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "update_gorilla_inventory",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/18 13:10:20.683342 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_gorilla_inventory\\update_gorilla_inventory.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/18 13:10:20.683342 Command Output:\n",
+          "DEBUG: 2023/04/18 13:10:20.683342 --------------------\n",
+          "DEBUG: 2023/04/18 13:10:22.544504 --------------------\n",
+          "INFO: 2023/04/18 13:10:22.564838 update_gorilla_inventory 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_set_default_browser",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
     }
-  ],
-  "Manifest": "pc101_manifest",
-  "StartTime": "2023-04-18 09:29:11 +0000",
-  "UninstalledItems": null
+  ]
 }

@@ -1,5 +1,8 @@
 # aquí empieza el script
 # Importamos el módulo de scripts de gorillaReport
+
+..\gr_add_module_to_path\Add-GRModuleToPath.ps1 -Wait -NoNewWindow
+
 try {
     $GRModule = Import-Module -Name "GRModule" -AsCustomObject -Force -ErrorAction stop -Passthru
     #Console debug: lista de propiedades y métodos del módulo
@@ -9,8 +12,9 @@ try {
 catch {
     <#Do this if a terminating exception happens#>
     Write-Host "Error al importar el módulo de scripts de gorillaReport"
+    Write-Host $env:PSModulePath
     Write-Host $_.Exception.Message
-    exit 1
+    exit 0
 }
 
 # variables
@@ -19,7 +23,12 @@ $json_file_log = $GRModule.gorilla_log_file_json_format
 
 #Código
 #Leemos el fichero de log en formato json
-$jsonString = Get-Content -Path $json_file_log -ErrorAction SilentlyContinue
+$jsonString = Get-Content -Path $json_file_log -Raw
+$jsonObject = $jsonString | ConvertTo-Json
+
+Write-Host $jsonString
+Write-Host $jsonObject
+exit 0
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 if ($null -eq $jsonString) {
@@ -35,7 +44,9 @@ else {
 # Obtenemmos el token de acceso a la API
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
-$result = $GRModule.PushReport($token,$jsonString)
+#$result = $GRModule.PushReport($token,$jsonString)
+#$result = $GRModule.PushReport($token,$jsonObject)
+$result = PushReport -token $token -report $jsonObject
 Write-Host "gorillareport webapp response: " $result.message
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
