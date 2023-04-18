@@ -175,23 +175,23 @@ function PushReport() {
         [System.Object[]]$token,
 
         [Parameter(Mandatory=$true)]
-        [System.Object]$report
+        [System.String]$report
     ) 
     
 
     #Ejecutamos el script en powershell 7
-    $result = pwsh -Command{
+    #$result = pwsh -Command{
 
-        $token = $args[0].access_token
-        $report = $args[1]
-        $URI = $args[2]
+        $access_token = $token.access_token
+        #$report = $args[1]
+        #$URI = $args[2]
 
-        Write-Host $report 
+        Write-Host $token
 
-        exit 0
+        
 
         #$token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
-        $token = ConvertTo-SecureString -String $token -AsPlainText -Force
+        $access_token = ConvertTo-SecureString -String $access_token -AsPlainText -Force
 
         $body = @{
             huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
@@ -200,9 +200,9 @@ function PushReport() {
 
         $Params=@{
             Method = "Post"
-            Uri = $URI
+            Uri = $update_report_uri
             Authentication = "Bearer"
-            Token = $token
+            Token = $access_token
             SkipCertificateCheck = 1
             Body = $body
         }
@@ -211,7 +211,7 @@ function PushReport() {
         $result = Invoke-RestMethod @Params
         return $result
 
-    } -args @($token, $report, $update_report_uri)
+    #} -args @($token, $report, $update_report_uri)
 
     return $result
 }
