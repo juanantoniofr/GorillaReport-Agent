@@ -1,7 +1,7 @@
 # aquí empieza el script
 # Importamos el módulo de scripts de gorillaReport
 
-..\gr_add_module_to_path\Add-GRModuleToPath.ps1 -Wait -NoNewWindow
+#..\gr_add_module_to_path\Add-GRModuleToPath.ps1 -Wait -NoNewWindow
 
 try {
     $GRModule = Import-Module -Name "GRModule" -AsCustomObject -Force -ErrorAction stop -Passthru
@@ -23,10 +23,8 @@ $json_file_log = $GRModule.gorilla_log_file_json_format
 
 #Código
 #Leemos el fichero de log en formato json
-$jsonString = Get-Content -Path $json_file_log 
-
-
-Write-Host $jsonString
+#$jsonString = Get-Content -Path $json_file_log 
+$jsonString = Get-Content -Raw -Path $json_file_log
 
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
@@ -41,11 +39,17 @@ else {
 }
 
 # Obtenemmos el token de acceso a la API
+
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
 #$result = $GRModule.PushReport($token,$jsonString)
-$result = $GRModule.PushReport($token,$jsonString)
-#$result = PushReport -token $token -report $jsonString
+$path_to_file = $GRModule.send_reports_dir+"\send_report_pwsh7.ps1"
+Write-Host $token.GetType()
+
+#powershell.exe -ExecutionPolicy Bypass -File .\send_report_pwsh7.ps1 -token $token.access_token -report $gorilla_log_file_json_format -uri $GRModule.update_report_uri
+pwsh.exe -File .\send_report_pwsh7.ps1 -token $token.access_token -report $gorilla_log_file_json_format -uri $GRModule.update_report_uri
+
+#DEBUG: console debug
 Write-Host "gorillareport webapp response: " $result.message
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
