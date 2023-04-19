@@ -46,13 +46,15 @@ $file_gorilla_log = "$gorilla_dir\cache\gorilla.log"
 
 ### directorios y ficheros de gorillaReport ###
 # directorio de gorillaReport
-$gorillaReport_dir = "gorillaReport"
+$gorillaReport_dir = "$homedir\gorillaReport"
 # directorio para reports de gorilla
-$reports_dir = "$homedir\$gorillaReport_dir\reports"
+$reports_dir = "$gorillaReport_dir\reports"
 # fichero de logs de gorillaReport
-$log_file = "$homedir\$gorillaReport_dir\logs\gorillareport.log"
+$log_file = "$gorillaReport_dir\logs\gorillareport.log"
 # fichero de logs de gorilla en formato JSON
 $gorilla_log_file_json_format = "$gorilla_dir\CustomGorillaReport.json"
+#Script ps1 para invocar pwsh con Invoke-RestMethod
+$ps_file_for_send_reports_with_pwsh = "$gorillaReport_dir\scripts\gr_send_parsed_log_file\send_report_pwsh7.ps1"
 
 
 # Funciones
@@ -230,6 +232,7 @@ $ExportedVariables = @(
     "log_file",
     "gorilla_log_file_json_format",
     "file_gorilla_log",
-    "reports_dir"
+    "reports_dir",
+    "ps_file_for_send_reports_with_pwsh"
 )
 Export-ModuleMember -Function $ExportedCommands -Variable $ExportedVariables

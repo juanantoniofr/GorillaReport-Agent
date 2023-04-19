@@ -1,0 +1,50 @@
+INFO: 2022/12/12 09:36:59.369661 Retrieving manifest: errors_manifest
+INFO: 2022/12/12 09:36:59.383660 Manifest Url: http://luivelmor.net/static/gorillaserver/forpas/example/manifests/errors_manifest.yaml
+INFO: 2022/12/12 09:36:59.794584 Retrieving catalog: [errors_catalog]
+INFO: 2022/12/12 09:36:59.795574 Catalog Url: http://luivelmor.net/static/gorillaserver/forpas/example/catalogs/errors_catalog.yaml
+INFO: 2022/12/12 09:36:59.926865 Processing manifest...
+WARN: 2022/12/12 09:36:59.927618 did not find a valid item in any catalog; Item name: check_script_execution_error
+INFO: 2022/12/12 09:36:59.927618 Processing managed installs...
+INFO: 2022/12/12 09:36:59.927618 Checking status via script: check_exit_1
+DEBUG: 2022/12/12 09:37:00.121361 Command Error: exit status 1
+DEBUG: 2022/12/12 09:37:00.121361 stdout: Check exit 1.........
+
+DEBUG: 2022/12/12 09:37:00.121361 stderr:
+INFO: 2022/12/12 09:37:00.122373 Checking status via script: check_exit_0
+DEBUG: 2022/12/12 09:37:00.306529 Command Error: <nil>
+DEBUG: 2022/12/12 09:37:00.306529 stdout: Check exit 0.........
+
+DEBUG: 2022/12/12 09:37:00.307522 stderr:
+INFO: 2022/12/12 09:37:00.307522 Installing ps1 for check_exit_0
+DEBUG: 2022/12/12 09:37:00.307522 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\scripts\testing_errors\check_script_exit_0.ps1]
+DEBUG: 2022/12/12 09:37:00.307522 Command Output:
+DEBUG: 2022/12/12 09:37:00.307522 --------------------
+DEBUG: 2022/12/12 09:37:00.476521 check_exit_0
+DEBUG: 2022/12/12 09:37:00.482522 --------------------
+INFO: 2022/12/12 09:37:00.493522 check_exit_0 1.0 Installation SUCCESSFUL
+INFO: 2022/12/12 09:37:00.493522 Checking status via script: check_exit_0_execution_error
+DEBUG: 2022/12/12 09:37:00.678122 Command Error: <nil>
+DEBUG: 2022/12/12 09:37:00.678122 stdout: Check exit 0.........
+
+DEBUG: 2022/12/12 09:37:00.678122 stderr:
+INFO: 2022/12/12 09:37:00.679041 Installing ps1 for check_exit_0_execution_error
+DEBUG: 2022/12/12 09:37:00.679041 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\scripts\testing_errors\check_script_exit_0_execution_error.ps1]
+DEBUG: 2022/12/12 09:37:00.679041 Command Output:
+DEBUG: 2022/12/12 09:37:00.679041 --------------------
+DEBUG: 2022/12/12 09:37:00.845178 check_exit_0_execution_error
+DEBUG: 2022/12/12 09:37:01.064178 --------------------
+INFO: 2022/12/12 09:37:01.075183 check_exit_0_execution_error 1.0 Installation SUCCESSFUL
+INFO: 2022/12/12 09:37:01.075183 Checking status via script: check_script_exit_0_hash_error
+DEBUG: 2022/12/12 09:37:01.255427 Command Error: <nil>
+DEBUG: 2022/12/12 09:37:01.255427 stdout: Check exit 0.........
+
+DEBUG: 2022/12/12 09:37:01.255427 stderr:
+DEBUG: 2022/12/12 09:37:01.255427 File hash does not match expected value: C:\gorilla\cache\cache\packages\scripts\testing_errors\check_script_exit_0_hash_error.ps1
+INFO: 2022/12/12 09:37:01.256413 Downloading http://luivelmor.net/static/gorillaserver/forpas/example/packages/scripts/testing_errors/check_script_exit_0_hash_error.ps1 to C:\gorilla\cache\cache\packages\scripts\testing_errors\
+DEBUG: 2022/12/12 09:37:01.354992 File hash does not match expected value: C:\gorilla\cache\cache\packages\scripts\testing_errors\check_script_exit_0_hash_error.ps1
+WARN: 2022/12/12 09:37:01.357991 Unable to download valid file: http://luivelmor.net/static/gorillaserver/forpas/example/packages/scripts/testing_errors/check_script_exit_0_hash_error.ps1
+INFO: 2022/12/12 09:37:01.358991 Processing managed uninstalls...
+INFO: 2022/12/12 09:37:01.361990 Processing managed updates...
+INFO: 2022/12/12 09:37:01.363993 Saving GorillaReport.json...
+INFO: 2022/12/12 09:37:01.365989 Cleaning up the cache...
+INFO: 2022/12/12 09:37:01.371990 Done!

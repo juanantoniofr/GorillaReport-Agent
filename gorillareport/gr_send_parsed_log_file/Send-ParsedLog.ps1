@@ -24,7 +24,8 @@ $json_file_log = $GRModule.gorilla_log_file_json_format
 #Código
 #Leemos el fichero de log en formato json
 #$jsonString = Get-Content -Path $json_file_log 
-$jsonString = Get-Content -Raw -Path $json_file_log
+ 
+
 
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
@@ -42,7 +43,9 @@ else {
 
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
-pwsh.exe -File $GRModule.send_reports_dir -token $token.access_token -report $gorilla_log_file_json_format -uri $GRModule.update_report_uri
+
+#powershell.exe -ExecutionPolicy Bypass -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -report $jsonString -uri $GRModule.update_report_uri
+pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.update_report_uri
 
 #DEBUG: console debug
 Write-Host "gorillareport webapp response: " $result.message

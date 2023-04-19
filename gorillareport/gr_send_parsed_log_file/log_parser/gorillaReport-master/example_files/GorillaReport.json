@@ -1,0 +1,97 @@
+{
+  "Catalog": [
+    "errors_catalog"
+  ],
+  "CurrentUser": "DESKTOP-IQDKRDJ\\luivelmor",
+  "EndTime": "2022-12-12 08:38:57 +0000",
+  "HostName": "DESKTOP-IQDKRDJ",
+  "InstalledItems": [
+    {
+      "Dependencies": null,
+      "DisplayName": "check_script_execution_error_exit_0",
+      "Check": {
+        "File": null,
+        "Script": "Write-Host \"Check script execution error exit 0.........\"\n# next line = execution error\nasdasdasd\nexit 0\n",
+        "Registry": {
+          "Name": "",
+          "Version": ""
+        }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/scripts/testing_errors/check_script_execution_error_exit_0.ps1",
+        "Hash": "b62e407d0b45631e1cdfca87425257d20e0724660e81571c237c31d0c1f6b8ce",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "check_exit_0",
+      "Check": {
+        "File": null,
+        "Script": "Write-Host \"Check exit 0.........\"\nexit 0\n",
+        "Registry": {
+          "Name": "",
+          "Version": ""
+        }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/scripts/testing_errors/check_script_exit_0.ps1",
+        "Hash": "86022c9f5b8a862bb1d2e0b8951ab9acbdd3164936c711e6d79e723feb44b861",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    },
+    {
+      "Dependencies": null,
+      "DisplayName": "check_exit_0_execution_error",
+      "Check": {
+        "File": null,
+        "Script": "Write-Host \"Check exit 0.........\"\nexit 0\n",
+        "Registry": {
+          "Name": "",
+          "Version": ""
+        }
+      },
+      "Installer": {
+        "Type": "ps1",
+        "Location": "packages/scripts/testing_errors/check_script_exit_0_execution_error.ps1",
+        "Hash": "5deac5a1c475476bee1f18f25555da2c821cf4a223bb6dcfd2c059931787e3b9",
+        "Arguments": null
+      },
+      "Uninstaller": {
+        "Type": "",
+        "Location": "",
+        "Hash": "",
+        "Arguments": null
+      },
+      "Version": "1.0",
+      "BlockingApps": null,
+      "PreScript": "",
+      "PostScript": ""
+    }
+  ],
+  "Manifest": "errors_manifest",
+  "StartTime": "2022-12-12 08:38:55 +0000",
+  "UninstalledItems": null
+}
