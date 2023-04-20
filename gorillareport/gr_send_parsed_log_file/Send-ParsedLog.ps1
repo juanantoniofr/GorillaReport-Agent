@@ -24,20 +24,7 @@ $json_file_log = $GRModule.gorilla_log_file_json_format
 #Código
 #Leemos el fichero de log en formato json
 #$jsonString = Get-Content -Path $json_file_log 
- 
 
-
-#DEBUG: escribir en el fichero de logs
-$DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-if ($null -eq $jsonString) {
-    Write-Host "Error: no se ha podido leer el fichero de log en formato json"
-    Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : Error: no se ha podido leer el fichero de log en formato json"
-    exit 1
-}
-else {
-    Write-Host "Fichero de log en formato json leido correctamente"
-    Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : Fichero de log en formato json leido correctamente"
-}
 
 # Obtenemmos el token de acceso a la API
 
