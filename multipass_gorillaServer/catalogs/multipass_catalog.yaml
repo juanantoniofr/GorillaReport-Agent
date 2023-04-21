@@ -1,0 +1,12 @@
+---
+
+init_gorillaReport_client:
+  display_name: init_gorillaReport_client
+  check:
+    script: |
+      exit 0
+  installer:
+    location: packages/gorillaReport/init_gorillaReport_client.ps1
+    hash: 6e49f6f087b1e5e0792923589cd1ee8208da9fd3fb3c037d74e635efb6153ea4
+    type: ps1
+  version: 1.0

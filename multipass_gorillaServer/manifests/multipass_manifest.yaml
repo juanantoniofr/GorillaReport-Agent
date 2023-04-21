@@ -1,0 +1,9 @@
+---
+name: multipass_manifest
+managed_installs:
+  - init_gorillaReport_client
+managed_uninstalls:
+managed_updates:
+included_manifests:
+catalogs:
+  - multipass_catalog
