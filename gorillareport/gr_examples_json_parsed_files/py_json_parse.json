@@ -4,8 +4,8 @@
     "CurrentUser": "pc101_IntelH310\\tecnico",
     "Catalog": ["fcomtic_catalog"],
     "Manifest": "pc101_manifest",
-    "LastExecution_StartTime": "2023-04-18 11:09:11 +0000",
-    "LastExecution_EndTime": "2023-04-18 11:10:22 +0000"
+    "LastExecution_StartTime": "2023-04-20 15:29:11 +0000",
+    "LastExecution_EndTime": "2023-04-20 15:30:35 +0000"
   },
   "managed_installs": [
     {
@@ -13,45 +13,45 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:11.977107 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\archive\\scripts\\copy_final_draft_8\\copy_final_draft_8.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:12.043429 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\archive\\scripts\\copy_final_draft_8\\copy_final_draft_8.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:11.977107 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:11.977107 --------------------\n",
-          "DEBUG: 2023/04/18 13:09:12.179252 \n",
-          "DEBUG: 2023/04/18 13:09:12.179252 \n",
-          "DEBUG: 2023/04/18 13:09:12.179252     Directorio: C:\\Users\\clase\n",
-          "DEBUG: 2023/04/18 13:09:12.179252 \n",
-          "DEBUG: 2023/04/18 13:09:12.179252 \n",
-          "DEBUG: 2023/04/18 13:09:12.179763 Mode                LastWriteTime         Length Name                                              \n",
-          "DEBUG: 2023/04/18 13:09:12.179763 ----                -------------         ------ ----                                              \n",
-          "DEBUG: 2023/04/18 13:09:12.180276 d-r---       20/12/2022      9:38                Desktop                                           \n",
-          "DEBUG: 2023/04/18 13:09:15.644930 \n",
-          "DEBUG: 2023/04/18 13:09:15.644930 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 \n",
-          "DEBUG: 2023/04/18 13:09:15.644930 Scanning the drive for archives:\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 1 file, 41245427 bytes (40 MiB)\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 \n",
-          "DEBUG: 2023/04/18 13:09:15.644930 Extracting archive: C:\\Users\\Public\\FD8.zip\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 --\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 Path = C:\\Users\\Public\\FD8.zip\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 Type = zip\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 Physical Size = 41245427\n",
-          "DEBUG: 2023/04/18 13:09:15.644930 \n",
-          "DEBUG: 2023/04/18 13:09:15.644930 \n",
-          "DEBUG: 2023/04/18 13:09:15.645442 Would you like to replace the existing file:\n",
-          "DEBUG: 2023/04/18 13:09:15.645442   Path:     C:\\Users\\Public\\FD8\\FD8\\Final Draft.exe\n",
-          "DEBUG: 2023/04/18 13:09:15.645442   Size:     43937024 bytes (42 MiB)\n",
-          "DEBUG: 2023/04/18 13:09:15.645442   Modified: 2009-10-22 15:55:30\n",
-          "DEBUG: 2023/04/18 13:09:15.645442 with the file from archive:\n",
-          "DEBUG: 2023/04/18 13:09:15.645442   Path:     FD8\\FD8\\Final Draft.exe\n",
-          "DEBUG: 2023/04/18 13:09:15.645442   Size:     43937024 bytes (42 MiB)\n",
-          "DEBUG: 2023/04/18 13:09:15.645442   Modified: 2009-10-22 15:55:30\n",
-          "DEBUG: 2023/04/18 13:09:15.645953 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
-          "DEBUG: 2023/04/18 13:09:15.645953 Archives with Errors: 1\n",
-          "DEBUG: 2023/04/18 13:09:15.645953 \n",
-          "DEBUG: 2023/04/18 13:09:18.661546 --------------------\n",
-          "INFO: 2023/04/18 13:09:18.692192 copy_final_draft_8 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:29:12.043429 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:12.043429 --------------------\n",
+          "DEBUG: 2023/04/20 17:29:12.247055 \n",
+          "DEBUG: 2023/04/20 17:29:12.247055 \n",
+          "DEBUG: 2023/04/20 17:29:12.247055     Directorio: C:\\Users\\clase\n",
+          "DEBUG: 2023/04/20 17:29:12.247055 \n",
+          "DEBUG: 2023/04/20 17:29:12.247055 \n",
+          "DEBUG: 2023/04/20 17:29:12.247567 Mode                LastWriteTime         Length Name                                              \n",
+          "DEBUG: 2023/04/20 17:29:12.247567 ----                -------------         ------ ----                                              \n",
+          "DEBUG: 2023/04/20 17:29:12.248076 d-r---       20/12/2022      9:38                Desktop                                           \n",
+          "DEBUG: 2023/04/20 17:29:15.745129 \n",
+          "DEBUG: 2023/04/20 17:29:15.745129 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
+          "DEBUG: 2023/04/20 17:29:15.745129 \n",
+          "DEBUG: 2023/04/20 17:29:15.745129 Scanning the drive for archives:\n",
+          "DEBUG: 2023/04/20 17:29:15.745129 1 file, 41245427 bytes (40 MiB)\n",
+          "DEBUG: 2023/04/20 17:29:15.745129 \n",
+          "DEBUG: 2023/04/20 17:29:15.745129 Extracting archive: C:\\Users\\Public\\FD8.zip\n",
+          "DEBUG: 2023/04/20 17:29:15.745129 --\n",
+          "DEBUG: 2023/04/20 17:29:15.745129 Path = C:\\Users\\Public\\FD8.zip\n",
+          "DEBUG: 2023/04/20 17:29:15.745129 Type = zip\n",
+          "DEBUG: 2023/04/20 17:29:15.745129 Physical Size = 41245427\n",
+          "DEBUG: 2023/04/20 17:29:15.745632 \n",
+          "DEBUG: 2023/04/20 17:29:15.745655 \n",
+          "DEBUG: 2023/04/20 17:29:15.745655 Would you like to replace the existing file:\n",
+          "DEBUG: 2023/04/20 17:29:15.745655   Path:     C:\\Users\\Public\\FD8\\FD8\\Final Draft.exe\n",
+          "DEBUG: 2023/04/20 17:29:15.745655   Size:     43937024 bytes (42 MiB)\n",
+          "DEBUG: 2023/04/20 17:29:15.745655   Modified: 2009-10-22 15:55:30\n",
+          "DEBUG: 2023/04/20 17:29:15.745655 with the file from archive:\n",
+          "DEBUG: 2023/04/20 17:29:15.745655   Path:     FD8\\FD8\\Final Draft.exe\n",
+          "DEBUG: 2023/04/20 17:29:15.745655   Size:     43937024 bytes (42 MiB)\n",
+          "DEBUG: 2023/04/20 17:29:15.745655   Modified: 2009-10-22 15:55:30\n",
+          "DEBUG: 2023/04/20 17:29:15.745655 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
+          "DEBUG: 2023/04/20 17:29:15.745655 Archives with Errors: 1\n",
+          "DEBUG: 2023/04/20 17:29:15.746164 \n",
+          "DEBUG: 2023/04/20 17:29:18.762958 --------------------\n",
+          "INFO: 2023/04/20 17:29:18.803238 copy_final_draft_8 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -62,15 +62,15 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:18.879422 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:18.967536 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:18.879935 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:18.879935 --------------------\n",
-          "DEBUG: 2023/04/18 13:09:19.076187 --------------------\n",
-          "WARN: 2023/04/18 13:09:19.088270 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n",
-          "WARN: 2023/04/18 13:09:19.088270 Command error: exit status 1\n",
-          "WARN: 2023/04/18 13:09:19.088270 add_media_feature_pack 1.0 Installation FAILED\n"
+          "DEBUG: 2023/04/20 17:29:18.967536 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:18.967536 --------------------\n",
+          "DEBUG: 2023/04/20 17:29:19.164688 --------------------\n",
+          "WARN: 2023/04/20 17:29:19.175844 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n",
+          "WARN: 2023/04/20 17:29:19.175844 Command error: exit status 1\n",
+          "WARN: 2023/04/20 17:29:19.175844 add_media_feature_pack 1.0 Installation FAILED\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -91,16 +91,16 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:30.528337 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\install_or_update_drivers\\install_or_update_drivers.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:31.778026 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\install_or_update_drivers\\install_or_update_drivers.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:30.528337 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:30.528337 --------------------\n",
-          "DEBUG: 2023/04/18 13:09:30.737500 \n",
-          "DEBUG: 2023/04/18 13:09:30.759437 Searching Driver-Updates...\n",
-          "DEBUG: 2023/04/18 13:09:42.332190 No pending driver updates.\n",
-          "DEBUG: 2023/04/18 13:09:42.337884 --------------------\n",
-          "INFO: 2023/04/18 13:09:42.350612 install_or_update_drivers 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:29:31.778026 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:31.778026 --------------------\n",
+          "DEBUG: 2023/04/20 17:29:31.988218 \n",
+          "DEBUG: 2023/04/20 17:29:32.009988 Searching Driver-Updates...\n",
+          "DEBUG: 2023/04/20 17:29:43.646260 No pending driver updates.\n",
+          "DEBUG: 2023/04/20 17:29:43.652577 --------------------\n",
+          "INFO: 2023/04/20 17:29:43.665339 install_or_update_drivers 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -131,13 +131,13 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:43.228052 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_set_gorilla_manifest\\update_set_gorilla_manifest.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:44.563475 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_set_gorilla_manifest\\update_set_gorilla_manifest.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:43.228052 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:43.228052 --------------------\n",
-          "DEBUG: 2023/04/18 13:09:43.943367 --------------------\n",
-          "INFO: 2023/04/18 13:09:43.959062 update_set_gorilla_manifest 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:29:44.563475 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:44.563475 --------------------\n",
+          "DEBUG: 2023/04/20 17:29:45.306811 --------------------\n",
+          "INFO: 2023/04/20 17:29:45.323009 update_set_gorilla_manifest 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -148,14 +148,14 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:44.127235 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\hotfix\\hotfix.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:45.489577 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\hotfix\\hotfix.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:44.127235 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:44.127235 --------------------\n",
-          "DEBUG: 2023/04/18 13:09:47.116351 modo incognito activado con anterioridad.....\n",
-          "DEBUG: 2023/04/18 13:09:47.128217 --------------------\n",
-          "INFO: 2023/04/18 13:09:47.139018 hotfix 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:29:45.489577 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:45.489577 --------------------\n",
+          "DEBUG: 2023/04/20 17:29:48.433946 modo incognito activado con anterioridad.....\n",
+          "DEBUG: 2023/04/20 17:29:48.446022 --------------------\n",
+          "INFO: 2023/04/20 17:29:48.457613 hotfix 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -166,37 +166,37 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:47.403110 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\gorilla_info_app\\gorilla_info_app.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:48.733075 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\gorilla_info_app\\gorilla_info_app.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:47.403110 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:47.403619 --------------------\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 \n",
-          "DEBUG: 2023/04/18 13:09:50.362706 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 \n",
-          "DEBUG: 2023/04/18 13:09:50.362706 Scanning the drive for archives:\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 1 file, 167754703 bytes (160 MiB)\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 \n",
-          "DEBUG: 2023/04/18 13:09:50.362706 Extracting archive: C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 --\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 Path = C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 Type = zip\n",
-          "DEBUG: 2023/04/18 13:09:50.362706 Physical Size = 167754703\n",
-          "DEBUG: 2023/04/18 13:09:50.363217 \n",
-          "DEBUG: 2023/04/18 13:09:50.363217 \n",
-          "DEBUG: 2023/04/18 13:09:50.363217 Would you like to replace the existing file:\n",
-          "DEBUG: 2023/04/18 13:09:50.363217   Path:     C:\\Users\\clase\\scripts\\GorillaInfoApp\\Accessibility.dll\n",
-          "DEBUG: 2023/04/18 13:09:50.363217   Size:     21144 bytes (21 KiB)\n",
-          "DEBUG: 2023/04/18 13:09:50.363217   Modified: 2022-05-18 01:18:12\n",
-          "DEBUG: 2023/04/18 13:09:50.363217 with the file from archive:\n",
-          "DEBUG: 2023/04/18 13:09:50.363217   Path:     GorillaInfoApp\\Accessibility.dll\n",
-          "DEBUG: 2023/04/18 13:09:50.363217   Size:     21144 bytes (21 KiB)\n",
-          "DEBUG: 2023/04/18 13:09:50.363217   Modified: 2022-05-18 01:18:12\n",
-          "DEBUG: 2023/04/18 13:09:50.363726 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
-          "DEBUG: 2023/04/18 13:09:50.363726 Archives with Errors: 1\n",
-          "DEBUG: 2023/04/18 13:09:50.363726 \n",
-          "DEBUG: 2023/04/18 13:09:52.262695 --------------------\n",
-          "INFO: 2023/04/18 13:09:52.284267 gorilla_info_app 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:29:48.733075 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:48.733075 --------------------\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 \n",
+          "DEBUG: 2023/04/20 17:29:52.687875 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 \n",
+          "DEBUG: 2023/04/20 17:29:52.687875 Scanning the drive for archives:\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 1 file, 167754703 bytes (160 MiB)\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 \n",
+          "DEBUG: 2023/04/20 17:29:52.687875 Extracting archive: C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 --\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 Path = C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 Type = zip\n",
+          "DEBUG: 2023/04/20 17:29:52.687875 Physical Size = 167754703\n",
+          "DEBUG: 2023/04/20 17:29:52.688377 \n",
+          "DEBUG: 2023/04/20 17:29:52.688384 \n",
+          "DEBUG: 2023/04/20 17:29:52.688384 Would you like to replace the existing file:\n",
+          "DEBUG: 2023/04/20 17:29:52.688384   Path:     C:\\Users\\clase\\scripts\\GorillaInfoApp\\Accessibility.dll\n",
+          "DEBUG: 2023/04/20 17:29:52.688384   Size:     21144 bytes (21 KiB)\n",
+          "DEBUG: 2023/04/20 17:29:52.688384   Modified: 2022-05-18 01:18:12\n",
+          "DEBUG: 2023/04/20 17:29:52.688384 with the file from archive:\n",
+          "DEBUG: 2023/04/20 17:29:52.688384   Path:     GorillaInfoApp\\Accessibility.dll\n",
+          "DEBUG: 2023/04/20 17:29:52.688384   Size:     21144 bytes (21 KiB)\n",
+          "DEBUG: 2023/04/20 17:29:52.688384   Modified: 2022-05-18 01:18:12\n",
+          "DEBUG: 2023/04/20 17:29:52.688384 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
+          "DEBUG: 2023/04/20 17:29:52.688893 Archives with Errors: 1\n",
+          "DEBUG: 2023/04/20 17:29:52.688893 \n",
+          "DEBUG: 2023/04/20 17:29:54.595396 --------------------\n",
+          "INFO: 2023/04/20 17:29:54.610188 gorilla_info_app 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -277,13 +277,13 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:54.393097 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\events_logs\\events_logs.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:56.632845 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\events_logs\\events_logs.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:54.393097 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:54.393097 --------------------\n",
-          "DEBUG: 2023/04/18 13:09:57.442736 --------------------\n",
-          "INFO: 2023/04/18 13:09:57.462820 events_logs 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:29:56.632845 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:56.632845 --------------------\n",
+          "DEBUG: 2023/04/20 17:29:59.378569 --------------------\n",
+          "INFO: 2023/04/20 17:29:59.394157 events_logs 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -294,13 +294,13 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:09:57.624674 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\windows_update_critical_and_important\\windows_update_critical_and_important.ps1]\n"
+          "DEBUG: 2023/04/20 17:29:59.556840 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\windows_update_critical_and_important\\windows_update_critical_and_important.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:09:57.624674 Command Output:\n",
-          "DEBUG: 2023/04/18 13:09:57.624674 --------------------\n",
-          "DEBUG: 2023/04/18 13:10:20.432925 --------------------\n",
-          "INFO: 2023/04/18 13:10:20.452327 windows_update_critical_and_important 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:29:59.556840 Command Output:\n",
+          "DEBUG: 2023/04/20 17:29:59.556840 --------------------\n",
+          "DEBUG: 2023/04/20 17:30:32.765436 --------------------\n",
+          "INFO: 2023/04/20 17:30:32.785397 windows_update_critical_and_important 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []
@@ -311,13 +311,13 @@
       "check_block": { "via": "Script" },
       "installing_ps1_block": {
         "command": [
-          "DEBUG: 2023/04/18 13:10:20.683342 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_gorilla_inventory\\update_gorilla_inventory.ps1]\n"
+          "DEBUG: 2023/04/20 17:30:33.004323 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_gorilla_inventory\\update_gorilla_inventory.ps1]\n"
         ],
         "command_output": [
-          "DEBUG: 2023/04/18 13:10:20.683342 Command Output:\n",
-          "DEBUG: 2023/04/18 13:10:20.683342 --------------------\n",
-          "DEBUG: 2023/04/18 13:10:22.544504 --------------------\n",
-          "INFO: 2023/04/18 13:10:22.564838 update_gorilla_inventory 1.0 Installation SUCCESSFUL\n"
+          "DEBUG: 2023/04/20 17:30:33.004323 Command Output:\n",
+          "DEBUG: 2023/04/20 17:30:33.004323 --------------------\n",
+          "DEBUG: 2023/04/20 17:30:34.896592 --------------------\n",
+          "INFO: 2023/04/20 17:30:34.912174 update_gorilla_inventory 1.0 Installation SUCCESSFUL\n"
         ],
         "hash_error": [],
         "download_error": []

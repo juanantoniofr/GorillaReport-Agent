@@ -45,10 +45,10 @@ $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
 
 #powershell.exe -ExecutionPolicy Bypass -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -report $jsonString -uri $GRModule.update_report_uri
-pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.update_report_uri
+$result = $(pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.update_report_uri)
 
 #DEBUG: console debug
-Write-Host "gorillareport webapp response: " $result.message
+Write-Host "gorillareport webapp response: " $result
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : gorillareport webapp response: -> $result.message"

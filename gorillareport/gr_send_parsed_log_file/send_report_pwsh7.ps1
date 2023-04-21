@@ -12,7 +12,7 @@ $URI = $uri
 $jsonString_fromfile = Get-Content -Raw -Path $logfile 
 $jsonObject = ConvertFrom-Json -InputObject $jsonString_fromfile
 
-$report = $jsonObject | ConvertTo-Json
+$report = $jsonObject | ConvertTo-Json -Depth 100
 
 $body = @{
     huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
@@ -31,5 +31,6 @@ $Params=@{
     Body = $body
 }
 
-$result = Invoke-RestMethod @Params 
-return $result
+$result = Invoke-RestMethod @Params
+
+return $result.message
