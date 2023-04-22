@@ -23,8 +23,8 @@ $gr_module = "GRModule"
 
 #### URI's ####
 #Nameserver o IP del servidor de gorillaReport
-#$gr_server = "gorillareport::4444"
-$gr_server = "10.1.21.2"
+$gr_server = "gorillareport:4444"
+#$gr_server = "10.1.21.2"
 # uri api login
 $login_uri = "https://"+$gr_server+"/api/login"
 # uri api de registro de pc_client
@@ -54,7 +54,7 @@ $log_file = "$gorillaReport_dir\logs\gorillareport.log"
 # fichero de logs de gorilla en formato JSON
 $gorilla_log_file_json_format = "$gorilla_dir\CustomGorillaReport.json"
 #Script ps1 para invocar pwsh con Invoke-RestMethod
-$ps_file_for_send_reports_with_pwsh = "$gorillaReport_dir\scripts\gr_send_parsed_log_file\send_report_pwsh7.ps1"
+$ps_file_for_send_reports_with_pwsh = "$gorillaReport_dir\scripts\send_report_pwsh7.ps1"
 
 
 # Funciones

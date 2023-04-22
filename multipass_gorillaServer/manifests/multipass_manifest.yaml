@@ -2,6 +2,7 @@
 name: multipass_manifest
 managed_installs:
   - init_gorillaReport_client
+  - register_client_gorillaReport
 managed_uninstalls:
 managed_updates:
 included_manifests:

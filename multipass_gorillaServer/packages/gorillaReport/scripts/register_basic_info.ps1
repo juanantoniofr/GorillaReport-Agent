@@ -20,7 +20,6 @@ $this_script = "register_basic_info.ps1"
 # Importamos el módulo de scripts de gorillaReport
 try {
     $GRModule = Import-Module -Name $gr_module -AsCustomObject -Force -ErrorAction stop -Passthru
-    #Console debug: lista de propiedades y métodos del módulo
     Write-Host "Módulo de scripts de gorillaReport importado"
 }
 catch {
@@ -65,16 +64,26 @@ function Get-SystemInfo {
         }
     }
 
-    # Convierte el objeto JSON en formato JSON y lo guarda en un archivo
-    $jsonString = $jsonObj | ConvertTo-Json
-    return $jsonString
+    return $jsonObj
 }
 
 # Obtenemos la información del sistema y generamos un fichero json que usaremos para enviar al servidor
-$basicInformation = Get-SystemInfo
-$jsonData = $basicInformation | ConvertTo-Json
-$json_file_log = $GRModule.reports_dir + "basic_info.json"
-Set-Content -Path $json_file_log -Value $jsonData
+$jsonData = Get-SystemInfo
+$json_file_log = $GRModule.reports_dir + "\basic_info.json"
+try {
+    #Set-Content -Path $json_file_log -Value $jsonData
+    $jsonData | ConvertTo-Json | Out-File -FilePath $json_file_log -Encoding UTF8
+ 
+    Write-Host "Fichero JSON con la información del sistema guardado en $json_file_log"
+    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script -: Fichero JSON con la información del sistema guardado en $json_file_log" 
+}
+catch {
+    <#Do this if a terminating exception happens#>
+    Write-Host "Error al guardar el fichero JSON en $json_file_log"
+    Write-Host $_.Exception.Message
+    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: Error al guardar el fichero JSON en $json_file_log"
+    exit 1 
+}
 
 # Obtenemmos el token de acceso a la API
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
@@ -94,12 +103,11 @@ else{
 }
 
 
-#powershell.exe -ExecutionPolicy Bypass -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -report $jsonString -uri $GRModule.update_report_uri
-$result = $(pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.update_report_uri)
+$result = $(pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.udpate_basic_info_uri)
 
 # logs
-Write-Host "gorillareport webapp response: " $result.message
+Write-Host "gorillareport webapp response: "  $result
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : gorillareport webapp response ->  $result.message" 
+Add-Content -Path $GRModule.log_file -Value "INFO: $DATE - $this_script - : gorillareport webapp response ->  $result" 
 exit 0
