@@ -31,7 +31,9 @@ $json_file_log = $GRModule.gorilla_log_file_json_format
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 #enviamos el reporte a la api de gorillaReport
 
-#powershell.exe -ExecutionPolicy Bypass -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -report $jsonString -uri $GRModule.update_report_uri
+Write-Host $GRModule.ps_file_for_send_reports_with_pwsh " -token " $token.access_token " -logfile " $json_file_log " -uri " $GRModule.update_report_uri
+
+
 $result = $(pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.update_report_uri)
 
 #DEBUG: console debug
