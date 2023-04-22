@@ -67,7 +67,7 @@ function Get-SystemInfo {
     return $jsonObj
 }
 
-# Obtenemos la información del sistema y generamos un fichero json que usaremos para enviar al servidor
+# Obtenemos la información del sistema y lo guardamos en un fichero JSON
 $jsonData = Get-SystemInfo
 $json_file_log = $GRModule.reports_dir + "\basic_info.json"
 try {
@@ -102,7 +102,7 @@ else{
     Write-Host "Token de acceso a la API obtenido"
 }
 
-
+# Enviamos la información del sistema a gorillaReport webapp
 $result = $(pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.udpate_basic_info_uri)
 
 # logs

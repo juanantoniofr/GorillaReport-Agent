@@ -55,6 +55,8 @@ $log_file = "$gorillaReport_dir\logs\gorillareport.log"
 $gorilla_log_file_json_format = "$gorilla_dir\CustomGorillaReport.json"
 #Script ps1 para invocar pwsh con Invoke-RestMethod
 $ps_file_for_send_reports_with_pwsh = "$gorillaReport_dir\scripts\send_report_pwsh7.ps1"
+#Path_to: Script python para parsear el fichero de logs de gorilla	
+$path_to_python_parser = "$gorillaReport_dir\modules\python_gorilla_parser\main.py"
 
 
 # Funciones
@@ -233,6 +235,7 @@ $ExportedVariables = @(
     "gorilla_log_file_json_format",
     "file_gorilla_log",
     "reports_dir",
-    "ps_file_for_send_reports_with_pwsh"
+    "ps_file_for_send_reports_with_pwsh",
+    "path_to_python_parser"
 )
 Export-ModuleMember -Function $ExportedCommands -Variable $ExportedVariables
