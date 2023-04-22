@@ -1,0 +1,5 @@
+#####################################
+## Variables ##
+#####################################
+# init_gorillaReport_client.ps1
+# $gorillaserver => IP o dns name del servidor gorilla (linea 39)
