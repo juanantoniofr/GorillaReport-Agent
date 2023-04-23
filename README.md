@@ -9,7 +9,7 @@ A set of PowerShell and Python scripts, which generates and sends computer statu
   - register_basic_info
   - register_gorilla_report
 
-# Config
+# CONFIG
 
 Variables a cconfigurar:
 * fichero init_gorillaReport_client.ps1
@@ -40,8 +40,8 @@ Examples:
     8 - Parsea fichero de log de gorilla a formato JSON
     9 - Envía fichero de log de gorilla parseado
 
-# Authors
-    Luis Vela Morilla, Juan Antonio Fernández Ruiz
+# AUTHORS
+    @Luis Vela Morilla - @Juan Antonio Fernández Ruiz
     Versión: 1.0
     Email:  luivelmor@us.es | juanafr@us.es
     Licencia: GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
