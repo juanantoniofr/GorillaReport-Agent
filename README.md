@@ -47,7 +47,7 @@ Examples:
 
 # contact
 
-- Email:  luivelmor@us.es | juanafr@us.es
+- Email:  luisvela@us.es | juanafr@us.es
 
 # Licence
 
