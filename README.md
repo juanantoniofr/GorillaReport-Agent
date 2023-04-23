@@ -3,10 +3,25 @@
 A set of PowerShell and Python scripts, which generates and sends computer status reports to the GorillaReport web utility. Its main objective is to parse the Gorilla log file, which is a plain text file, into JSON format and send it to the server. This way, we centralize the monitoring of installations made with Gorilla.
 
 # SCRIPTS
+
   - init_gorillaReport_client.ps1
   - register_client
   - register_basic_info
   - register_gorilla_report
+
+# Config
+
+- script: init_gorillaReport_client.ps1
+- Variable: Nameserver o IP del servidor de gorilla
+ $gorillaserver = "gorillaserver.lc:8080" 
+ $gorillaserver = "10.1.XX.XX"
+
+
+- script: GRModule.psm1
+- Variable: Nameserver o IP del servidor de gorillaReport
+$gr_server = "gorillareport:4444"
+$gr_server = "10.1.XX.XX"
+
 # SYNOPSIS: init_gorillaReport_client.ps1
     1 - Instala python y powershell 7
     2 - Crea los directorios de gorillaReport en el cliente.
