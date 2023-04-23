@@ -11,7 +11,8 @@ A set of PowerShell and Python scripts, which generates and sends computer statu
 
 # Config
 
-* init_gorillaReport_client.ps1
+Variables a cconfigurar:
+* fichero init_gorillaReport_client.ps1
 
 **$gorillaserver:** Set nameserver or IP of gorilla server
 
@@ -20,7 +21,7 @@ Examples:
 2. $gorillaserver = "10.1.XX.XX"
 
 
-* GRModule.psm1
+* fichero GRModule.psm1
 **$gr_server:** Set Nameserver or IP gorillaReport server
 
 Examples:
