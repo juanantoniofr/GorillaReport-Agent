@@ -40,7 +40,8 @@ $json_file_log = $GRModule.gorilla_log_file_json_format
 # 2.1 Verificamos que python está instalado en el sistema y obtenemos su ruta
 if (Get-Command python -ErrorAction SilentlyContinue) {
     $pythonExe = $(Get-Command python).Path
-} else {
+}
+else {
     Write-Host "Python no está instalado en el sistema."
     exit 1
 }
@@ -53,7 +54,8 @@ $process.WaitForExit()
 # 2.4 Comprobamos el código de salida del script de python, si error salimos del script
 if ($process.ExitCode -eq 0) {
     Write-Host "El script de Python se ha ejecutado correctamente."
-} else {
+}
+else {
     Write-Host "Ha ocurrido un error al ejecutar el script de Python."
     exit 1
 }
