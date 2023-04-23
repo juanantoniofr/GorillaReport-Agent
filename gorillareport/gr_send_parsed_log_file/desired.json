@@ -1,9 +1,0 @@
-Tengo un fichero de log donde se repite la estructura siguiente
-INFO: 2023/04/09 11:15:24.033158 Retrieving manifest: conejillo
-
-...
-Un número indeterminado de líneas
-
-INFO: 2023/04/09 11:15:27.916611 Done!
-
-Quiero almacenar en una variable las lineas de la última ocurrencia de este patrón, incluidas la primera y la última linea
