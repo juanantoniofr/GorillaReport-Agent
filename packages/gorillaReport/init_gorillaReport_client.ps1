@@ -45,7 +45,7 @@ $gorillaserver="gorillaserver.lc:8080"
 #########################################
 
 # 1.1 - Instalamos python
-if(!($null -eq (choco list --localonly | Select-String "python"))){
+if($null -eq (choco list --localonly | Select-String "python")){
     choco install python -y
 }
 else{
