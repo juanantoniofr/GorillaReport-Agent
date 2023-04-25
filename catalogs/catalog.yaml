@@ -55,6 +55,6 @@ register_gorilla_report:
       exit 0
   installer:
     location: packages/gorillaReport/scripts/register_gorilla_report.ps1
-    hash: 20877BC547C12590F61E18D327688EA42A6D5C30154F5E3ACA4A1F1E8C46A1DE
+    hash: 42B5BBC626511A3605B32438F7BDF5AC0A78F40C96F5B12ED90681B6DE7A6784
     type: ps1
   version: 1.0
