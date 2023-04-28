@@ -1,9 +1,12 @@
 ---
-name: multipass_manifest
+name: conejillo_manifest
 managed_installs:
   - init_gorillaReport_client
+  - register_client
+  - register_basic_info
+  - register_gorilla_report
 managed_uninstalls:
 managed_updates:
 included_manifests:
 catalogs:
-  - multipass_catalog
+  - catalog

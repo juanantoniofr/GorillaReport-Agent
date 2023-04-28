@@ -1,4 +1,5 @@
 ---
+
 init_gorillaReport_client:
   display_name: init_gorillaReport_client
   check:
@@ -6,39 +7,6 @@ init_gorillaReport_client:
       exit 0
   installer:
     location: packages/gorillaReport/init_gorillaReport_client.ps1
-    hash: E41CEFD7FD77815255D19E372A0C56597EB38BE1C719FD8285594BB5F28EDC65
-    type: ps1
-  version: 1.0
-
-register_client:
-  display_name: register_client
-  check:
-    script: |
-      exit 0
-  installer:
-    location: packages/gorillaReport/scripts/register_client.ps1
-    hash: E75C101781515C8234624A2A21C4496AC94963BD353E86168BE90EF3961C6AD9
-    type: ps1
-  version: 1.0
-
-register_basic_info:
-  display_name: register_basic_info
-  check:
-    script: |
-      exit 0
-  installer:
-    location: packages/gorillaReport/scripts/register_basic_info.ps1
-    hash: 8A68CCBFA11D130E58085B91C64F74DA52FB9C9567CB61D3309419B7E2722425
-    type: ps1
-  version: 1.0
-
-register_gorilla_report:
-  display_name: register_gorilla_report
-  check:
-    script: |
-      exit 0
-  installer:
-    location: packages/gorillaReport/scripts/register_gorilla_report.ps1
-    hash: 20877BC547C12590F61E18D327688EA42A6D5C30154F5E3ACA4A1F1E8C46A1DE
+    hash: 6e49f6f087b1e5e0792923589cd1ee8208da9fd3fb3c037d74e635efb6153ea4
     type: ps1
   version: 1.0
