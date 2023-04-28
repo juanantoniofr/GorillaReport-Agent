@@ -38,17 +38,19 @@ $json_file_log = $GRModule.gorilla_log_file_json_format
 
 # 2. Generamos fichero de log de gorilla en formato JSON
 # 2.1 Verificamos que python está instalado en el sistema y obtenemos su ruta
-#$pythonExe = $(Get-Command python).Path
-if ( !(Test-Path -Path "C:\Program Files\Python311\python.exe" )) {
-    Write-Host "Python no está instalado en el sistema."
+try {
+    $pythonExe = Get-Command python.exe    
+}
+catch {
+    <#Do this if a terminating exception happens#>
+    Write-Host "Python no esta instalado..."
     exit 1
 }
 
-$pythonExe = "C:\Program Files\Python311\python.exe"
 
 
 # 2.2 Ejecutamos el script de python para parsear el fichero de log de gorilla a formato JSON
-$process = Start-Process -FilePath $pythonExe -ArgumentList $GRModule.path_to_python_parser -PassThru
+$process = Start-Process -FilePath $pythonExe.Source -ArgumentList $GRModule.path_to_python_parser -PassThru
 # 2.3 Esperamos a que termine la ejecución del script de python
 $process.WaitForExit()
 # 2.4 Comprobamos el código de salida del script de python, si error salimos del script

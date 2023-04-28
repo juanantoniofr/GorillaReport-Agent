@@ -3,7 +3,7 @@ Python:
   display_name: Python
   check:
     file:
-      - path: C:\Program Files\Python311\python.exe
+      - path: C:\Python311\python.exe
       - version: 3.11.2
   installer:
     location: packages/gorillaReport/apps/python-3.11.2-amd64.exe
