@@ -1,0 +1,435 @@
+{
+  "global_info": {
+    "HostName": "pc101_IntelH310",
+    "CurrentUser": "pc101_IntelH310\\tecnico",
+    "Catalog": ["fcomtic_catalog"],
+    "Manifest": "pc101_manifest",
+    "LastExecution_StartTime": "2023-04-25 08:19:11 +0000",
+    "LastExecution_EndTime": "2023-04-25 08:20:32 +0000"
+  },
+  "managed_installs": [
+    {
+      "task_name": "Python",
+      "check_block": { "via": "File" },
+      "installing_ps1_block": {}
+    },
+    {
+      "task_name": "init_gorillaReport_client",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:11.990299 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\gorillaReport\\init_gorillaReport_client.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:11.990299 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:11.990299 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:12.178585 Powershell 7 ya esta instalado\n",
+          "DEBUG: 2023/04/25 10:19:12.183586 El directorio gorillaReport ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.184097 El directorio C:\\Users\\tecnico\\gorillaReport\\scripts ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.184605 El directorio C:\\Users\\tecnico\\gorillaReport\\modules ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.185113 El directorio C:\\Users\\tecnico\\gorillaReport\\logs ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.185623 El directorio C:\\Users\\tecnico\\gorillaReport\\reports ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.186132 El directorio C:\\Users\\tecnico\\gorillaReport\\temp ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.186641 El archivo C:\\Users\\tecnico\\gorillaReport\\logs\\gorillareport.log ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.187151 El directorio C:\\Users\\tecnico\\gorillaReport\\modules\\GRModule ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.237107 Hash del fichero C:\\Users\\tecnico\\gorillaReport\\modules\\GRModule\\GRModule.psm1 : B3B6C1BE90622F77E68CEBAF8EAA432FC0F70E685C06C6A4AB72023BAAFDD27C\n",
+          "DEBUG: 2023/04/25 10:19:12.238770 El fichero C:\\Users\\tecnico\\gorillaReport\\modules\\GRModule\\GRModule.psm1 ya existe y no es necesario descargarlo.\n",
+          "DEBUG: 2023/04/25 10:19:12.239279 El directorio  + C:\\Users\\tecnico\\gorillaReport\\modules\\python_gorilla_parser +  ya existe.\n",
+          "DEBUG: 2023/04/25 10:19:12.507998 Module python:  C:\\Users\\tecnico\\gorillaReport\\modules\\python_gorilla_parser\\main.py\n",
+          "DEBUG: 2023/04/25 10:19:12.507998 Module python:  C:\\Users\\tecnico\\gorillaReport\\modules\\python_gorilla_parser\\my_functions.py\n",
+          "DEBUG: 2023/04/25 10:19:12.548269 La variable $env:PSModulePath ya contiene C:\\Users\\tecnico\\gorillaReport\\modules :\n",
+          "DEBUG: 2023/04/25 10:19:12.548269 C:\\Users\\tecnico\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Users\\tecnico\\gorillaReport\\modules\n",
+          "DEBUG: 2023/04/25 10:19:13.022542 --------------------\n",
+          "INFO: 2023/04/25 10:19:13.034597 init_gorillaReport_client 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "register_client",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:13.142621 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\gorillaReport\\scripts\\register_client.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:13.142621 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:13.142621 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:13.310607 M\u00c7\u00fcdulo de scripts de gorillaReport importado\n",
+          "DEBUG: 2023/04/25 10:19:14.651752 gorillareport webapp response:  ClientController@register: Cliente registrado exitosamente\n",
+          "DEBUG: 2023/04/25 10:19:14.658082 --------------------\n",
+          "INFO: 2023/04/25 10:19:14.670353 register_client 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "register_basic_info",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:14.780968 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\gorillaReport\\scripts\\register_basic_info.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:14.781477 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:14.781477 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:14.952972 M\u00c7\u00fcdulo de scripts de gorillaReport importado\n",
+          "DEBUG: 2023/04/25 10:19:16.163950 Fichero JSON con la informaci\u00c7\u00fcn del sistema guardado en C:\\Users\\tecnico\\gorillaReport\\reports\\basic_info.json\n",
+          "DEBUG: 2023/04/25 10:19:16.587637 Token de acceso a la API obtenido\n",
+          "DEBUG: 2023/04/25 10:19:16.942636 gorillareport webapp response:  ClientController@updateBasicInformation: Informaci\u00a2n actualizada exitosamente\n",
+          "DEBUG: 2023/04/25 10:19:16.947850 --------------------\n",
+          "INFO: 2023/04/25 10:19:16.961422 register_basic_info 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "register_gorilla_report",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:17.080080 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\gorillaReport\\scripts\\register_gorilla_report.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:17.080080 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:17.080080 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:17.245773 M\u00c7\u00fcdulo de scripts de gorillaReport importado\n",
+          "DEBUG: 2023/04/25 10:19:17.390256 El script de Python se ha ejecutado correctamente.\n",
+          "DEBUG: 2023/04/25 10:19:18.143826 gorillareport webapp response:  ClientController@updateReport: Reporte creado exitosamente\n",
+          "DEBUG: 2023/04/25 10:19:18.150528 --------------------\n",
+          "INFO: 2023/04/25 10:19:18.163118 register_gorilla_report 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "copy_final_draft_8",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:18.271842 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\archive\\scripts\\copy_final_draft_8\\copy_final_draft_8.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:18.271842 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:18.271842 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:18.471002 \n",
+          "DEBUG: 2023/04/25 10:19:18.471002 \n",
+          "DEBUG: 2023/04/25 10:19:18.471002     Directorio: C:\\Users\\clase\n",
+          "DEBUG: 2023/04/25 10:19:18.471970 \n",
+          "DEBUG: 2023/04/25 10:19:18.471970 \n",
+          "DEBUG: 2023/04/25 10:19:18.471970 Mode                LastWriteTime         Length Name                                              \n",
+          "DEBUG: 2023/04/25 10:19:18.471970 ----                -------------         ------ ----                                              \n",
+          "DEBUG: 2023/04/25 10:19:18.471970 d-r---       20/12/2022      9:38                Desktop                                           \n",
+          "DEBUG: 2023/04/25 10:19:21.885405 \n",
+          "DEBUG: 2023/04/25 10:19:21.885405 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
+          "DEBUG: 2023/04/25 10:19:21.885405 \n",
+          "DEBUG: 2023/04/25 10:19:21.885405 Scanning the drive for archives:\n",
+          "DEBUG: 2023/04/25 10:19:21.885405 1 file, 41245427 bytes (40 MiB)\n",
+          "DEBUG: 2023/04/25 10:19:21.885405 \n",
+          "DEBUG: 2023/04/25 10:19:21.885405 Extracting archive: C:\\Users\\Public\\FD8.zip\n",
+          "DEBUG: 2023/04/25 10:19:21.885405 --\n",
+          "DEBUG: 2023/04/25 10:19:21.885916 Path = C:\\Users\\Public\\FD8.zip\n",
+          "DEBUG: 2023/04/25 10:19:21.885916 Type = zip\n",
+          "DEBUG: 2023/04/25 10:19:21.885916 Physical Size = 41245427\n",
+          "DEBUG: 2023/04/25 10:19:21.885916 \n",
+          "DEBUG: 2023/04/25 10:19:21.885916 \n",
+          "DEBUG: 2023/04/25 10:19:21.886460 Would you like to replace the existing file:\n",
+          "DEBUG: 2023/04/25 10:19:21.886460   Path:     C:\\Users\\Public\\FD8\\FD8\\Final Draft.exe\n",
+          "DEBUG: 2023/04/25 10:19:21.886460   Size:     43937024 bytes (42 MiB)\n",
+          "DEBUG: 2023/04/25 10:19:21.886460   Modified: 2009-10-22 15:55:30\n",
+          "DEBUG: 2023/04/25 10:19:21.886460 with the file from archive:\n",
+          "DEBUG: 2023/04/25 10:19:21.886460   Path:     FD8\\FD8\\Final Draft.exe\n",
+          "DEBUG: 2023/04/25 10:19:21.886970   Size:     43937024 bytes (42 MiB)\n",
+          "DEBUG: 2023/04/25 10:19:21.886970   Modified: 2009-10-22 15:55:30\n",
+          "DEBUG: 2023/04/25 10:19:21.886970 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
+          "DEBUG: 2023/04/25 10:19:21.886970 Archives with Errors: 1\n",
+          "DEBUG: 2023/04/25 10:19:21.886970 \n",
+          "DEBUG: 2023/04/25 10:19:24.899012 --------------------\n",
+          "INFO: 2023/04/25 10:19:24.928273 copy_final_draft_8 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "add_media_feature_pack",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:25.091373 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:25.091373 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:25.091373 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:25.290689 --------------------\n",
+          "WARN: 2023/04/25 10:19:25.302623 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\add_media_feature_pack\\add_media_feature_pack.ps1]\n",
+          "WARN: 2023/04/25 10:19:25.302623 Command error: exit status 1\n",
+          "WARN: 2023/04/25 10:19:25.302623 add_media_feature_pack 1.0 Installation FAILED\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "DaVinci_18.1.1",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "install_or_update_drivers",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:36.930746 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\install_or_update_drivers\\install_or_update_drivers.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:36.930746 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:36.930746 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:37.132491 \n",
+          "DEBUG: 2023/04/25 10:19:37.153540 Searching Driver-Updates...\n",
+          "DEBUG: 2023/04/25 10:19:49.473496 No pending driver updates.\n",
+          "DEBUG: 2023/04/25 10:19:49.479002 --------------------\n",
+          "INFO: 2023/04/25 10:19:49.491063 install_or_update_drivers 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "install_driver_and_printer_HP_Laser_408",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_set_default_printer",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "update_set_gorilla_manifest",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:50.353393 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_set_gorilla_manifest\\update_set_gorilla_manifest.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:50.353393 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:50.353393 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:51.042405 --------------------\n",
+          "INFO: 2023/04/25 10:19:51.059987 update_set_gorilla_manifest 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "hotfix",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:51.221297 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\hotfix\\hotfix.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:51.221297 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:51.221297 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:54.119511 modo incognito activado con anterioridad.....\n",
+          "DEBUG: 2023/04/25 10:19:54.132332 --------------------\n",
+          "INFO: 2023/04/25 10:19:54.144280 hotfix 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "gorilla_info_app",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:19:54.407332 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\gorilla_info_app\\gorilla_info_app.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:19:54.407332 Command Output:\n",
+          "DEBUG: 2023/04/25 10:19:54.407332 --------------------\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 \n",
+          "DEBUG: 2023/04/25 10:19:59.372216 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 \n",
+          "DEBUG: 2023/04/25 10:19:59.372216 Scanning the drive for archives:\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 1 file, 167754703 bytes (160 MiB)\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 \n",
+          "DEBUG: 2023/04/25 10:19:59.372216 Extracting archive: C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 --\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 Path = C:\\Users\\clase\\scripts\\GorillaInfoApp.zip\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 Type = zip\n",
+          "DEBUG: 2023/04/25 10:19:59.372216 Physical Size = 167754703\n",
+          "DEBUG: 2023/04/25 10:19:59.372726 \n",
+          "DEBUG: 2023/04/25 10:19:59.372726 \n",
+          "DEBUG: 2023/04/25 10:19:59.372726 Would you like to replace the existing file:\n",
+          "DEBUG: 2023/04/25 10:19:59.372726   Path:     C:\\Users\\clase\\scripts\\GorillaInfoApp\\Accessibility.dll\n",
+          "DEBUG: 2023/04/25 10:19:59.372726   Size:     21144 bytes (21 KiB)\n",
+          "DEBUG: 2023/04/25 10:19:59.372726   Modified: 2022-05-18 01:18:12\n",
+          "DEBUG: 2023/04/25 10:19:59.372726 with the file from archive:\n",
+          "DEBUG: 2023/04/25 10:19:59.372726   Path:     GorillaInfoApp\\Accessibility.dll\n",
+          "DEBUG: 2023/04/25 10:19:59.372726   Size:     21144 bytes (21 KiB)\n",
+          "DEBUG: 2023/04/25 10:19:59.372726   Modified: 2022-05-18 01:18:12\n",
+          "DEBUG: 2023/04/25 10:19:59.372726 ? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? \n",
+          "DEBUG: 2023/04/25 10:19:59.372726 Archives with Errors: 1\n",
+          "DEBUG: 2023/04/25 10:19:59.373236 \n",
+          "DEBUG: 2023/04/25 10:20:01.194512 --------------------\n",
+          "INFO: 2023/04/25 10:20:01.208760 gorilla_info_app 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_set_wallpaper",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_update_windows_defender_signature",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_set_screen_resolution",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_activator_w10_office",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_auto_shutdown",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "gpedit_shutdown_event_log",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "gpedit_shutdown_clean_desktop_files_and_others",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "events_logs",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:20:03.215394 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\events_logs\\events_logs.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:20:03.215394 Command Output:\n",
+          "DEBUG: 2023/04/25 10:20:03.215394 --------------------\n",
+          "DEBUG: 2023/04/25 10:20:06.281797 --------------------\n",
+          "INFO: 2023/04/25 10:20:06.297039 events_logs 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "windows_update_critical_and_important",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:20:06.460589 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\windows_update_critical_and_important\\windows_update_critical_and_important.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:20:06.460589 Command Output:\n",
+          "DEBUG: 2023/04/25 10:20:06.460589 --------------------\n",
+          "DEBUG: 2023/04/25 10:20:30.506417 --------------------\n",
+          "INFO: 2023/04/25 10:20:30.526962 windows_update_critical_and_important 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "update_gorilla_inventory",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [
+          "DEBUG: 2023/04/25 10:20:30.759334 command: C:\\Windows\\system32\\WindowsPowershell\\v1.0\\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\\gorilla\\cache\\cache\\packages\\complete\\scripts\\update_gorilla_inventory\\update_gorilla_inventory.ps1]\n"
+        ],
+        "command_output": [
+          "DEBUG: 2023/04/25 10:20:30.759334 Command Output:\n",
+          "DEBUG: 2023/04/25 10:20:30.759334 --------------------\n",
+          "DEBUG: 2023/04/25 10:20:32.506831 --------------------\n",
+          "INFO: 2023/04/25 10:20:32.522413 update_gorilla_inventory 1.0 Installation SUCCESSFUL\n"
+        ],
+        "hash_error": [],
+        "download_error": []
+      }
+    },
+    {
+      "task_name": "create_scheduled_task_set_default_browser",
+      "check_block": { "via": "Script" },
+      "installing_ps1_block": {
+        "command": [],
+        "command_output": [],
+        "hash_error": [],
+        "download_error": []
+      }
+    }
+  ]
+}

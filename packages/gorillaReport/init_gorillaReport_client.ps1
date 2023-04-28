@@ -45,12 +45,18 @@ $gorillaserver="gorillaserver.lc:8080"
 #########################################
 
 # 1.1 - Instalamos python
-if(!($null -eq (choco list --localonly | Select-String "python"))){
-    choco install python -y
-}
-else{
-    Write-Host "Python ya esta instalado"
-}
+#if($null -eq (choco list --localonly | Select-String "python")){
+#    try {
+#        Invoke-Expression "choco install python -y"
+#        Write-Host "Python instalado correctamente"
+#    } catch {
+#        Write-Host "Error al instalar Python: $_"
+#    }
+#    
+#}
+#else{
+#    Write-Host "Python ya esta instalado"
+#}
 
 # 1.2 - Instalamos powershell 7
 If( !(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe") ) {

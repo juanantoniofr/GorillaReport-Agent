@@ -1,4 +1,19 @@
 ---
+Python:
+  display_name: Python
+  check:
+    file:
+      - path: C:\Python311\python.exe
+      - version: 3.11.2
+  installer:
+    location: packages/gorillaReport/apps/python-3.11.2-amd64.exe
+    hash: EBFFD8B4B09A27238423CFFC17ED9D5F25F0BAFAF1CA133791FC3EC5E3F31F63
+    arguments:
+      - /quiet
+      - InstallAllUsers=1
+      - PrependPath=1
+    type: exe
+  version: 3.11.2
 
 init_gorillaReport_client:
   display_name: init_gorillaReport_client
@@ -7,6 +22,39 @@ init_gorillaReport_client:
       exit 0
   installer:
     location: packages/gorillaReport/init_gorillaReport_client.ps1
-    hash: 6e49f6f087b1e5e0792923589cd1ee8208da9fd3fb3c037d74e635efb6153ea4
+    hash: B0FBB398AE564B4511FA0C6ECB30E9A830E03EE2671727717AA3E20284CD0D88
+    type: ps1
+  version: 1.0
+
+register_client:
+  display_name: register_client
+  check:
+    script: |
+      exit 0
+  installer:
+    location: packages/gorillaReport/scripts/register_client.ps1
+    hash: E75C101781515C8234624A2A21C4496AC94963BD353E86168BE90EF3961C6AD9
+    type: ps1
+  version: 1.0
+
+register_basic_info:
+  display_name: register_basic_info
+  check:
+    script: |
+      exit 0
+  installer:
+    location: packages/gorillaReport/scripts/register_basic_info.ps1
+    hash: 8A68CCBFA11D130E58085B91C64F74DA52FB9C9567CB61D3309419B7E2722425
+    type: ps1
+  version: 1.0
+
+register_gorilla_report:
+  display_name: register_gorilla_report
+  check:
+    script: |
+      exit 0
+  installer:
+    location: packages/gorillaReport/scripts/register_gorilla_report.ps1
+    hash: 42B5BBC626511A3605B32438F7BDF5AC0A78F40C96F5B12ED90681B6DE7A6784
     type: ps1
   version: 1.0
