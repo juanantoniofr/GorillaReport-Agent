@@ -1,4 +1,3 @@
----
 Python:
   display_name: Python
   check:
@@ -22,39 +21,17 @@ init_gorillaReport_client:
       exit 0
   installer:
     location: packages/gorillaReport/init_gorillaReport_client.ps1
-    hash: B0FBB398AE564B4511FA0C6ECB30E9A830E03EE2671727717AA3E20284CD0D88
+    hash: 18F6F1BBB7BE6959AF3F27E32528C8FCB6C2D8DAF9DDEE7951047799BEDC5BC8
     type: ps1
   version: 1.0
 
-register_client:
-  display_name: register_client
+create_scheduled_task_gorilla_report:
+  display_name: create_scheduled_task_gorilla_report
   check:
     script: |
       exit 0
   installer:
-    location: packages/gorillaReport/scripts/register_client.ps1
-    hash: E75C101781515C8234624A2A21C4496AC94963BD353E86168BE90EF3961C6AD9
-    type: ps1
-  version: 1.0
-
-register_basic_info:
-  display_name: register_basic_info
-  check:
-    script: |
-      exit 0
-  installer:
-    location: packages/gorillaReport/scripts/register_basic_info.ps1
-    hash: 8A68CCBFA11D130E58085B91C64F74DA52FB9C9567CB61D3309419B7E2722425
-    type: ps1
-  version: 1.0
-
-register_gorilla_report:
-  display_name: register_gorilla_report
-  check:
-    script: |
-      exit 0
-  installer:
-    location: packages/gorillaReport/scripts/register_gorilla_report.ps1
-    hash: 42B5BBC626511A3605B32438F7BDF5AC0A78F40C96F5B12ED90681B6DE7A6784
+    location: packages/gorillaReport/scripts/create_scheduled_task_gorilla_report.ps1
+    hash: C94AA37A1D0CAB83426B74A3B7D33FCA7B6F6BC30A7E58873E60A6DA55D9E376
     type: ps1
   version: 1.0

@@ -2,8 +2,9 @@
 name: multipass_manifest
 managed_installs:
   - init_gorillaReport_client
+  - create_scheduled_task_gorilla_report
 managed_uninstalls:
 managed_updates:
 included_manifests:
 catalogs:
-  - multipass_catalog
+  - catalog
