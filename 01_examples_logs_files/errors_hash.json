@@ -216,7 +216,7 @@
     },
     {
       "task_name": "create_scheduled_task_set_default_printer",
-      "check_block": { "via": "Script" },
+      "check_block": { "via": "Script", "stdout": [] },
       "installing_ps1_block": {
         "command": [],
         "command_output": [],

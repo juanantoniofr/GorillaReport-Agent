@@ -1,0 +1,456 @@
+INFO: 2023/05/03 12:10:17.440152 Retrieving manifest: pc101_manifest
+INFO: 2023/05/03 12:10:17.449629 Manifest Url: https://gorillaserver/manifests/pc101_manifest.yaml
+INFO: 2023/05/03 12:10:17.456994 Retrieving catalog: [fcomtic_catalog]
+INFO: 2023/05/03 12:10:17.456994 Catalog Url: https://gorillaserver/catalogs/fcomtic_catalog.yaml
+INFO: 2023/05/03 12:10:17.464047 Processing manifest...
+INFO: 2023/05/03 12:10:17.464820 Processing managed installs...
+INFO: 2023/05/03 12:10:17.464820 Checking status via Script: init_gorillaReport_client
+DEBUG: 2023/05/03 12:10:17.584864 Command Error: <nil>
+DEBUG: 2023/05/03 12:10:17.585378 stdout: 
+DEBUG: 2023/05/03 12:10:17.587475 stderr: 
+INFO: 2023/05/03 12:10:17.587475 Installing ps1 for init_gorillaReport_client
+DEBUG: 2023/05/03 12:10:17.587985 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\init_gorillaReport_client.ps1]
+DEBUG: 2023/05/03 12:10:17.587985 Command Output:
+DEBUG: 2023/05/03 12:10:17.588495 --------------------
+DEBUG: 2023/05/03 12:10:17.773379 Powershell 7 ya esta instalado
+DEBUG: 2023/05/03 12:10:17.778493 El directorio gorillaReport ya existe.
+DEBUG: 2023/05/03 12:10:17.779528 El directorio C:\Users\tecnico\gorillaReport\scripts ya existe.
+DEBUG: 2023/05/03 12:10:17.780036 El directorio C:\Users\tecnico\gorillaReport\modules ya existe.
+DEBUG: 2023/05/03 12:10:17.783146 El directorio C:\Users\tecnico\gorillaReport\logs ya existe.
+DEBUG: 2023/05/03 12:10:17.783668 El directorio C:\Users\tecnico\gorillaReport\reports ya existe.
+DEBUG: 2023/05/03 12:10:17.787744 El directorio C:\Users\tecnico\gorillaReport\temp ya existe.
+DEBUG: 2023/05/03 12:10:17.788755 El archivo C:\Users\tecnico\gorillaReport\logs\gorillareport.log ya existe.
+DEBUG: 2023/05/03 12:10:17.789289 El directorio C:\Users\tecnico\gorillaReport\modules\GRModule ya existe.
+DEBUG: 2023/05/03 12:10:17.846684 Hash del fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 : B3B6C1BE90622F77E68CEBAF8EAA432FC0F70E685C06C6A4AB72023BAAFDD27C
+DEBUG: 2023/05/03 12:10:17.848808 El fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 ya existe y no es necesario descargarlo.
+DEBUG: 2023/05/03 12:10:17.849855 El directorio  + C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser +  ya existe.
+DEBUG: 2023/05/03 12:10:18.128997 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\main.py
+DEBUG: 2023/05/03 12:10:18.129520 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\my_functions.py
+DEBUG: 2023/05/03 12:10:18.176603 La variable $env:PSModulePath ya contiene C:\Users\tecnico\gorillaReport\modules :
+DEBUG: 2023/05/03 12:10:18.177129 C:\Users\tecnico\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Users\tecnico\gorillaReport\modules
+DEBUG: 2023/05/03 12:10:18.461958 --------------------
+INFO: 2023/05/03 12:10:18.473903 init_gorillaReport_client 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:10:18.474443 Checking status via Script: create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:10:18.589222 Command Error: <nil>
+DEBUG: 2023/05/03 12:10:18.589732 stdout: 
+DEBUG: 2023/05/03 12:10:18.591873 stderr: 
+INFO: 2023/05/03 12:10:18.591873 Installing ps1 for create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:10:18.592383 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1]
+DEBUG: 2023/05/03 12:10:18.592886 Command Output:
+DEBUG: 2023/05/03 12:10:18.592893 --------------------
+DEBUG: 2023/05/03 12:10:20.626185 --------------------
+INFO: 2023/05/03 12:10:20.639414 create_scheduled_task_gorilla_report 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:10:20.639414 Checking status via Script: check_error_and_continue
+DEBUG: 2023/05/03 12:10:20.917330 Command Error: exit status 1
+DEBUG: 2023/05/03 12:10:20.917843 stdout: Check script block from check_error_and_continue task:
+
+DEBUG: 2023/05/03 12:10:20.920059 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de script o programa 
+ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta de acceso, compruebe que dicha ruta 
+es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:10:20.920575 Checking status via Script: check_error_and_stop
+DEBUG: 2023/05/03 12:10:21.184591 Command Error: exit status 1
+DEBUG: 2023/05/03 12:10:21.185130 stdout: Check script block from check_error_and_stop task:
+
+DEBUG: 2023/05/03 12:10:21.187260 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de script o programa 
+ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta de acceso, compruebe que dicha ruta 
+es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:10:21.187563 Processing managed uninstalls...
+INFO: 2023/05/03 12:10:21.187563 Processing managed updates...
+INFO: 2023/05/03 12:10:21.188072 Saving GorillaReport.json...
+INFO: 2023/05/03 12:10:21.188580 Cleaning up the cache...
+INFO: 2023/05/03 12:10:21.194432 Done!
+INFO: 2023/05/03 12:19:11.780206 Retrieving manifest: pc101_manifest
+INFO: 2023/05/03 12:19:11.790463 Manifest Url: https://gorillaserver/manifests/pc101_manifest.yaml
+INFO: 2023/05/03 12:19:11.797395 Retrieving catalog: [fcomtic_catalog]
+INFO: 2023/05/03 12:19:11.797395 Catalog Url: https://gorillaserver/catalogs/fcomtic_catalog.yaml
+INFO: 2023/05/03 12:19:11.804448 Processing manifest...
+INFO: 2023/05/03 12:19:11.804448 Processing managed installs...
+INFO: 2023/05/03 12:19:11.804448 Checking status via Script: init_gorillaReport_client
+DEBUG: 2023/05/03 12:19:11.914513 Command Error: <nil>
+DEBUG: 2023/05/03 12:19:11.914513 stdout: 
+DEBUG: 2023/05/03 12:19:11.914513 stderr: 
+INFO: 2023/05/03 12:19:11.915023 Installing ps1 for init_gorillaReport_client
+DEBUG: 2023/05/03 12:19:11.915023 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\init_gorillaReport_client.ps1]
+DEBUG: 2023/05/03 12:19:11.915023 Command Output:
+DEBUG: 2023/05/03 12:19:11.915023 --------------------
+DEBUG: 2023/05/03 12:19:12.099919 Powershell 7 ya esta instalado
+DEBUG: 2023/05/03 12:19:12.105267 El directorio gorillaReport ya existe.
+DEBUG: 2023/05/03 12:19:12.105780 El directorio C:\Users\tecnico\gorillaReport\scripts ya existe.
+DEBUG: 2023/05/03 12:19:12.106291 El directorio C:\Users\tecnico\gorillaReport\modules ya existe.
+DEBUG: 2023/05/03 12:19:12.106802 El directorio C:\Users\tecnico\gorillaReport\logs ya existe.
+DEBUG: 2023/05/03 12:19:12.107312 El directorio C:\Users\tecnico\gorillaReport\reports ya existe.
+DEBUG: 2023/05/03 12:19:12.107826 El directorio C:\Users\tecnico\gorillaReport\temp ya existe.
+DEBUG: 2023/05/03 12:19:12.108338 El archivo C:\Users\tecnico\gorillaReport\logs\gorillareport.log ya existe.
+DEBUG: 2023/05/03 12:19:12.108849 El directorio C:\Users\tecnico\gorillaReport\modules\GRModule ya existe.
+DEBUG: 2023/05/03 12:19:12.158429 Hash del fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 : B3B6C1BE90622F77E68CEBAF8EAA432FC0F70E685C06C6A4AB72023BAAFDD27C
+DEBUG: 2023/05/03 12:19:12.159456 El fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 ya existe y no es necesario descargarlo.
+DEBUG: 2023/05/03 12:19:12.159966 El directorio  + C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser +  ya existe.
+DEBUG: 2023/05/03 12:19:12.415802 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\main.py
+DEBUG: 2023/05/03 12:19:12.415802 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\my_functions.py
+DEBUG: 2023/05/03 12:19:12.459572 La variable $env:PSModulePath ya contiene C:\Users\tecnico\gorillaReport\modules :
+DEBUG: 2023/05/03 12:19:12.459572 C:\Users\tecnico\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Users\tecnico\gorillaReport\modules
+DEBUG: 2023/05/03 12:19:12.734581 --------------------
+INFO: 2023/05/03 12:19:12.746243 init_gorillaReport_client 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:19:12.746243 Checking status via Script: create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:19:12.858095 Command Error: <nil>
+DEBUG: 2023/05/03 12:19:12.858095 stdout: 
+DEBUG: 2023/05/03 12:19:12.858095 stderr: 
+INFO: 2023/05/03 12:19:12.858095 Installing ps1 for create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:19:12.858608 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1]
+DEBUG: 2023/05/03 12:19:12.858608 Command Output:
+DEBUG: 2023/05/03 12:19:12.858608 --------------------
+DEBUG: 2023/05/03 12:19:14.933747 --------------------
+INFO: 2023/05/03 12:19:14.947059 create_scheduled_task_gorilla_report 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:19:14.947059 Checking status via Script: check_error_and_continue
+DEBUG: 2023/05/03 12:19:15.211357 Command Error: exit status 1
+DEBUG: 2023/05/03 12:19:15.211357 stdout: Check script block from check_error_and_continue task:
+
+DEBUG: 2023/05/03 12:19:15.211867 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:19:15.211867 Checking status via Script: check_error_and_stop
+DEBUG: 2023/05/03 12:19:15.477952 Command Error: exit status 1
+DEBUG: 2023/05/03 12:19:15.477952 stdout: Check script block from check_error_and_stop task:
+
+DEBUG: 2023/05/03 12:19:15.478461 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], ParentContainsErrorRecordExcep 
+   tion
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:19:15.478461 Processing managed uninstalls...
+INFO: 2023/05/03 12:19:15.478461 Processing managed updates...
+INFO: 2023/05/03 12:19:15.478461 Saving GorillaReport.json...
+INFO: 2023/05/03 12:19:15.478969 Cleaning up the cache...
+INFO: 2023/05/03 12:19:15.484828 Done!
+INFO: 2023/05/03 12:29:11.737062 Retrieving manifest: pc101_manifest
+INFO: 2023/05/03 12:29:11.746076 Manifest Url: https://gorillaserver/manifests/pc101_manifest.yaml
+INFO: 2023/05/03 12:29:11.753747 Retrieving catalog: [fcomtic_catalog]
+INFO: 2023/05/03 12:29:11.753747 Catalog Url: https://gorillaserver/catalogs/fcomtic_catalog.yaml
+INFO: 2023/05/03 12:29:11.760530 Processing manifest...
+INFO: 2023/05/03 12:29:11.760530 Processing managed installs...
+INFO: 2023/05/03 12:29:11.760530 Checking status via Script: init_gorillaReport_client
+DEBUG: 2023/05/03 12:29:11.880367 Command Error: <nil>
+DEBUG: 2023/05/03 12:29:11.880367 stdout: 
+DEBUG: 2023/05/03 12:29:11.880367 stderr: 
+INFO: 2023/05/03 12:29:11.880871 Installing ps1 for init_gorillaReport_client
+DEBUG: 2023/05/03 12:29:11.880893 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\init_gorillaReport_client.ps1]
+DEBUG: 2023/05/03 12:29:11.880893 Command Output:
+DEBUG: 2023/05/03 12:29:11.880893 --------------------
+DEBUG: 2023/05/03 12:29:12.060598 Powershell 7 ya esta instalado
+DEBUG: 2023/05/03 12:29:12.065265 El directorio gorillaReport ya existe.
+DEBUG: 2023/05/03 12:29:12.065776 El directorio C:\Users\tecnico\gorillaReport\scripts ya existe.
+DEBUG: 2023/05/03 12:29:12.066289 El directorio C:\Users\tecnico\gorillaReport\modules ya existe.
+DEBUG: 2023/05/03 12:29:12.066797 El directorio C:\Users\tecnico\gorillaReport\logs ya existe.
+DEBUG: 2023/05/03 12:29:12.067307 El directorio C:\Users\tecnico\gorillaReport\reports ya existe.
+DEBUG: 2023/05/03 12:29:12.067818 El directorio C:\Users\tecnico\gorillaReport\temp ya existe.
+DEBUG: 2023/05/03 12:29:12.068327 El archivo C:\Users\tecnico\gorillaReport\logs\gorillareport.log ya existe.
+DEBUG: 2023/05/03 12:29:12.068837 El directorio C:\Users\tecnico\gorillaReport\modules\GRModule ya existe.
+DEBUG: 2023/05/03 12:29:12.118600 Hash del fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 : B3B6C1BE90622F77E68CEBAF8EAA432FC0F70E685C06C6A4AB72023BAAFDD27C
+DEBUG: 2023/05/03 12:29:12.119619 El fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 ya existe y no es necesario descargarlo.
+DEBUG: 2023/05/03 12:29:12.120127 El directorio  + C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser +  ya existe.
+DEBUG: 2023/05/03 12:29:12.381405 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\main.py
+DEBUG: 2023/05/03 12:29:12.381405 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\my_functions.py
+DEBUG: 2023/05/03 12:29:12.423545 La variable $env:PSModulePath ya contiene C:\Users\tecnico\gorillaReport\modules :
+DEBUG: 2023/05/03 12:29:12.423545 C:\Users\tecnico\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Users\tecnico\gorillaReport\modules
+DEBUG: 2023/05/03 12:29:12.709873 --------------------
+INFO: 2023/05/03 12:29:12.721021 init_gorillaReport_client 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:29:12.721021 Checking status via Script: create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:29:12.830637 Command Error: <nil>
+DEBUG: 2023/05/03 12:29:12.830637 stdout: 
+DEBUG: 2023/05/03 12:29:12.830637 stderr: 
+INFO: 2023/05/03 12:29:12.831151 Installing ps1 for create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:29:12.831177 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1]
+DEBUG: 2023/05/03 12:29:12.831177 Command Output:
+DEBUG: 2023/05/03 12:29:12.831177 --------------------
+DEBUG: 2023/05/03 12:29:14.823306 --------------------
+INFO: 2023/05/03 12:29:14.836100 create_scheduled_task_gorilla_report 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:29:14.836100 Checking status via Script: check_error_and_continue
+DEBUG: 2023/05/03 12:29:15.091467 Command Error: exit status 1
+DEBUG: 2023/05/03 12:29:15.091467 stdout: Check script block from check_error_and_continue task:
+
+DEBUG: 2023/05/03 12:29:15.092001 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:29:15.092001 Checking status via Script: check_error_and_stop
+DEBUG: 2023/05/03 12:29:15.344727 Command Error: exit status 1
+DEBUG: 2023/05/03 12:29:15.344727 stdout: Check script block from check_error_and_stop task:
+
+DEBUG: 2023/05/03 12:29:15.345237 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], ParentContainsErrorRecordExcep 
+   tion
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:29:15.345237 Processing managed uninstalls...
+INFO: 2023/05/03 12:29:15.345237 Processing managed updates...
+INFO: 2023/05/03 12:29:15.345237 Saving GorillaReport.json...
+INFO: 2023/05/03 12:29:15.345977 Cleaning up the cache...
+INFO: 2023/05/03 12:29:15.350074 Done!
+INFO: 2023/05/03 12:39:11.746986 Retrieving manifest: pc101_manifest
+INFO: 2023/05/03 12:39:11.756867 Manifest Url: https://gorillaserver/manifests/pc101_manifest.yaml
+INFO: 2023/05/03 12:39:11.764283 Retrieving catalog: [fcomtic_catalog]
+INFO: 2023/05/03 12:39:11.764283 Catalog Url: https://gorillaserver/catalogs/fcomtic_catalog.yaml
+INFO: 2023/05/03 12:39:11.771258 Processing manifest...
+INFO: 2023/05/03 12:39:11.771258 Processing managed installs...
+INFO: 2023/05/03 12:39:11.771258 Checking status via Script: init_gorillaReport_client
+DEBUG: 2023/05/03 12:39:11.882686 Command Error: <nil>
+DEBUG: 2023/05/03 12:39:11.882686 stdout: 
+DEBUG: 2023/05/03 12:39:11.882686 stderr: 
+INFO: 2023/05/03 12:39:11.883196 Installing ps1 for init_gorillaReport_client
+DEBUG: 2023/05/03 12:39:11.883196 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\init_gorillaReport_client.ps1]
+DEBUG: 2023/05/03 12:39:11.883196 Command Output:
+DEBUG: 2023/05/03 12:39:11.883196 --------------------
+DEBUG: 2023/05/03 12:39:12.065257 Powershell 7 ya esta instalado
+DEBUG: 2023/05/03 12:39:12.069970 El directorio gorillaReport ya existe.
+DEBUG: 2023/05/03 12:39:12.070478 El directorio C:\Users\tecnico\gorillaReport\scripts ya existe.
+DEBUG: 2023/05/03 12:39:12.070990 El directorio C:\Users\tecnico\gorillaReport\modules ya existe.
+DEBUG: 2023/05/03 12:39:12.071498 El directorio C:\Users\tecnico\gorillaReport\logs ya existe.
+DEBUG: 2023/05/03 12:39:12.072010 El directorio C:\Users\tecnico\gorillaReport\reports ya existe.
+DEBUG: 2023/05/03 12:39:12.072519 El directorio C:\Users\tecnico\gorillaReport\temp ya existe.
+DEBUG: 2023/05/03 12:39:12.073029 El archivo C:\Users\tecnico\gorillaReport\logs\gorillareport.log ya existe.
+DEBUG: 2023/05/03 12:39:12.073541 El directorio C:\Users\tecnico\gorillaReport\modules\GRModule ya existe.
+DEBUG: 2023/05/03 12:39:12.123761 Hash del fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 : B3B6C1BE90622F77E68CEBAF8EAA432FC0F70E685C06C6A4AB72023BAAFDD27C
+DEBUG: 2023/05/03 12:39:12.124802 El fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 ya existe y no es necesario descargarlo.
+DEBUG: 2023/05/03 12:39:12.125317 El directorio  + C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser +  ya existe.
+DEBUG: 2023/05/03 12:39:12.391606 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\main.py
+DEBUG: 2023/05/03 12:39:12.391606 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\my_functions.py
+DEBUG: 2023/05/03 12:39:12.434386 La variable $env:PSModulePath ya contiene C:\Users\tecnico\gorillaReport\modules :
+DEBUG: 2023/05/03 12:39:12.434386 C:\Users\tecnico\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Users\tecnico\gorillaReport\modules
+DEBUG: 2023/05/03 12:39:12.720013 --------------------
+INFO: 2023/05/03 12:39:12.731754 init_gorillaReport_client 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:39:12.731754 Checking status via Script: create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:39:12.843875 Command Error: <nil>
+DEBUG: 2023/05/03 12:39:12.843875 stdout: 
+DEBUG: 2023/05/03 12:39:12.843875 stderr: 
+INFO: 2023/05/03 12:39:12.844389 Installing ps1 for create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:39:12.844399 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1]
+DEBUG: 2023/05/03 12:39:12.844399 Command Output:
+DEBUG: 2023/05/03 12:39:12.844399 --------------------
+DEBUG: 2023/05/03 12:39:14.914144 --------------------
+INFO: 2023/05/03 12:39:14.929185 create_scheduled_task_gorilla_report 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:39:14.929185 Checking status via Script: check_error_and_continue
+DEBUG: 2023/05/03 12:39:15.174586 Command Error: exit status 1
+DEBUG: 2023/05/03 12:39:15.174586 stdout: Check script block from check_error_and_continue task:
+
+DEBUG: 2023/05/03 12:39:15.175099 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:39:15.175099 Checking status via Script: check_error_and_stop
+DEBUG: 2023/05/03 12:39:15.421138 Command Error: exit status 1
+DEBUG: 2023/05/03 12:39:15.421138 stdout: Check script block from check_error_and_stop task:
+
+DEBUG: 2023/05/03 12:39:15.421672 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], ParentContainsErrorRecordExcep 
+   tion
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:39:15.421672 Processing managed uninstalls...
+INFO: 2023/05/03 12:39:15.421672 Processing managed updates...
+INFO: 2023/05/03 12:39:15.421672 Saving GorillaReport.json...
+INFO: 2023/05/03 12:39:15.422208 Cleaning up the cache...
+INFO: 2023/05/03 12:39:15.424256 Cleaning old cached file: register_gorilla_report.ps1
+INFO: 2023/05/03 12:39:15.427313 Done!
+INFO: 2023/05/03 12:49:11.745890 Retrieving manifest: pc101_manifest
+INFO: 2023/05/03 12:49:11.755277 Manifest Url: https://gorillaserver/manifests/pc101_manifest.yaml
+INFO: 2023/05/03 12:49:11.762835 Retrieving catalog: [fcomtic_catalog]
+INFO: 2023/05/03 12:49:11.762835 Catalog Url: https://gorillaserver/catalogs/fcomtic_catalog.yaml
+INFO: 2023/05/03 12:49:11.769242 Processing manifest...
+INFO: 2023/05/03 12:49:11.769242 Processing managed installs...
+INFO: 2023/05/03 12:49:11.769242 Checking status via Script: init_gorillaReport_client
+DEBUG: 2023/05/03 12:49:11.884773 Command Error: <nil>
+DEBUG: 2023/05/03 12:49:11.884773 stdout: 
+DEBUG: 2023/05/03 12:49:11.884773 stderr: 
+INFO: 2023/05/03 12:49:11.884773 Installing ps1 for init_gorillaReport_client
+DEBUG: 2023/05/03 12:49:11.885301 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\init_gorillaReport_client.ps1]
+DEBUG: 2023/05/03 12:49:11.885301 Command Output:
+DEBUG: 2023/05/03 12:49:11.885301 --------------------
+DEBUG: 2023/05/03 12:49:12.065783 Powershell 7 ya esta instalado
+DEBUG: 2023/05/03 12:49:12.070864 El directorio gorillaReport ya existe.
+DEBUG: 2023/05/03 12:49:12.071600 El directorio C:\Users\tecnico\gorillaReport\scripts ya existe.
+DEBUG: 2023/05/03 12:49:12.072110 El directorio C:\Users\tecnico\gorillaReport\modules ya existe.
+DEBUG: 2023/05/03 12:49:12.072622 El directorio C:\Users\tecnico\gorillaReport\logs ya existe.
+DEBUG: 2023/05/03 12:49:12.073130 El directorio C:\Users\tecnico\gorillaReport\reports ya existe.
+DEBUG: 2023/05/03 12:49:12.073638 El directorio C:\Users\tecnico\gorillaReport\temp ya existe.
+DEBUG: 2023/05/03 12:49:12.074147 El archivo C:\Users\tecnico\gorillaReport\logs\gorillareport.log ya existe.
+DEBUG: 2023/05/03 12:49:12.074655 El directorio C:\Users\tecnico\gorillaReport\modules\GRModule ya existe.
+DEBUG: 2023/05/03 12:49:12.125569 Hash del fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 : B3B6C1BE90622F77E68CEBAF8EAA432FC0F70E685C06C6A4AB72023BAAFDD27C
+DEBUG: 2023/05/03 12:49:12.127206 El fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 ya existe y no es necesario descargarlo.
+DEBUG: 2023/05/03 12:49:12.127715 El directorio  + C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser +  ya existe.
+DEBUG: 2023/05/03 12:49:12.406481 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\main.py
+DEBUG: 2023/05/03 12:49:12.406481 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\my_functions.py
+DEBUG: 2023/05/03 12:49:12.451035 La variable $env:PSModulePath ya contiene C:\Users\tecnico\gorillaReport\modules :
+DEBUG: 2023/05/03 12:49:12.451035 C:\Users\tecnico\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Users\tecnico\gorillaReport\modules
+DEBUG: 2023/05/03 12:49:12.736383 --------------------
+INFO: 2023/05/03 12:49:12.749557 init_gorillaReport_client 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:49:12.749557 Checking status via Script: create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:49:12.862762 Command Error: <nil>
+DEBUG: 2023/05/03 12:49:12.862762 stdout: 
+DEBUG: 2023/05/03 12:49:12.862762 stderr: 
+INFO: 2023/05/03 12:49:12.863270 Installing ps1 for create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:49:12.863270 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1]
+DEBUG: 2023/05/03 12:49:12.863270 Command Output:
+DEBUG: 2023/05/03 12:49:12.863270 --------------------
+DEBUG: 2023/05/03 12:49:14.871977 --------------------
+INFO: 2023/05/03 12:49:14.885689 create_scheduled_task_gorilla_report 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:49:14.885689 Checking status via Script: check_error_and_continue
+DEBUG: 2023/05/03 12:49:15.139225 Command Error: exit status 1
+DEBUG: 2023/05/03 12:49:15.139225 stdout: Check script block from check_error_and_continue task:
+
+DEBUG: 2023/05/03 12:49:15.139737 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:49:15.139737 Checking status via Script: check_error_and_stop
+DEBUG: 2023/05/03 12:49:15.386914 Command Error: exit status 1
+DEBUG: 2023/05/03 12:49:15.386914 stdout: Check script block from check_error_and_stop task:
+
+DEBUG: 2023/05/03 12:49:15.387425 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], ParentContainsErrorRecordExcep 
+   tion
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:49:15.387425 Processing managed uninstalls...
+INFO: 2023/05/03 12:49:15.387425 Processing managed updates...
+INFO: 2023/05/03 12:49:15.387425 Saving GorillaReport.json...
+INFO: 2023/05/03 12:49:15.387933 Cleaning up the cache...
+INFO: 2023/05/03 12:49:15.393529 Done!
+INFO: 2023/05/03 12:59:11.735236 Retrieving manifest: pc101_manifest
+INFO: 2023/05/03 12:59:11.745974 Manifest Url: https://gorillaserver/manifests/pc101_manifest.yaml
+INFO: 2023/05/03 12:59:11.754076 Retrieving catalog: [fcomtic_catalog]
+INFO: 2023/05/03 12:59:11.754076 Catalog Url: https://gorillaserver/catalogs/fcomtic_catalog.yaml
+INFO: 2023/05/03 12:59:11.761548 Processing manifest...
+INFO: 2023/05/03 12:59:11.761548 Processing managed installs...
+INFO: 2023/05/03 12:59:11.761548 Checking status via Script: init_gorillaReport_client
+DEBUG: 2023/05/03 12:59:11.874912 Command Error: <nil>
+DEBUG: 2023/05/03 12:59:11.874912 stdout: 
+DEBUG: 2023/05/03 12:59:11.874912 stderr: 
+INFO: 2023/05/03 12:59:11.874912 Installing ps1 for init_gorillaReport_client
+DEBUG: 2023/05/03 12:59:11.875425 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\init_gorillaReport_client.ps1]
+DEBUG: 2023/05/03 12:59:11.875425 Command Output:
+DEBUG: 2023/05/03 12:59:11.875425 --------------------
+DEBUG: 2023/05/03 12:59:12.057852 Powershell 7 ya esta instalado
+DEBUG: 2023/05/03 12:59:12.062708 El directorio gorillaReport ya existe.
+DEBUG: 2023/05/03 12:59:12.063220 El directorio C:\Users\tecnico\gorillaReport\scripts ya existe.
+DEBUG: 2023/05/03 12:59:12.063728 El directorio C:\Users\tecnico\gorillaReport\modules ya existe.
+DEBUG: 2023/05/03 12:59:12.064256 El directorio C:\Users\tecnico\gorillaReport\logs ya existe.
+DEBUG: 2023/05/03 12:59:12.064256 El directorio C:\Users\tecnico\gorillaReport\reports ya existe.
+DEBUG: 2023/05/03 12:59:12.064766 El directorio C:\Users\tecnico\gorillaReport\temp ya existe.
+DEBUG: 2023/05/03 12:59:12.065277 El archivo C:\Users\tecnico\gorillaReport\logs\gorillareport.log ya existe.
+DEBUG: 2023/05/03 12:59:12.065785 El directorio C:\Users\tecnico\gorillaReport\modules\GRModule ya existe.
+DEBUG: 2023/05/03 12:59:12.116624 Hash del fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 : B3B6C1BE90622F77E68CEBAF8EAA432FC0F70E685C06C6A4AB72023BAAFDD27C
+DEBUG: 2023/05/03 12:59:12.117666 El fichero C:\Users\tecnico\gorillaReport\modules\GRModule\GRModule.psm1 ya existe y no es necesario descargarlo.
+DEBUG: 2023/05/03 12:59:12.118178 El directorio  + C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser +  ya existe.
+DEBUG: 2023/05/03 12:59:12.376542 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\main.py
+DEBUG: 2023/05/03 12:59:12.376542 Module python:  C:\Users\tecnico\gorillaReport\modules\python_gorilla_parser\my_functions.py
+DEBUG: 2023/05/03 12:59:12.437378 La variable $env:PSModulePath ya contiene C:\Users\tecnico\gorillaReport\modules :
+DEBUG: 2023/05/03 12:59:12.437378 C:\Users\tecnico\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Users\tecnico\gorillaReport\modules
+DEBUG: 2023/05/03 12:59:12.716473 --------------------
+INFO: 2023/05/03 12:59:12.729226 init_gorillaReport_client 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:59:12.729226 Checking status via Script: create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:59:12.841321 Command Error: <nil>
+DEBUG: 2023/05/03 12:59:12.841321 stdout: 
+DEBUG: 2023/05/03 12:59:12.841321 stderr: 
+INFO: 2023/05/03 12:59:12.841833 Installing ps1 for create_scheduled_task_gorilla_report
+DEBUG: 2023/05/03 12:59:12.841833 command: C:\Windows\system32\WindowsPowershell\v1.0\powershell.exe [-NoProfile -NoLogo -NonInteractive -WindowStyle Normal -ExecutionPolicy Bypass -File C:\gorilla\cache\cache\packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1]
+DEBUG: 2023/05/03 12:59:12.841833 Command Output:
+DEBUG: 2023/05/03 12:59:12.841833 --------------------
+DEBUG: 2023/05/03 12:59:14.852917 --------------------
+INFO: 2023/05/03 12:59:14.866797 create_scheduled_task_gorilla_report 1.0 Installation SUCCESSFUL
+INFO: 2023/05/03 12:59:14.866797 Checking status via Script: check_error_and_continue
+DEBUG: 2023/05/03 12:59:15.109954 Command Error: exit status 1
+DEBUG: 2023/05/03 12:59:15.109954 stdout: Check script block from check_error_and_continue task:
+
+DEBUG: 2023/05/03 12:59:15.110465 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:59:15.110465 Checking status via Script: check_error_and_stop
+DEBUG: 2023/05/03 12:59:15.357470 Command Error: exit status 1
+DEBUG: 2023/05/03 12:59:15.357470 stdout: Check script block from check_error_and_stop task:
+
+DEBUG: 2023/05/03 12:59:15.357982 stderr: asfcasdf : El t‚rmino 'asfcasdf' no se reconoce como nombre de un cmdlet, funci¢n, archivo de 
+script o programa ejecutable. Compruebe si escribi¢ correctamente el nombre o, si incluy¢ una ruta 
+de acceso, compruebe que dicha ruta es correcta e int‚ntelo de nuevo.
+En C:\gorilla\cache\cache\tmpCheckScript.ps1: 3 Car cter: 1
++ asfcasdf
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (asfcasdf:String) [], ParentContainsErrorRecordExcep 
+   tion
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+INFO: 2023/05/03 12:59:15.357982 Processing managed uninstalls...
+INFO: 2023/05/03 12:59:15.357982 Processing managed updates...
+INFO: 2023/05/03 12:59:15.357982 Saving GorillaReport.json...
+INFO: 2023/05/03 12:59:15.358491 Cleaning up the cache...
+INFO: 2023/05/03 12:59:15.362581 Done!
