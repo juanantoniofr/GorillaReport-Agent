@@ -2,7 +2,7 @@ Python:
   display_name: Python
   check:
     file:
-      - path: C:\Python311\python.exe
+      - path: C:\Program Files\Python311
       - version: 3.11.2
   installer:
     location: packages/gorillaReport/apps/python-3.11.2-amd64.exe
@@ -21,7 +21,7 @@ init_gorillaReport_client:
       exit 0
   installer:
     location: packages/gorillaReport/init_gorillaReport_client.ps1
-    hash: 18F6F1BBB7BE6959AF3F27E32528C8FCB6C2D8DAF9DDEE7951047799BEDC5BC8
+    hash: 8F0C289235439FB5075FB6313E15775C99BA8BA605444BABDED21947F257F063
     type: ps1
   version: 1.0
 

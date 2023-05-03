@@ -37,7 +37,7 @@
     Licencia: GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
 #>
 #Gorilla Server DNS Name or IP
-$gorillaserver="gorillaserver.lc:8080"
+$gorillaserver = "gorillaserver.lc:8080"
 #$gorillaserver="172.23.23.132"
 
 #########################################
@@ -59,7 +59,7 @@ $gorillaserver="gorillaserver.lc:8080"
 #}
 
 # 1.2 - Instalamos powershell 7
-If( !(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe") ) {
+If ( !(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe") ) {
     # copiamos el script
     $file = "http://$gorillaserver/packages/gorillaReport/PowerShell-7.2.0-win-x64.msi"
     $outputFile = 'C:\Users\tecnico\AppData\Local\Temp\PowerShell-7.2.0-win-x64.msi'
@@ -68,7 +68,7 @@ If( !(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe") ) {
     # instalamos
     msiexec.exe /i "C:\Users\tecnico\AppData\Local\Temp\PowerShell-7.2.0-win-x64.msi" /qn
 }
-else{
+else {
     Write-Host "Powershell 7 ya esta instalado"
 }
 
@@ -85,10 +85,12 @@ if (-not (Test-Path -Path "$homedir\$gorilladir" -PathType Container)) {
     try {
         New-Item -ItemType Directory -Path "$homedir\$gorilladir" -ErrorAction Stop | Out-Null
         Write-Host "Directorio $gorilladir creado correctamente."
-    } catch {
+    }
+    catch {
         throw "Error al crear el directorio: $_"
     }
-} else {
+}
+else {
     Write-Host "El directorio $gorilladir ya existe."
 }
 
@@ -100,10 +102,12 @@ foreach ($subdir in $subdirectories) {
         try {
             New-Item -ItemType Directory -Path "$homedir\$gorilladir\$subdir" -ErrorAction Stop | Out-Null
             Write-Host "Directorio $homedir\$gorilladir\$subdir creado correctamente."
-        } catch {
+        }
+        catch {
             throw "Error al crear el directorio: $_"
         }
-    } else {
+    }
+    else {
         Write-Host "El directorio $homedir\$GORILLADIR\$subdir ya existe."
     }
 }
@@ -114,10 +118,12 @@ if (-not (Test-Path -Path $log_file -PathType Leaf)) {
     try {
         New-Item -ItemType File -Path $log_file -ErrorAction Stop | Out-Null
         Write-Host "Archivo $log_file creado correctamente."
-    } catch {
+    }
+    catch {
         throw "Error al crear el archivo: $_"
     }
-} else {
+}
+else {
     Write-Host "El archivo $log_file ya existe."
 }
 
@@ -145,24 +151,26 @@ If (-not (Test-Path -Path $gr_module_dir -PathType Container)) {
     try {
         New-Item -ItemType Directory -Path $gr_module_dir -ErrorAction Stop | Out-Null
         Write-Host "Directorio $gr_module_dir creado correctamente."
-    } catch {
+    }
+    catch {
         throw "Error al crear el directorio: $_"
         exit 1
     }
-} else {
+}
+else {
     Write-Host "El directorio $gr_module_dir ya existe."
 }
 
 # 3.2 - descarga de ficheros (sin certificado, AuthBasic in gorilla server)
-$HASH=''
+$HASH = ''
 If ( (Test-Path $GRModule_path) ) {
-    $HASH=(Get-FileHash $GRModule_path).Hash
+    $HASH = (Get-FileHash $GRModule_path).Hash
 }
 
 Write-Host "Hash del fichero $GRModule_path : $HASH"
 
 # si no existe el archivo ó si el hash no coincide con la plantilla del servidor
-If ($HASH -ne "a2a91f5e93d9529c956e0211ad446408ce425c29a1903b05566bd2c27492d701"){
+If ($HASH -ne "a2a91f5e93d9529c956e0211ad446408ce425c29a1903b05566bd2c27492d701") {
     $file = "http://$gorillaserver/packages/gorillaReport/modules/GRModule/GRModule.psm1"       
     Invoke-WebRequest -Uri $file -OutFile $GRModule_path 
 }
@@ -173,8 +181,9 @@ else {
 # 3.3 - descarga scripts de python (parser)
 If (!(Test-Path $gr_modules_path\python_gorilla_parser)) {
     New-Item -ItemType Directory -Path $gr_modules_path\python_gorilla_parser -ErrorAction Stop | Out-Null
-   Write-Host "Directorio " + "$gr_modules_path\python_gorilla_parser" + "creado correctamente."
-} else {
+    Write-Host "Directorio " + "$gr_modules_path\python_gorilla_parser" + "creado correctamente."
+}
+else {
     Write-Host "El directorio " + "$gr_modules_path\python_gorilla_parser" + " ya existe."
 }
 
@@ -225,7 +234,7 @@ else {
 ### 5 - Descarga scripts para realizar reportes ###
 ###################################################
 
-$file1 = "https://gorillaserver/packages/gorillaReport/scripts/register_gorilla_report.ps1"
+$file1 = "http://gorillaserver/packages/gorillaReport/scripts/register_gorilla_report.ps1"
 $outputFile1 = "$homedir\gorillaReport\scripts\register_gorilla_report.ps1"
 
 $file2 = "http://$gorillaserver/packages/gorillaReport/scripts/register_client.ps1"
