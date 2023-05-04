@@ -39,6 +39,20 @@ def get_ps1_installer_file_path(line):
     return ps1_file_path
 
 
+def get_stdout_text(line):
+    parts = line.split("stdout:")
+    if len(parts) == 1:
+        return ""
+    return parts[1].strip()
+
+
+def get_stderr_text(line):
+    parts = line.split("stderr:")
+    if len(parts) == 1:
+        return ""
+    return parts[1].strip()
+
+
 def get_last_data_execution_gorilla_report_json(file):
     my_gorilla_report_json = {}
     with open(file) as json_file:
@@ -116,12 +130,12 @@ def parse_log_file(gorilla_log_file):
             ######################################
             # managed installs/check status via #
             ######################################
-            if 'Checking status via' in line or check_script_exit_1:
+            if 'Checking status via' in line:
                 managed_install_items_count += 1
                 processing_managed_install_item = True
                 check_script_exit_1 = False
 
-                if checking_status_found:  # implies new managed_install_item
+                if checking_status_found or check_script_exit_1:  # implies new managed_install_item
                     # restore all variables associated to a single managed_install_item
                     managed_install_item = {}
                     # check
@@ -166,6 +180,7 @@ def parse_log_file(gorilla_log_file):
                         check_script_stdout_found = True
                     if 'stderr: ' in line:
                         check_script_stderr_found = True
+                        check_script_block['stderr'].append(get_stderr_text(line))
                     if 'Command Error: exit status 1' in line:
                         check_script_exit_1 = True
 
@@ -175,9 +190,7 @@ def parse_log_file(gorilla_log_file):
                     if not check_script_stdout_found:
                         check_script_block['command_error'].append(line)
                     if check_script_stdout_found and not check_script_stderr_found:
-                        check_script_block['stdout'].append(line)
-                    if check_script_stdout_found and check_script_stderr_found and not installing_ps1_found:
-                        check_script_block['stderr'].append(line)
+                        check_script_block['stdout'].append(get_stdout_text(line))
 
             ###########################################
             # managed installs/installing ps1: command, command_output #
@@ -211,19 +224,19 @@ def parse_log_file(gorilla_log_file):
     #################
     # print results #
     #################
-    # for item in managed_install_items:
-    #    print('- task_name: ', item['task_name'])
-    #    print('- check_via: ', item['check_block']['via'])
-    #    if item['check_block']['via'] == 'Script':
-    #        print('  - command_error: ', item['check_block']['script']['command_error'])
-    #        print('  - stdout: ', item['check_block']['script']['stdout'])
-    #        print('  - stderr: ', item['check_block']['script']['stderr'])
-    #    print('- installing ps1: ', item['installing_ps1_block'])
-    #    print('  - command: ', item['installing_ps1_block']['command'])
-    #    print('  - command_output: ', item['installing_ps1_block']['command_output'])
-    #    print('  - hash_error: ', item['installing_ps1_block']['hash_error'])
-    #    print('  - download_error: ', item['installing_ps1_block']['download_error'])
-    #    print()
+    for item in managed_install_items:
+       print('- task_name: ', item['task_name'])
+       print('- check_via: ', item['check_block']['via'])
+       if item['check_block']['via'] == 'Script':
+           print('  - command_error: ', item['check_block']['script']['command_error'])
+           print('  - stdout: ', item['check_block']['script']['stdout'])
+           print('  - stderr: ', item['check_block']['script']['stderr'])
+       print('- installing ps1: ', item['installing_ps1_block'])
+       print('  - command: ', item['installing_ps1_block']['command'])
+       print('  - command_output: ', item['installing_ps1_block']['command_output'])
+       print('  - hash_error: ', item['installing_ps1_block']['hash_error'])
+       print('  - download_error: ', item['installing_ps1_block']['download_error'])
+       print()
 
 
     return managed_install_items
