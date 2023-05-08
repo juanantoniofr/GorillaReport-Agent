@@ -30,73 +30,71 @@ catch {
     exit 1
 }
 
-# Registra pc_client en el servidor gorillaReport
-function Register {
-    
-    param(
-        [Parameter(Mandatory=$true)]
-        [System.Object[]]$token,
-
-        [Parameter(Mandatory=$true)]
-        [string]$URI
-    )
-
-    # Ejecutamos el script en powershell 7
-    $result = pwsh -Command{
-        
-        $token = $args[0].access_token
-        $URI = $args[1]
-
-        #$token = ConvertTo-SecureString -String $args[0] -AsPlainText -Force
-        $token = ConvertTo-SecureString -String $token -AsPlainText -Force
-
-        # Obtenemos las IPs de la máquina
-        $ipAddresses = Get-NetIPAddress -AddressFamily Ipv4 | Where-Object { $_.IPAddress -ne '127.0.0.1' } | Select-Object -ExpandProperty IPAddress
-        # Convertimos a json
-        $ips = ($ipAddresses | ConvertTo-Json)
-        
-        $body = @{
-            huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
-            name = $env:COMPUTERNAME
-            ip = $ips.Replace('[','{').Replace(']','}')
-        }
-        
-        
-        $Params=@{
-            Method = "Post"
-            Uri = $URI
-            Authentication = "Bearer"
-            Token = $token
-            SkipCertificateCheck = 1
-            Body = $body
-        }
-        
-        return Invoke-RestMethod @Params
-    } -args @($token, $URI)
-
-    return $result
+# Verificar si el mÃ³dulo CimCmdlets estÃ¡ disponible
+if (-not(Get-Module -Name CimCmdlets)) {
+    try {
+        # Importar el mÃ³dulo CimCmdlets si no estÃ¡ disponible
+        Import-Module CimCmdlets -ErrorAction Stop
+    }
+    catch {
+        Write-Error "No se pudo importar el mÃ³dulo CimCmdlets. Error: $($_.Exception.Message)"
+        exit 1
+    }
 }
+
+
+#Get information for register pc
+
+$ipAddress = (Get-NetIPConfiguration).IPv4Address.IPAddress
+$huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
+$name = $env:COMPUTERNAME
+
+#Creamos objeto JSON
+$jsonData = @{
+    ip=$ipAddress
+    huid=$huid
+    name=$name    
+}
+#Guardamos a fichero
+$json_file_log = $GRModule.reports_dir + "\register_info.json"
+try {
+    $jsonData | ConvertTo-Json | Out-File -FilePath $json_file_log -Encoding UTF8
+    Write-Host "Fichero JSON con la informacion del sistema guardado en $json_file_log"
+    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script -: Fichero JSON con la informacion del sistema guardado en $json_file_log" 
+}
+catch {
+    <#Do this if a terminating exception happens#>
+    Write-Host "Error al guardar el fichero JSON en $json_file_log"
+    Write-Host $_.Exception.Message
+    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: Error al guardar el fichero JSON en $json_file_log"
+    #exit 1 
+}
+
 
 #Obtenemos el token de acceso
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 
-#Si no hay token de acceso salimos
-if ( $null -eq $token ){ 
-    #DEBUG: escribir en el fichero de logs
+#si no hay token de acceso salimos
+if ($null -eq $token) {
+    #Debug: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: No se ha podido obtener el token de acceso"
-    exit 0
+    Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: No se ha podido obtener el token de acceso a la API"
+    Write-Host "No se ha podido obtener el token de acceso a la API"
+    exit 1
 }
 else{
-    #DEBUG: escribir en el fichero de logs
+    #Debug: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script - : Token de acceso obtenido correctamente"
+    Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script -: Token de acceso a la API obtenido"
+    Write-Host "Token de acceso a la API obtenido"
 }
 
-#Registramos pc_client
-$result = Register $token $GRModule.register_pc_uri 
-Write-Host "gorillareport webapp response: " $result.message
+# Enviamos la informaciÃ³n del sistema a gorillaReport webapp
+$result = $(pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.register_pc_uri)
+
+# logs
+Write-Host "gorillareport webapp response: "  $result
 #DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-Add-Content -Path $GRModule.log_file -Value "$DATE - $this_script - : gorillareport webapp response ->  $result.message" 
+Add-Content -Path $GRModule.log_file -Value "INFO: $DATE - $this_script - : gorillareport webapp response ->  $result" 
 exit 0

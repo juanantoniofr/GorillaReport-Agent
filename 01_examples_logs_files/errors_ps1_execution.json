@@ -176,7 +176,10 @@
     },
     {
       "task_name": "DaVinci_18.1.1",
-      "check_block": { "via": "Script" },
+      "check_block": {
+        "via": "Script",
+        "Output": []
+      },
       "installing_ps1_block": {
         "command": [],
         "command_output": [],
