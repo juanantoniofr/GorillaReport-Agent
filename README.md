@@ -1,6 +1,8 @@
 ## About GorillaReport Agent
 
-A set of PowerShell and Python scripts, which generates and sends computer status reports to the GorillaReport web utility. Its main objective is to parse the Gorilla log file, which is a plain text file, into JSON format and send it to the server. This way, we centralize the monitoring of installations made with Gorilla.
+Un conjunto de scripts de PowerShell y Python, que generan y envían informes de estado de un Pc gestionado con [Gorilla](https://github.com/1dustindavis/gorilla) a la utilidad web GorillaReport. Su objetivo principal es analizar el archivo de logs de [Gorilla](https://github.com/1dustindavis/gorilla), que es un archivo en texto plano, parsearlo a formato JSON y enviarlo a [gorillaReport](https://github.com/juanantoniofr/gorillareport). 
+
+De esta manera, centralizamos la monitorización de las tareas realizadas con [Gorilla](https://github.com/1dustindavis/gorilla).
 
 # SCRIPTS
 
@@ -11,34 +13,34 @@ A set of PowerShell and Python scripts, which generates and sends computer statu
 
 # CONFIG
 
-Variables a cconfigurar:
-* fichero init_gorillaReport_client.ps1
+Indicar la IP o el nombre de host del Servidor [gorillaReport](https://github.com/juanantoniofr/gorillareport) en las variables siguientes:
 
-**$gorillaserver:** Set nameserver or IP of gorilla server
+* En el fichero init_gorillaReport_client.ps1
 
-Examples:
-1. $gorillaserver = "gorillaserver.lc:8080"
-2. $gorillaserver = "10.1.XX.XX"
+**$gorillaserver:** 
 
-
-* fichero GRModule.psm1
+* En el fichero GRModule.psm1
 **$gr_server:** Set Nameserver or IP gorillaReport server
 
-Examples:
-1. $gr_server = "gorillareport:4444"
-2. $gr_server = "10.1.XX.XX"
+Ejemplos:
+1. $gorillaserver = "gorillaserver.lc:8080" || $gorillaserver = "10.1.XX.XX"
+1. $gr_server = "gorillareport:4444" |1 $gr_server = "10.1.XX.XX"
 
 
 # SYNOPSIS: 
-    1 - Instala python y powershell 7
-    2 - Crea los directorios de gorillaReport en el cliente.
-    3 - Descarga el modulo GRmodule.psm1  y el parser en python del servidor de gorilla.
-    4 - Hace disponible el módulo gorillaReport.psm1 para todos los scripts de powershell.
-    5 - Descarga scripts para realizar reportes.
-    6 - Registra el equipo
-    7 - Envía información básica: sistema (SO, Build, Hostname..) y dispositivo (CPU, RAM,...)
-    8 - Parsea fichero de log de gorilla a formato JSON
-    9 - Envía fichero de log de gorilla parseado
+
+    El conjunto de script gorillaReport-Agent realizan las siguientes tareas:
+    
+      1 - Instala python y powershell 7.
+      2 - Crea los directorios de gorillaReport en el cliente.
+      3 - Descarga el modulo GRmodule.psm1  y el parser en python del servidor de gorilla.
+      4 - Hace disponible el módulo gorillaReport.psm1 para todos los scripts de powershell.
+      5 - Descarga scripts para realizar reportes.
+      6 - Hace uso de la API definida en gorillaReport para:
+          6.1 - Registar el equipo.
+          6.2 - Enviar información básica del equipo: sistema (SO, Build, Hostname..) y dispositivo (CPU, RAM,...).
+          6.3 - Parsea fichero de log de gorilla a formato JSON.
+          6.4 - Envía fichero de log de gorilla parseado.
 
 # AUTHORS
 
