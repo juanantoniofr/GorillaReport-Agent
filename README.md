@@ -53,11 +53,11 @@ Ejemplos:
 - [Luis Vela](https://github.com/luivelmor)
 - [Juan Antonio](https://github.com/juanantoniofr)
 
-# Contact
+## Contact
 
 - Email:  luisvela@us.es | juanafr@us.es
 
-# Licence
+## Licence
 
 - GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
 
