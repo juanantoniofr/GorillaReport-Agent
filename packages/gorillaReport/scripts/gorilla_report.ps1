@@ -1,9 +1,9 @@
 $homedir = [Environment]::GetFolderPath("UserProfile")
-$gorilladir = "gorillaReport"
+$gorillaReportDir = "gorillaReport"
 
-$register_client = "$homedir\$gorilladir\scripts\register_client.ps1"
-$register_basic_info = "$homedir\$gorilladir\scripts\register_basic_info.ps1"
-$register_gorilla_report = "$homedir\$gorilladir\scripts\register_gorilla_report.ps1"
+$register_client = "$homedir\$gorillaReportDir\scripts\register_client.ps1"
+$register_basic_info = "$homedir\$gorillaReportDir\scripts\register_basic_info.ps1"
+$register_gorilla_report = "$homedir\$gorillaReportDir\scripts\register_gorilla_report.ps1"
 
 $scripts = @($register_client, $register_basic_info, $register_gorilla_report)
 

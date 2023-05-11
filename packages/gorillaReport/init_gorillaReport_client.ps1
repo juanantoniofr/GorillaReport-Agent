@@ -64,41 +64,41 @@ else {
 
 # 2.1 - Crea el directorio gorillaReport
 $homedir = [Environment]::GetFolderPath("UserProfile")
-$gorilladir = "gorillaReport"
+$gorillaReportDir = "gorillaReport"
 
-if (-not (Test-Path -Path "$homedir\$gorilladir" -PathType Container)) {
+if (-not (Test-Path -Path "$homedir\$gorillaReportDir" -PathType Container)) {
     try {
-        New-Item -ItemType Directory -Path "$homedir\$gorilladir" -ErrorAction Stop | Out-Null
-        Write-Host "Directorio $gorilladir creado correctamente."
+        New-Item -ItemType Directory -Path "$homedir\$gorillaReportDir" -ErrorAction Stop | Out-Null
+        Write-Host "Directorio $gorillaReportDir creado correctamente."
     }
     catch {
         throw "Error al crear el directorio: $_"
     }
 }
 else {
-    Write-Host "El directorio $gorilladir ya existe."
+    Write-Host "El directorio $gorillaReportDir ya existe."
 }
 
 # 2.2 - Crea los subdirectorios de gorillaReport
 $subdirectories = @("scripts", "modules", "logs", "reports", "temp")
 
 foreach ($subdir in $subdirectories) {
-    if (-not (Test-Path -Path "$homedir\$gorilladir\$subdir" -PathType Container)) {
+    if (-not (Test-Path -Path "$homedir\$gorillaReportDir\$subdir" -PathType Container)) {
         try {
-            New-Item -ItemType Directory -Path "$homedir\$gorilladir\$subdir" -ErrorAction Stop | Out-Null
-            Write-Host "Directorio $homedir\$gorilladir\$subdir creado correctamente."
+            New-Item -ItemType Directory -Path "$homedir\$gorillaReportDir\$subdir" -ErrorAction Stop | Out-Null
+            Write-Host "Directorio $homedir\$gorillaReportDir\$subdir creado correctamente."
         }
         catch {
             throw "Error al crear el directorio: $_"
         }
     }
     else {
-        Write-Host "El directorio $homedir\$GORILLADIR\$subdir ya existe."
+        Write-Host "El directorio $homedir\$gorillaReportDir\$subdir ya existe."
     }
 }
 
 # 2.3 - Crea un fichero de log para gorillaReport
-$log_file = "$homedir\$gorilladir\logs\gorillareport.log"
+$log_file = "$homedir\$gorillaReportDir\logs\gorillareport.log"
 if (-not (Test-Path -Path $log_file -PathType Leaf)) {
     try {
         New-Item -ItemType File -Path $log_file -ErrorAction Stop | Out-Null
@@ -121,9 +121,9 @@ else {
 # Directorio home del usuario
 $homedir = [Environment]::GetFolderPath("UserProfile")
 # Directorio de gorillaReport
-$gorilladir = "gorillaReport"
+$gorillaReportDir = "gorillaReport"
 # Directorio donde se guardan los modulos de gorillaReport
-$gr_modules_path = "$homeDir\$gorilladir\modules"
+$gr_modules_path = "$homeDir\$gorillaReportDir\modules"
 #Directorio donde se guarda el módulo GRModule.psm1
 $gr_module_dir = "$gr_modules_path\GRModule"
 # Nombre del modulo
@@ -190,9 +190,9 @@ if (!(Test-Path $file2)) { Invoke-WebRequest -Uri $file2 -OutFile $outputFile2 }
 # home de usuario
 $homedir = $env:USERPROFILE
 # directorio de gorillaReport
-$gorilladir = "gorillaReport"
+$gorillaReportDir = "gorillaReport"
 # directorio de módulos de gorillaReport
-$gr_module_path = "$homeDir\$gorilladir\modules"
+$gr_module_path = "$homeDir\$gorillaReportDir\modules"
 
 
 # 4.1 - Verificar si el archivo de perfil existe
@@ -219,7 +219,7 @@ else {
 ### 5 - Descarga scripts para realizar reportes ###
 ###################################################
 
-$file1 = "http://gorillaserver/packages/gorillaReport/scripts/register_gorilla_report.ps1"
+$file1 = "http://$gorillaserver/packages/gorillaReport/scripts/register_gorilla_report.ps1"
 $outputFile1 = "$homedir\gorillaReport\scripts\register_gorilla_report.ps1"
 
 $file2 = "http://$gorillaserver/packages/gorillaReport/scripts/register_client.ps1"
