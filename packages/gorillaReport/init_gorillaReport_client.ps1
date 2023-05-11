@@ -42,16 +42,16 @@ $gorillaserver = "gorillaserver.lc:8080"
 #########################################
 ### 1 - Instala el software necesario ###
 #########################################
-
+$homedir = [Environment]::GetFolderPath("UserProfile")
 # 1.1 - Instalamos powershell 7
 If ( !(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe") ) {
     # copiamos el script
     $file = "http://$gorillaserver/packages/gorillaReport/PowerShell-7.2.0-win-x64.msi"
-    $outputFile = 'C:\Users\tecnico\AppData\Local\Temp\PowerShell-7.2.0-win-x64.msi'
+    $outputFile = "$homedir\AppData\Local\Temp\PowerShell-7.2.0-win-x64.msi"
     # descargamos los ficheros
     Invoke-WebRequest -Uri $file -OutFile $outputFile
     # instalamos
-    msiexec.exe /i "C:\Users\tecnico\AppData\Local\Temp\PowerShell-7.2.0-win-x64.msi" /qn
+    msiexec.exe /i "$homedir\AppData\Local\Temp\PowerShell-7.2.0-win-x64.msi" /qn
 }
 else {
     Write-Host "Powershell 7 ya esta instalado"
@@ -63,7 +63,6 @@ else {
 ###############################################################
 
 # 2.1 - Crea el directorio gorillaReport
-$homedir = [Environment]::GetFolderPath("UserProfile")
 $gorillaReportDir = "gorillaReport"
 
 if (-not (Test-Path -Path "$homedir\$gorillaReportDir" -PathType Container)) {
