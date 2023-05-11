@@ -13,19 +13,25 @@ De esta manera, centralizamos la monitorización de las tareas realizadas con [G
 
 # CONFIG
 
-Indicar la IP o el nombre de host del Servidor [gorillaReport](https://github.com/juanantoniofr/gorillareport) en las variables siguientes:
 
-* En el fichero init_gorillaReport_client.ps1
+Para conectar gorillaReport-Agent con el servidor gorillarReport y con el servidor de gorilla, tenemos que configurar la IP o el nombre de host del Servidor [gorillaReport](https://github.com/juanantoniofr/gorillareport) en las variables siguientes:
 
-**$gorillaserver:** 
+* $gorillaserver
 
-* En el fichero GRModule.psm1
-**$gr_server:** Set Nameserver or IP gorillaReport server
+Editar el fichero init_gorillaReport_client.ps1 para establecer la IP o hostname del Servidor gorilla. 
+
+* $gr_server
+
+Editar el fichero GRModule.psm1 para establecer la IP o hostname del Servidor gorillaReport. 
 
 Ejemplos:
-1. $gorillaserver = "gorillaserver.lc:8080" || $gorillaserver = "10.1.XX.XX"
-1. $gr_server = "gorillareport:4444" |1 $gr_server = "10.1.XX.XX"
 
+    $gorillaserver = "gorillaserver.lc:8080"
+    $gorillaserver = "10.1.XX.XX"
+
+
+    $gr_server = "gorillareport:4444"
+    $gr_server = "10.1.XX.XX"
 
 # SYNOPSIS: 
 
