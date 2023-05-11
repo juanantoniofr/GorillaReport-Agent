@@ -2,12 +2,15 @@
 pwsh -Command {
     $homedir = [Environment]::GetFolderPath("UserProfile")
     $gorilladir = "gorillaReport"
+    #Gorilla Server DNS Name or IP
+    $gorillaserver = "gorillaserver.lc:8080"
+    #$gorillaserver="172.23.23.132"
 
     # certificado pfx (requiere contraseña en windows ltsc)
     $pass = ConvertTo-SecureString -String 'asdf' -AsPlainText -Force
     $client_pfx_cert = Get-PfxCertificate -FilePath "C:\ProgramData\gorilla\cliente_gorillaserver.pfx" -Password $pass
     
-    $file = 'https://gorillaserver/packages/gorillaReport/scripts/gorilla_report.ps1'
+    $file = "http://$gorillaserver/packages/gorillaReport/scripts/gorilla_report.ps1"
     $outputFile = "$homedir\$gorilladir\scripts\gorilla_report.ps1"
 
     # descargamos los ficheros

@@ -8,5 +8,5 @@ $register_gorilla_report = "$homedir\$gorilladir\scripts\register_gorilla_report
 $scripts = @($register_client, $register_basic_info, $register_gorilla_report)
 
 foreach ($script in $scripts) {
-    Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$script`"" -Wait
+    Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$script`"" -Wait -NonInteractive -WindowStyle Hidden
 }
