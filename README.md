@@ -4,14 +4,14 @@ Un conjunto de scripts de PowerShell y Python, que generan y envían informes de
 
 De esta manera, centralizamos la monitorización de las tareas realizadas con [Gorilla](https://github.com/1dustindavis/gorilla).
 
-## SCRIPTS
+## Scripts
 
   - init_gorillaReport_client.ps1
   - register_client
   - register_basic_info
   - register_gorilla_report
 
-## CONFIG
+## Config
 
 
 Para conectar gorillaReport-Agent con el servidor gorillarReport y con el servidor de Gorilla, tenemos que configurar las variables siguientes:
@@ -33,7 +33,7 @@ Ejemplos:
     $gr_server = "gorillareport:4444"
     $gr_server = "10.1.XX.XX"
 
-## SYNOPSIS: 
+## Synopsis
 
     El conjunto de script gorillaReport-Agent realizan las siguientes tareas:
     
@@ -48,12 +48,12 @@ Ejemplos:
           6.3 - Parsea fichero de log de gorilla a formato JSON.
           6.4 - Envía fichero de log de gorilla parseado.
 
-## AUTHORS
+## Authors
 
 - [Luis Vela](https://github.com/luivelmor)
 - [Juan Antonio](https://github.com/juanantoniofr)
 
-# contact
+# Contact
 
 - Email:  luisvela@us.es | juanafr@us.es
 
