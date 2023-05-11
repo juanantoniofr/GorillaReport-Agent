@@ -1,7 +1,7 @@
 # Donwload file ps1 usando powershell 7
 pwsh -Command {
     $homedir = [Environment]::GetFolderPath("UserProfile")
-    $gorilladir = "gorillaReport"
+    $gorillaReportDir = "gorillaReport"
     #Gorilla Server DNS Name or IP
     $gorillaserver = "gorillaserver.lc:8080"
     #$gorillaserver="172.23.23.132"
@@ -11,7 +11,7 @@ pwsh -Command {
     $client_pfx_cert = Get-PfxCertificate -FilePath "C:\ProgramData\gorilla\cliente_gorillaserver.pfx" -Password $pass
     
     $file = "http://$gorillaserver/packages/gorillaReport/scripts/gorilla_report.ps1"
-    $outputFile = "$homedir\$gorilladir\scripts\gorilla_report.ps1"
+    $outputFile = "$homedir\$gorillaReportDir\scripts\gorilla_report.ps1"
 
     # descargamos los ficheros
     If(!(test-path $outputFile)) {
@@ -21,12 +21,16 @@ pwsh -Command {
 }
 
 $homedir = [Environment]::GetFolderPath("UserProfile")
-$gorilladir = "gorillaReport"
+$gorillaReportDir = "gorillaReport"
+#Gorilla Server DNS Name or IP
+$gorillaserver = "gorillaserver.lc:8080"
+#$gorillaserver="172.23.23.132"
 
 # Scheduled task variables
 $TaskName = "_gorilla_report"
-$User = "tecnico"
-$script = "$homedir\$gorilladir\scripts\gorilla_report.ps1"
+$User = "user_name"
+$Passwd = "user_pass"
+$script = "$homedir\$gorillaReportDir\scripts\gorilla_report.ps1"
 
 
 
@@ -40,5 +44,5 @@ if($null -eq (Get-ScheduledTask -TaskName $TaskName)){
     $Principal = New-ScheduledTaskPrincipal -UserId $User -RunLevel Highest
     $Set = New-ScheduledTaskSettingsSet
     $Object = New-ScheduledTask -Action $Action -Principal $Principal -Trigger $Trigger -Settings $Set
-    Register-ScheduledTask $TaskName -InputObject $Object -User "tecnico" -Password 'v3nt4n1t401'
+    Register-ScheduledTask $TaskName -InputObject $Object -User $User -Password $Passwd
 }
