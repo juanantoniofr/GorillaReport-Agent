@@ -14,7 +14,7 @@ De esta manera, centralizamos la monitorización de las tareas realizadas con [G
 # CONFIG
 
 
-Para conectar gorillaReport-Agent con el servidor gorillarReport y con el servidor de gorilla, tenemos que configurar la IP o el nombre de host del Servidor [gorillaReport](https://github.com/juanantoniofr/gorillareport) en las variables siguientes:
+Para conectar gorillaReport-Agent con el servidor gorillarReport y con el servidor de Gorilla, tenemos que configurar las variables siguientes:
 
 * $gorillaserver
 
