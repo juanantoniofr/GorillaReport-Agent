@@ -1,14 +1,13 @@
 <#
 .SYNOPSIS
-    1 - Instala python y powershell 7
+    1 - Instala powershell 7
     2 - Crea los directorios de gorillaReport en el cliente.
     3 - Descarga el modulo GRmodule.psm1  y el parser en python del servidor de gorilla.
     4 - Hace disponible el módulo gorillaReport.psm1 para todos los scripts de powershell.
     5 - Descarga scripts para realizar reportes.
 
 .DESCRIPTION
-    1 - Instala python y powershell 7
-        Instalar python3 y Powershell 7.4
+    1 - Instala powershell 7
 
     2 - Crea los directorios de gorillaReport en el cliente. 
         En el directorio home del usuario crea un directorio llamado gorillaReport, y los subdirectorios:
@@ -44,21 +43,7 @@ $gorillaserver = "gorillaserver.lc:8080"
 ### 1 - Instala el software necesario ###
 #########################################
 
-# 1.1 - Instalamos python
-#if($null -eq (choco list --localonly | Select-String "python")){
-#    try {
-#        Invoke-Expression "choco install python -y"
-#        Write-Host "Python instalado correctamente"
-#    } catch {
-#        Write-Host "Error al instalar Python: $_"
-#    }
-#    
-#}
-#else{
-#    Write-Host "Python ya esta instalado"
-#}
-
-# 1.2 - Instalamos powershell 7
+# 1.1 - Instalamos powershell 7
 If ( !(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe") ) {
     # copiamos el script
     $file = "http://$gorillaserver/packages/gorillaReport/PowerShell-7.2.0-win-x64.msi"
