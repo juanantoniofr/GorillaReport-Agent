@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
-    Usa python script para parsear el fichero de log de gorilla a formato JSON y lo envía a gorillaReport webapp.
+    Usa python script para parsear el fichero de log de gorilla a formato JSON y lo envia a gorillaReport webapp.
 .DESCRIPTION
-    Usa python script para parsear el fichero de log de gorilla a formato JSON y lo envía a gorillaReport webapp.
-    1. Importa el módulo de scripts de gorillaReport
+    Usa python script para parsear el fichero de log de gorilla a formato JSON y lo envia a gorillaReport webapp.
+    1. Importa el modulo de scripts de gorillaReport
     2. Parsea el fichero de log de gorilla a formato JSON: python.exe - $GRModule.path_to_python_parser.
     3. Obtiene el token de acceso a la API
     4. Envia el reporte a la api de gorillaReport
@@ -15,12 +15,11 @@
     Licencia: GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
 #>
 
-# aquí empieza el script
 # 1. Importamos el módulo de scripts de gorillaReport
 
 try {
     $GRModule = Import-Module -Name "GRModule" -AsCustomObject -Force -ErrorAction stop -Passthru
-    #Console debug: lista de propiedades y métodos del módulo
+    #Console debug: lista de propiedades y metodos del módulo
     Write-Host "Módulo de scripts de gorillaReport importado"
     #$GRModule | Get-Member
 }

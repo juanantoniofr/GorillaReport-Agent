@@ -91,7 +91,8 @@ def get_all_executions_gorilla_log(file):
                     execution_block = ''
                 f.close()
 
-                gorilla_execution['endTime'] = line.split(' ')[1] + " - " + line.split(' ')[2].split('.')[0]
+                gorilla_execution['endTime'] = line.split(
+                    ' ')[1] + " - " + line.split(' ')[2].split('.')[0]
                 gorilla_executions.append(gorilla_execution)
                 gorilla_execution = {'endTime': [], 'executionTextBlock': []}
 
@@ -123,7 +124,8 @@ def parse_log_file(gorilla_log_file):
     installing_ps1_command_output_found = False
     installing_ps1_hash_error = False
     installing_ps1_download_error = False
-    installing_ps1_block = {'command': [], 'command_output': [], 'hash_error': [], 'download_error': []}
+    installing_ps1_block = {'command': [], 'command_output': [
+    ], 'hash_error': [], 'download_error': []}
 
     with open(gorilla_log_file) as file:
         for line in file:
@@ -142,18 +144,21 @@ def parse_log_file(gorilla_log_file):
                     check_script_command_error_found = False
                     check_script_stdout_found = False
                     check_script_stderr_found = False
-                    check_script_block = {'command_error': [], 'stdout': [], 'stderr': []}
+                    check_script_block = {
+                        'command_error': [], 'stdout': [], 'stderr': []}
                     # installing ps1
                     installing_ps1_command_found = False
                     installing_ps1_command_output_found = False
                     installing_ps1_hash_error = False
                     installing_ps1_download_error = False
-                    installing_ps1_block = {'command': [], 'command_output': [], 'hash_error': [], 'download_error': []}
+                    installing_ps1_block = {'command': [], 'command_output': [
+                    ], 'hash_error': [], 'download_error': []}
 
                 # new managed_install_item
                 managed_install_item['task_name'] = get_task_name(line)
                 managed_install_item['check_block'] = {}
-                managed_install_item['check_block']['via'] = get_check_status_via(line)
+                managed_install_item['check_block']['via'] = get_check_status_via(
+                    line)
                 managed_install_item['check_block']['script'] = check_script_block
                 managed_install_item['installing_ps1_block'] = {}
 
@@ -180,7 +185,8 @@ def parse_log_file(gorilla_log_file):
                         check_script_stdout_found = True
                     if 'stderr: ' in line:
                         check_script_stderr_found = True
-                        check_script_block['stderr'].append(get_stderr_text(line))
+                        check_script_block['stderr'].append(
+                            get_stderr_text(line))
                     if 'Command Error: exit status 1' in line:
                         check_script_exit_1 = True
 
@@ -190,7 +196,8 @@ def parse_log_file(gorilla_log_file):
                     if not check_script_stdout_found:
                         check_script_block['command_error'].append(line)
                     if check_script_stdout_found and not check_script_stderr_found:
-                        check_script_block['stdout'].append(get_stdout_text(line))
+                        check_script_block['stdout'].append(
+                            get_stdout_text(line))
 
             ###########################################
             # managed installs/installing ps1: command, command_output #
@@ -214,7 +221,7 @@ def parse_log_file(gorilla_log_file):
                         installing_ps1_block['command_output'].append(line)
                     if "FAILED" in line:
                         installing_ps1_block['command_output'].append(line)
-                    #elif:
+                    # elif:
                         # do nothing
                 if installing_ps1_hash_error and not installing_ps1_download_error:
                     installing_ps1_block['hash_error'].append(line)
@@ -224,6 +231,7 @@ def parse_log_file(gorilla_log_file):
     #################
     # print results #
     #################
+    """
     for item in managed_install_items:
        print('- task_name: ', item['task_name'])
        print('- check_via: ', item['check_block']['via'])
@@ -237,6 +245,6 @@ def parse_log_file(gorilla_log_file):
        print('  - hash_error: ', item['installing_ps1_block']['hash_error'])
        print('  - download_error: ', item['installing_ps1_block']['download_error'])
        print()
-
+    """
 
     return managed_install_items

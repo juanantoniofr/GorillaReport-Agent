@@ -9,9 +9,12 @@ import os
 import glob
 import json
 
-# variables
-gorilla_report_file = 'C:\ProgramData\gorilla\GorillaReport.json'
+# actual files
+original_gorilla_report_file = 'C:\ProgramData\gorilla\GorillaReport.json'
 gorilla_log_file = 'C:\gorilla\cache\gorilla.log'
+# new generated files
+new_gorilla_report_output_directory = 'C:\gorilla'
+new_gorilla_report_filename = 'CustomGorillaReport.json'
 
 # split gorilla.log in smaller files: gorilla_execution_1.log, gorilla_execution_2.log, etc
 my_functions.get_all_executions_gorilla_log(gorilla_log_file)
@@ -35,11 +38,11 @@ for f in glob.glob("gorilla_execution_*"):
 
 # build final object
 final_object = {
-    'global_info': my_functions.get_last_data_execution_gorilla_report_json(gorilla_report_file),
+    'global_info': my_functions.get_last_data_execution_gorilla_report_json(original_gorilla_report_file),
     'managed_installs': managed_install_items[0]
 }
 
 # save final_object to a json file
-with open(os.path.join('C:\gorilla', 'CustomGorillaReport.json'), 'w') as fp:
+with open(os.path.join(new_gorilla_report_output_directory, new_gorilla_report_filename), 'w') as fp:
     json.dump(final_object, fp)
 exit()

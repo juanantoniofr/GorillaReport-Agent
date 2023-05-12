@@ -23,8 +23,7 @@ $gr_module = "GRModule"
 
 #### URI's ####
 #Nameserver o IP del servidor de gorillaReport
-$gr_server = "gorillareport:4444"
-#$gr_server = "10.1.21.2"
+$gr_server = "gorillaServer"
 # uri api login
 $login_uri = "https://"+$gr_server+"/api/login"
 # uri api de registro de pc_client

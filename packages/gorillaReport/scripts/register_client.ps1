@@ -11,8 +11,8 @@
     Licencia: GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
 #>
 
-# aquí empieza el script
-# variables
+# Aquí empieza el script
+# Variables
 $gr_module = "GRModule"
 $this_script = "register_client.ps1"
 
@@ -30,10 +30,10 @@ catch {
     exit 1
 }
 
-# Verificar si el mÃ³dulo CimCmdlets estÃ¡ disponible
+# Verificar si el modulo CimCmdlets estÃ¡ disponible
 if (-not(Get-Module -Name CimCmdlets)) {
     try {
-        # Importar el mÃ³dulo CimCmdlets si no estÃ¡ disponible
+        # Importar el modulo CimCmdlets si no estÃ¡ disponible
         Import-Module CimCmdlets -ErrorAction Stop
     }
     catch {
@@ -43,19 +43,18 @@ if (-not(Get-Module -Name CimCmdlets)) {
 }
 
 
-#Get information for register pc
-
+# Informacion del PC
 $ipAddress = (Get-NetIPConfiguration).IPv4Address.IPAddress
 $huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
 $name = $env:COMPUTERNAME
 
-#Creamos objeto JSON
+# Creamos objeto JSON
 $jsonData = @{
     ip=$ipAddress
     huid=$huid
     name=$name    
 }
-#Guardamos a fichero
+# Guardamos a fichero
 $json_file_log = $GRModule.reports_dir + "\register_info.json"
 try {
     $jsonData | ConvertTo-Json | Out-File -FilePath $json_file_log -Encoding UTF8
@@ -63,7 +62,7 @@ try {
     Add-Content -Path $GRModule.log_file -Value "INFO ($DATE) - $this_script -: Fichero JSON con la informacion del sistema guardado en $json_file_log" 
 }
 catch {
-    <#Do this if a terminating exception happens#>
+    <# Do this if a terminating exception happens #>
     Write-Host "Error al guardar el fichero JSON en $json_file_log"
     Write-Host $_.Exception.Message
     Add-Content -Path $GRModule.log_file -Value "ERROR ($DATE) - $this_script -: Error al guardar el fichero JSON en $json_file_log"
@@ -71,10 +70,10 @@ catch {
 }
 
 
-#Obtenemos el token de acceso
+# Obtenemos el token de acceso
 $token = $GRModule.GetAccessToken($GRModule.login_uri)
 
-#si no hay token de acceso salimos
+# Si no hay token de acceso salimos
 if ($null -eq $token) {
     #Debug: escribir en el fichero de logs
     $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
@@ -89,12 +88,13 @@ else{
     Write-Host "Token de acceso a la API obtenido"
 }
 
-# Enviamos la informaciÃ³n del sistema a gorillaReport webapp
+# Enviamos la informacion del sistema a gorillaReport webapp
 $result = $(pwsh.exe -File $GRModule.ps_file_for_send_reports_with_pwsh -token $token.access_token -logfile $json_file_log -uri $GRModule.register_pc_uri)
 
 # logs
 Write-Host "gorillareport webapp response: "  $result
-#DEBUG: escribir en el fichero de logs
+
+# DEBUG: escribir en el fichero de logs
 $DATE = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $GRModule.log_file -Value "INFO: $DATE - $this_script - : gorillareport webapp response ->  $result" 
 exit 0

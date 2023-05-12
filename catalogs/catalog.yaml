@@ -1,5 +1,5 @@
-Python:
-  display_name: Python
+Python3.11.2:
+  display_name: Python3.11.2
   check:
     file:
       - path: C:\Program Files\Python311
