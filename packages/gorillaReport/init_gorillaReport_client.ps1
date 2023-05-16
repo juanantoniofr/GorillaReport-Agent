@@ -217,8 +217,8 @@ else {
 ### 5 - Descarga scripts para realizar reportes ###
 ###################################################
 
-$file1 = "$gorillaserver/packages/gorillaReport/scripts/register_gorilla_report.ps1"
-$outputFile1 = "$homedir\gorillaReport\scripts\register_gorilla_report.ps1"
+$file1 = "$gorillaserver/packages/gorillaReport/scripts/gorilla_report.ps1"
+$outputFile1 = "$homedir\gorillaReport\scripts\gorilla_report.ps1"
 
 $file2 = "$gorillaserver/packages/gorillaReport/scripts/register_client.ps1"
 $outputFile2 = "$homedir\gorillaReport\scripts\register_client.ps1"
