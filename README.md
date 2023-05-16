@@ -6,7 +6,7 @@ De esta manera, centralizamos la monitorización de las tareas realizadas con [G
 
 ## Synopsis
 
-    El conjunto de script gorillaReport-Agent realizan las siguientes tareas:
+    El conjunto de scripts gorillaReport-Agent realizan las siguientes tareas:
     
       1 - Instala python y powershell 7.
       2 - Crea los directorios de gorillaReport en el cliente.
