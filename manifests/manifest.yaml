@@ -1,7 +1,7 @@
 ---
 name: multipass_manifest
 managed_installs:
-  - Python
+  - Python3.11.2
   - init_gorillaReport_client
   - create_scheduled_task_gorilla_report
 managed_uninstalls:
