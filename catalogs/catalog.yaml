@@ -47,6 +47,6 @@ create_scheduled_task_gorilla_report:
       exit 1
   installer:
     location: packages/gorillaReport/scripts/create_scheduled_task_gorilla_report.ps1
-    hash: 5cb3ed5d31c8a0f7c5430bf6f971e950bc1e772c49100a519b90f3e5ce60b58c
+    hash: fe1cc4c79b9fc8c6b26678b692df1fc46af5bb071318565c5a73d2fd6148ad20
     type: ps1
   version: 1.0
