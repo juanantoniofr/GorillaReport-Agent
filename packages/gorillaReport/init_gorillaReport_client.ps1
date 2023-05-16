@@ -37,7 +37,6 @@
 #>
 #Gorilla Server DNS Name or IP
 $gorillaserver = "http://gorillaserver"
-#$gorillaserver="172.23.23.132"
 
 #########################################
 ### 1 - Instala el software necesario ###
