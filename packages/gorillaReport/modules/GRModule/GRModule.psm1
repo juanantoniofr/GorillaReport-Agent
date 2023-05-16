@@ -23,7 +23,7 @@ $gr_module = "GRModule"
 
 #### URI's ####
 #Nameserver o IP del servidor de gorillaReport
-$gr_server = "gorillaServer"
+$gr_server = "gorillareport"
 # uri api login
 $login_uri = "https://"+$gr_server+"/api/login"
 # uri api de registro de pc_client
@@ -39,7 +39,7 @@ $homedir = $env:USERPROFILE
 
 ### directorios y ficheros de gorilla ###
 #directorio de gorilla
-$gorilla_dir = "c:\gorilla"
+$gorilla_dir = "C:\gorilla"
 # fichero de logs de gorilla
 $file_gorilla_log = "$gorilla_dir\cache\gorilla.log"
 
