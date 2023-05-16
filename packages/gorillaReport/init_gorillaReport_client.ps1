@@ -217,8 +217,8 @@ else {
 ### 5 - Descarga scripts para realizar reportes ###
 ###################################################
 
-$file1 = "$gorillaserver/packages/gorillaReport/scripts/gorilla_report.ps1"
-$outputFile1 = "$homedir\gorillaReport\scripts\gorilla_report.ps1"
+$file1 = "$gorillaserver/packages/gorillaReport/scripts/register_gorilla_report.ps1"
+$outputFile1 = "$homedir\gorillaReport\scripts\register_gorilla_report.ps1"
 
 $file2 = "$gorillaserver/packages/gorillaReport/scripts/register_client.ps1"
 $outputFile2 = "$homedir\gorillaReport\scripts\register_client.ps1"
@@ -229,7 +229,11 @@ $outputFile3 = "$home\gorillaReport\scripts\send_report_pwsh7.ps1"
 $file4 = "$gorillaserver/packages/gorillaReport/scripts/register_basic_info.ps1"
 $outputFile4 = "$homedir\gorillaReport\scripts\register_basic_info.ps1"
 
+$file5 = "$gorillaserver/packages/gorillaReport/scripts/gorilla_report.ps1"
+$outputFile5 = "$homedir\gorillaReport\scripts\gorilla_report.ps1"
+
 if (!(Test-Path $outputFile1)) { Invoke-WebRequest -Uri $file1 -OutFile $outputFile1 }
 if (!(Test-Path $outputFile2)) { Invoke-WebRequest -Uri $file2 -OutFile $outputFile2 }
 if (!(Test-Path $outputFile3)) { Invoke-WebRequest -Uri $file3 -OutFile $outputFile3 }
 if (!(Test-Path $outputFile4)) { Invoke-WebRequest -Uri $file4 -OutFile $outputFile4 }
+if (!(Test-Path $outputFile5)) { Invoke-WebRequest -Uri $file5 -OutFile $outputFile5 }
