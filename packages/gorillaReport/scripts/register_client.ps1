@@ -11,8 +11,8 @@
     Licencia: GNU General Public License v3.0. https://www.gnu.org/licenses/gpl-3.0.html
 #>
 
-# Aquí empieza el script
 # Variables
+$ip_pattern = "172."
 $gr_module = "GRModule"
 $this_script = "register_client.ps1"
 
@@ -44,7 +44,7 @@ if (-not(Get-Module -Name CimCmdlets)) {
 
 
 # Informacion del PC
-$ipAddress = (Get-NetIPConfiguration).IPv4Address.IPAddress
+$ipAddress = ((Get-NetIPConfiguration).IPv4Address.IPAddress | Select-String -Pattern $ip_pattern).toString().Trim()
 $huid=(Get-CimInstance Win32_ComputerSystemProduct).UUID
 $name = $env:COMPUTERNAME
 
