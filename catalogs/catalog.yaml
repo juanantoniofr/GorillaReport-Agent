@@ -2,8 +2,11 @@ Python3.11.2:
   display_name: Python3.11.2
   check:
     file:
-      - path: C:\Program Files\Python311
-      - version: 3.11.2
+      script: |
+      if(Test-Path "$Home\AppData\Local\Programs\Python\Python311"){
+          exit 1
+      }
+      exit 0
   installer:
     location: packages/gorillaReport/apps/python-3.11.2-amd64.exe
     hash: EBFFD8B4B09A27238423CFFC17ED9D5F25F0BAFAF1CA133791FC3EC5E3F31F63
