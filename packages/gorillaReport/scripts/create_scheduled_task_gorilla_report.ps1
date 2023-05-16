@@ -23,7 +23,7 @@ $script = "$homedir\$gorillaReportDir\scripts\gorilla_report.ps1"
 
 if($null -eq (Get-ScheduledTask -TaskName $TaskName)){
     # Define scheduled task
-    $Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -NoLogo -NonInteractive -WindowStyle Hidden -File $script"
+    $Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -NoLogo -WindowStyle Hidden -File $script"
     $Trigger = @(
         $(New-ScheduledTaskTrigger -Atlogon)
         $(New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 10))
