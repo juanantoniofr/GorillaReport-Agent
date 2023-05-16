@@ -228,9 +228,9 @@ def parse_log_file(gorilla_log_file):
                 if installing_ps1_download_error:
                     installing_ps1_block['download_error'].append(line)
 
-    #################
-    # print results #
-    #################
+    #####################################
+    # print results: only for debugging #
+    #####################################
     """
     for item in managed_install_items:
        print('- task_name: ', item['task_name'])
