@@ -13,13 +13,20 @@ Revisar y/o modificar EN ESTE ORDEN (IMPORTANTE):
 		- $Passwd = "user_pass"
 
 3 - Adaptar las variables de este script a nuestro entorno:
-	packages\gorillaReport\init_gorillaReport_client.ps1
+	packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1
+		# puedes poner hasta el tercer octeto de la IP de tu rango de aulas o entorno de pruebas
+		# para aulas: "10.1.21."
+		# para multipass: "172."
+		- $ip_pattern = "172." 
+
+4 - Adaptar las variables de este script a nuestro entorno:
+	packages\gorillaReport\scripts\register_client.ps1
 		- $gorillaserver = "http://gorillaserver"
 	    - $file = "https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/PowerShell-7.3.4-win-x64.msi"
 	    - $outputFile = "$homedir\AppData\Local\Temp\PowerShell-7.3.4-win-x64.msi"
 	    - msiexec.exe /i "$homedir\AppData\Local\Temp\PowerShell-7.3.4-win-x64.msi" /qn
 
-4 - Adaptar las variables del script "parser" de python a nuestro entorno:
+5 - Adaptar las variables del script "parser" de python a nuestro entorno:
 	packages\gorillaReport\modules\python_gorilla_parser\main.py
 		- new_gorilla_report_output_directory = 'C:\gorilla'
 		- new_gorilla_report_filename = 'CustomGorillaReport.json'
@@ -29,12 +36,12 @@ Revisar y/o modificar EN ESTE ORDEN (IMPORTANTE):
 ***********************************  CATALOG   **************************************
 *************************************************************************************
 
-5 - Anadir las tareas de gorillaReport/catalogs/catalog.yaml al catalogo de nuestro servidor:
+6 - Anadir las tareas de gorillaReport/catalogs/catalog.yaml al catalogo de nuestro servidor:
 	-> Tarea "Python3.11.2"
 	-> Tarea "init_gorillaReport_client"
 	-> Tarea "create_scheduled_task_gorilla_report"
 
-6 - Revisar que los hashes de las tareas de nuestro catalogo son correctos
+7 - Revisar que los hashes de las tareas de nuestro catalogo son correctos
 	-> Tarea "Python3.11.2": comprobar que el hash es correcto
 	-> Tarea "init_gorillaReport_client": comprobar que el hash es correcto
 	-> Tarea "create_scheduled_task_gorilla_report": comprobar que el hash es correcto
@@ -44,7 +51,7 @@ Revisar y/o modificar EN ESTE ORDEN (IMPORTANTE):
 *************************************************************************************
 **********************************  MANIFEST   **************************************
 *************************************************************************************
-7 - Anadir las siguientes lineas al manifest/s que se despliegue en los clientes:
+8 - Anadir las siguientes lineas al manifest/s que se despliegue en los clientes:
 		...
 		...
 		managed_installs:
@@ -58,8 +65,9 @@ Revisar y/o modificar EN ESTE ORDEN (IMPORTANTE):
 *************************************************************************************
 ************************* DNS Clientes para gorillaReport: **************************
 *************************************************************************************
-8 - Obtener la IP de nuestro servidor de gorillaReport
+9 - Obtener la IP de nuestro servidor de gorillaReport
 	-> multipass list
 	
-9 - Anadir a los clientes de Gorilla la siguiente linea en "C:\Windows\System32\drivers\etc\hosts":
-	-> gorillaReport X.X.X.X (donde X.X.X.X es la IP de gorillaReport)
+10 - Anadir a los clientes de Gorilla la siguiente linea en "C:\Windows\System32\drivers\etc\hosts":
+	-> X.X.X.X gorillareport (donde X.X.X.X es la IP de gorillaReport)
+	-> X.X.X.X gorillaserver (donde X.X.X.X es la IP de gorillaserver)
