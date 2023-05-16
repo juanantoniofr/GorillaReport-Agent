@@ -71,3 +71,5 @@ Revisar y/o modificar EN ESTE ORDEN (IMPORTANTE):
 10 - Anadir a los clientes de Gorilla la siguiente linea en "C:\Windows\System32\drivers\etc\hosts":
 	-> X.X.X.X gorillareport (donde X.X.X.X es la IP de gorillaReport)
 	-> X.X.X.X gorillaserver (donde X.X.X.X es la IP de gorillaServer)
+	
+11 - Ejecuta gorilla.exe -d -v en los clientes para comprobar que realiza las tareas definidas
