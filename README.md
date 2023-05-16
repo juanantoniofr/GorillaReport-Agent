@@ -4,34 +4,10 @@ Un conjunto de scripts de PowerShell y Python, que generan y envían informes de
 
 De esta manera, centralizamos la monitorización de las tareas realizadas con [Gorilla](https://github.com/1dustindavis/gorilla).
 
-## Scripts
-
-  - init_gorillaReport_client.ps1
-  - register_client
-  - register_basic_info
-  - register_gorilla_report
 
 ## Config
+El fichero "configuraciones_despliegue.txt" contiene la descripción de las variables a configurar en cada uno de los scripts contenidos en la carpeta "packages/gorillaReport/scripts" para que el entorno funcione correctamente
 
-
-Para conectar gorillaReport-Agent con el servidor gorillarReport y con el servidor de Gorilla, tenemos que configurar las variables siguientes:
-
-* $gorillaserver
-
-Editar el fichero init_gorillaReport_client.ps1 para establecer la IP o hostname del Servidor gorilla. 
-
-* $gr_server
-
-Editar el fichero GRModule.psm1 para establecer la IP o hostname del Servidor gorillaReport. 
-
-Ejemplos:
-
-    $gorillaserver = "gorillaserver.lc:8080"
-    $gorillaserver = "10.1.XX.XX"
-
-
-    $gr_server = "gorillareport:4444"
-    $gr_server = "10.1.XX.XX"
 
 ## Synopsis
 
