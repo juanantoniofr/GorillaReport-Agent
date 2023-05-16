@@ -4,6 +4,7 @@ Python3.11.2:
     file:
       script: |
       if(Test-Path "$Home\AppData\Local\Programs\Python\Python311"){
+          Write-Host "Python3.11 ya existe"
           exit 1
       }
       exit 0
@@ -21,6 +22,10 @@ init_gorillaReport_client:
   display_name: init_gorillaReport_client
   check:
     script: |
+      if(Test-Path "$Home\gorillaReport"){
+          Write-Host "El directorio $Home\gorillaReport ya existe"
+          exit 1
+      }
       exit 0
   installer:
     location: packages/gorillaReport/init_gorillaReport_client.ps1
@@ -32,7 +37,14 @@ create_scheduled_task_gorilla_report:
   display_name: create_scheduled_task_gorilla_report
   check:
     script: |
-      exit 0
+      try {
+        Get-ScheduledTaskInfo -TaskPath "\" -TaskName "_gorilla_report" -ErrorAction Stop
+      } 
+      catch {
+        echo "La tarea programada no existe"
+        exit 0
+      }
+      exit 1
   installer:
     location: packages/gorillaReport/scripts/create_scheduled_task_gorilla_report.ps1
     hash: C94AA37A1D0CAB83426B74A3B7D33FCA7B6F6BC30A7E58873E60A6DA55D9E376
