@@ -29,7 +29,7 @@ init_gorillaReport_client:
       exit 0
   installer:
     location: packages/gorillaReport/init_gorillaReport_client.ps1
-    hash: F218F20A399505DE9CC25DF6EACCFA86AB93A7DE49A8C8BF38B8D0EE79FD4D06
+    hash: bec57a2a85fbf1ff0581cdc1d7198bd7e63e8f86b370b7248f04e3d5564ab92d
     type: ps1
   version: 1.0
 
@@ -47,6 +47,6 @@ create_scheduled_task_gorilla_report:
       exit 1
   installer:
     location: packages/gorillaReport/scripts/create_scheduled_task_gorilla_report.ps1
-    hash: C94AA37A1D0CAB83426B74A3B7D33FCA7B6F6BC30A7E58873E60A6DA55D9E376
+    hash: 5cb3ed5d31c8a0f7c5430bf6f971e950bc1e772c49100a519b90f3e5ce60b58c
     type: ps1
   version: 1.0
