@@ -177,7 +177,7 @@ def parse_log_file(gorilla_log_file):
             # managed installs/check status: command_error, stdout, stderr #
             ###############################################
             if processing_managed_install_item and not managed_uninstalls_found:
-                if managed_install_item['check_block']['via'] == 'Script':
+                if managed_install_item['check_block']['via'] == 'script':
 
                     if 'Command Error: ' in line:
                         check_script_command_error_found = True
