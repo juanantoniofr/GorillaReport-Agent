@@ -16,8 +16,8 @@ Invoke-WebRequest -Uri $file -OutFile $outputFile
 
 # Scheduled task variables
 $TaskName = "_gorilla_report"
-$User = "user_name"
-$Passwd = "user_pass"
+$User = "practica"
+$Passwd = "practica"
 $script = "$homedir\$gorillaReportDir\scripts\gorilla_report.ps1"
 
 
