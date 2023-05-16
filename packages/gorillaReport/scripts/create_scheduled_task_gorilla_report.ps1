@@ -21,7 +21,7 @@ $Passwd = "user_pass"
 $script = "$homedir\$gorillaReportDir\scripts\gorilla_report.ps1"
 
 
-if($null -eq (Get-ScheduledTask -TaskName $TaskName)){
+if (-not (Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue)) {
     # Define scheduled task
     $Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -NoLogo -WindowStyle Hidden -File $script"
     $Trigger = @(
