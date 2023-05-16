@@ -29,7 +29,7 @@ init_gorillaReport_client:
       exit 0
   installer:
     location: packages/gorillaReport/init_gorillaReport_client.ps1
-    hash: bec57a2a85fbf1ff0581cdc1d7198bd7e63e8f86b370b7248f04e3d5564ab92d
+    hash: 179bc09eaf41bea674ca1aeb161c02880ecb8d5e4554d83a354da4ddc4ecee49
     type: ps1
   version: 1.0
 
