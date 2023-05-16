@@ -4,11 +4,6 @@ Un conjunto de scripts de PowerShell y Python, que generan y envían informes de
 
 De esta manera, centralizamos la monitorización de las tareas realizadas con [Gorilla](https://github.com/1dustindavis/gorilla).
 
-
-## Config
-El fichero "configuraciones_despliegue.txt" contiene la descripción de las variables a configurar en cada uno de los scripts contenidos en la carpeta "packages/gorillaReport/scripts" para que el entorno funcione correctamente
-
-
 ## Synopsis
 
     El conjunto de script gorillaReport-Agent realizan las siguientes tareas:
@@ -23,6 +18,81 @@ El fichero "configuraciones_despliegue.txt" contiene la descripción de las vari
           6.2 - Enviar información básica del equipo: sistema (SO, Build, Hostname..) y dispositivo (CPU, RAM,...).
           6.3 - Parsea fichero de log de gorilla a formato JSON.
           6.4 - Envía fichero de log de gorilla parseado.
+
+## Config
+    Revisar y/o modificar EN ESTE ORDEN (IMPORTANTE):
+
+    *************************************************************************************
+    **********************************  PACKAGES   **************************************
+    *************************************************************************************
+    1 - Copiar la carpeta gorillaReport en /var/www/html/packages	
+
+    2 - Adaptar las variables de este script a nuestro entorno:
+      packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1
+        - $gorillaserver = "http://gorillaserver"
+        - $User = "user_name"
+        - $Passwd = "user_pass"
+
+    3 - Adaptar las variables de este script a nuestro entorno:
+      packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1
+        # puedes poner hasta el tercer octeto de la IP de tu rango de aulas o entorno de pruebas
+        # para aulas: "10.1.21."
+        # para multipass: "172."
+        - $ip_pattern = "172." 
+
+    4 - Adaptar las variables de este script a nuestro entorno:
+      packages\gorillaReport\scripts\register_client.ps1
+        - $gorillaserver = "http://gorillaserver"
+          - $file = "https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/PowerShell-7.3.4-win-x64.msi"
+          - $outputFile = "$homedir\AppData\Local\Temp\PowerShell-7.3.4-win-x64.msi"
+          - msiexec.exe /i "$homedir\AppData\Local\Temp\PowerShell-7.3.4-win-x64.msi" /qn
+
+    5 - Adaptar las variables del script "parser" de python a nuestro entorno:
+      packages\gorillaReport\modules\python_gorilla_parser\main.py
+        - new_gorilla_report_output_directory = 'C:\gorilla'
+        - new_gorilla_report_filename = 'CustomGorillaReport.json'
+
+
+    *************************************************************************************
+    ***********************************  CATALOG   **************************************
+    *************************************************************************************
+
+    6 - Anadir las tareas de gorillaReport/catalogs/catalog.yaml al catalogo de nuestro servidor:
+      -> Tarea "Python3.11.2"
+      -> Tarea "init_gorillaReport_client"
+      -> Tarea "create_scheduled_task_gorilla_report"
+
+    7 - Revisar que los hashes de las tareas de nuestro catalogo son correctos
+      -> Tarea "Python3.11.2": comprobar que el hash es correcto
+      -> Tarea "init_gorillaReport_client": comprobar que el hash es correcto
+      -> Tarea "create_scheduled_task_gorilla_report": comprobar que el hash es correcto
+
+
+
+    *************************************************************************************
+    **********************************  MANIFEST   **************************************
+    *************************************************************************************
+    8 - Anadir las siguientes lineas al manifest/s que se despliegue en los clientes:
+        ...
+        ...
+        managed_installs:
+          - Python
+          - init_gorillaReport_client
+          - create_scheduled_task_gorilla_report
+          ...
+          ...
+
+
+    *************************************************************************************
+    ************************* DNS Clientes para gorillaReport: **************************
+    *************************************************************************************
+    9 - Obtener la IP de nuestro servidor de gorillaReport
+      -> multipass list
+      
+    10 - Anadir a los clientes de Gorilla la siguiente linea en "C:\Windows\System32\drivers\etc\hosts":
+      -> X.X.X.X gorillareport (donde X.X.X.X es la IP de gorillaReport)
+      -> X.X.X.X gorillaserver (donde X.X.X.X es la IP de gorillaServer)
+
 
 ## Authors
 
