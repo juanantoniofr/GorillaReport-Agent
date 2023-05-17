@@ -34,7 +34,7 @@ De esta manera, centralizamos la monitorización de las tareas realizadas con [G
         - $Passwd = "user_pass"
 
     3 - Adaptar las variables de este script a nuestro entorno:
-      packages\gorillaReport\scripts\create_scheduled_task_gorilla_report.ps1
+      packages\gorillaReport\scripts\register_client.ps1
         # puedes poner hasta el tercer octeto de la IP de tu rango de aulas o entorno de pruebas
         # para aulas: "10.1.21."
         # para multipass: "172."
